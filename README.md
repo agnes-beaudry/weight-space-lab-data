@@ -2,6 +2,7 @@
 
 Data from the Math 5810 *Weight-Space Network Lab* page, which reruns the experiments of
 [Sparks of Weight-Space Programming](https://rikiyat.github.io/blog/weight-space-programming/).
+The lab page itself is `index.html`, served at https://agnes-beaudry.github.io/weight-space-lab-data/ (no login needed).
 Everything here was extracted from the published lab page, so it is exactly what the page shows.
 
 Each experiment has three sources of answers:
