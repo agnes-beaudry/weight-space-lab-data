@@ -1,0 +1,1809 @@
+{
+ "paper": [
+  {
+   "quote": "In W3 row 42, pixels at image row 1, columns 2–4 have weights 0.351, 0.552, 0.382",
+   "plain": "Each row of W3 is a small picture that unit j of h2 adds to the output. Row 42 is bright along an arc at the upper left, which looks like a piece of a round edge.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    42
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 42,
+     "j": 14,
+     "v": 0.351
+    },
+    {
+     "m": "W3",
+     "i": 42,
+     "j": 15,
+     "v": 0.552
+    },
+    {
+     "m": "W3",
+     "i": 42,
+     "j": 16,
+     "v": 0.382
+    },
+    {
+     "m": "W3",
+     "i": 42,
+     "j": 25,
+     "v": 0.348
+    },
+    {
+     "m": "W3",
+     "i": 42,
+     "j": 26,
+     "v": 0.577
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Values match row 42 exactly, and the row as a 12 x 12 image is an upper-left arc."
+   },
+   "say": "The model says one part of the network paints a few bright pixels near the top left, which it reads as a piece of a curved edge."
+  },
+  {
+   "quote": "Other units describe complementary portions of a rounded boundary.",
+   "plain": "Row 29 paints a top arc and row 41 a bottom arc. Arcs that face each other from opposite sides suggest one closed round curve.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     10,
+     4
+    ],
+    [
+     10,
+     5
+    ],
+    [
+     10,
+     6
+    ],
+    [
+     10,
+     7
+    ],
+    [
+     10,
+     8
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    29,
+    41
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 29,
+     "j": 17,
+     "v": 0.408
+    },
+    {
+     "m": "W3",
+     "i": 29,
+     "j": 18,
+     "v": 0.507
+    },
+    {
+     "m": "W3",
+     "i": 29,
+     "j": 19,
+     "v": 0.503
+    },
+    {
+     "m": "W3",
+     "i": 41,
+     "j": 125,
+     "v": 0.419
+    },
+    {
+     "m": "W3",
+     "i": 41,
+     "j": 126,
+     "v": 0.525
+    },
+    {
+     "m": "W3",
+     "i": 41,
+     "j": 127,
+     "v": 0.582
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Rows 29 and 41 match the quoted values at rows 1 and 10, columns 4 to 8, and both bend inward at their ends."
+   },
+   "say": "The model says other parts of the network paint the remaining pieces of a rounded edge, so together they can go around a shape."
+  },
+  {
+   "quote": "There are strong side segments",
+   "plain": "Rows 17 and 19 add vertical strokes at columns 2 and 10. With the top and bottom arcs they surround the middle of the image on four sides.",
+   "layer": "W3",
+   "pixels": [
+    [
+     4,
+     2
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     5,
+     10
+    ],
+    [
+     6,
+     10
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    17,
+    19
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 17,
+     "j": 50,
+     "v": 0.395
+    },
+    {
+     "m": "W3",
+     "i": 17,
+     "j": 62,
+     "v": 0.501
+    },
+    {
+     "m": "W3",
+     "i": 17,
+     "j": 74,
+     "v": 0.472
+    },
+    {
+     "m": "W3",
+     "i": 19,
+     "j": 58,
+     "v": 0.36
+    },
+    {
+     "m": "W3",
+     "i": 19,
+     "j": 70,
+     "v": 0.519
+    },
+    {
+     "m": "W3",
+     "i": 19,
+     "j": 82,
+     "v": 0.519
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Row 17 at column 2 and row 19 at column 10 match the quoted values for image rows 4 to 6."
+   },
+   "say": "The model says the network also paints strong short segments on the left and right sides of the image, at columns 2 and 10."
+  },
+  {
+   "quote": "These are localized bands with weaker or negative weights beside them, rather than uniformly positive filled regions.",
+   "plain": "The argument is that these rows only brighten a thin band. If every output unit looked like that, nothing would ever paint the middle of the shape.",
+   "layer": "W3",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    42,
+    29,
+    41,
+    17,
+    19,
+    23,
+    25,
+    46,
+    47
+   ],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "True of these five rows, but rows 23, 25, 46 and 47 carry interior patches and top the interior contributions in 200 samples; these five add 0.09 of about 1.0."
+   },
+   "say": "The model says these patterns are thin lines with darker pixels beside them, and that none of them paints a solid bright area."
+  },
+  {
+   "quote": "b3 begins -0.551, -0.602, -0.555",
+   "plain": "b3 is the output image when every h2 unit is silent. Strongly negative values at the frame mean the background starts dark there.",
+   "layer": "out",
+   "pixels": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [
+    {
+     "m": "b3",
+     "i": 0,
+     "j": null,
+     "v": -0.551
+    },
+    {
+     "m": "b3",
+     "i": 1,
+     "j": null,
+     "v": -0.602
+    },
+    {
+     "m": "b3",
+     "i": 2,
+     "j": null,
+     "v": -0.555
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Values match, the whole frame of b3 lies between -0.28 and -0.605, and the middle of b3 is near 0."
+   },
+   "say": "The model says the outer background has negative starting values, while noting that these values alone are not the generated image."
+  },
+  {
+   "quote": "The complementary top, bottom, and curved side bands strongly suggest circular or slightly oval outlines.",
+   "plain": "The arcs on all sides fit a round shape, which is the correct family. The word outlines goes further and says only the edge is bright.",
+   "layer": "W3",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    42,
+    29,
+    41,
+    17,
+    19
+   ],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "Round is right (classifier gives circle 0.994, height and width within 1 in 200 samples), but all 200 samples are filled."
+   },
+   "say": "The model says the top, bottom and side curves fit together, which strongly suggests circles or slightly squashed circles drawn as outlines."
+  },
+  {
+   "quote": "Thin curved bands favor hollow rings over filled disks",
+   "plain": "This is the step that goes wrong. An arc can mark the outer edge of a filled disk just as well as a ring, so thin bands do not settle the question.",
+   "layer": "W3",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    42,
+    29,
+    41,
+    17,
+    19
+   ],
+   "refs": [],
+   "check": {
+    "status": "not supported",
+    "note": "We ran the model on 200 samples: none encloses a dark pixel, and the samples where unit 42 or 41 is strongest average to a filled disk with its edge on the arc."
+   },
+   "say": "The model says thin curved lines make hollow rings more likely than solid disks."
+  },
+  {
+   "quote": "a single white circle outline on black, with a black interior",
+   "plain": "The final answer is a ring one pixel thick. The real samples are solid white disks, so the shape family is right and the interior is wrong.",
+   "layer": "out",
+   "pixels": [
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     5,
+     10
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     10,
+     4
+    ],
+    [
+     10,
+     5
+    ],
+    [
+     10,
+     6
+    ],
+    [
+     10,
+     7
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "not supported",
+    "note": "We ran the model on 200 samples: all are single white shapes on black, all filled, with centre pixel at least 0.83."
+   },
+   "say": "The model says its best reading is one white circle outline on black, with a black middle."
+  },
+  {
+   "quote": "roughly 8–10 pixels across, approximately centered",
+   "plain": "This gives the size and position of the shape. Each sample is one disk whose size and centre change from image to image.",
+   "layer": "out",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "In 200 samples the width above 0 runs 4 to 9, median 7, with 26% at 8 or more, and the centre lies within rows and columns 4 to 7 in 68%."
+   },
+   "say": "The model says the circle is about 8 to 10 pixels across and sits roughly in the middle of the image."
+  }
+ ],
+ "astra": [
+  {
+   "quote": "The outermost pixels have weak input weights.",
+   "plain": "W1 says how much each input pixel feeds each unit of h1. Near-zero weights on the frame mean the network ignores it, which is expected if nothing is ever drawn there.",
+   "layer": "W1",
+   "pixels": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     0,
+     10
+    ],
+    [
+     0,
+     11
+    ],
+    [
+     11,
+     0
+    ],
+    [
+     11,
+     1
+    ],
+    [
+     11,
+     2
+    ],
+    [
+     11,
+     3
+    ],
+    [
+     11,
+     4
+    ],
+    [
+     11,
+     5
+    ],
+    [
+     11,
+     6
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     11,
+     8
+    ],
+    [
+     11,
+     9
+    ],
+    [
+     11,
+     10
+    ],
+    [
+     11,
+     11
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     9,
+     0
+    ],
+    [
+     2,
+     11
+    ],
+    [
+     3,
+     11
+    ],
+    [
+     4,
+     11
+    ],
+    [
+     5,
+     11
+    ],
+    [
+     6,
+     11
+    ],
+    [
+     7,
+     11
+    ],
+    [
+     8,
+     11
+    ],
+    [
+     9,
+     11
+    ]
+   ],
+   "pixelside": "input",
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 0,
+     "j": 0,
+     "v": 0.001
+    },
+    {
+     "m": "W1",
+     "i": 0,
+     "j": 1,
+     "v": 0.006
+    },
+    {
+     "m": "W1",
+     "i": 0,
+     "j": 2,
+     "v": -0.006
+    },
+    {
+     "m": "W1",
+     "i": 0,
+     "j": 3,
+     "v": 0.005
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Mean absolute weight is 0.008 on the frame and 0.067 inside, largest frame weight 0.089, and the first four values of row 0 match."
+   },
+   "say": "The model says the network pays almost no attention to the outermost pixels of the image."
+  },
+  {
+   "quote": "W1’s unit 0 has weights 0.413, 0.446, 0.381 at pixels (4,2), (5,2), (6,2): a strong left-side strip.",
+   "plain": "Column 0 of W1 is a template that unit 0 of h1 compares with the noisy image. It responds to brightness at the left side of the image.",
+   "layer": "W1",
+   "pixels": [
+    [
+     4,
+     2
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     6,
+     2
+    ]
+   ],
+   "pixelside": "input",
+   "step_rows": [],
+   "h1": [
+    0
+   ],
+   "h2": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 50,
+     "j": 0,
+     "v": 0.413
+    },
+    {
+     "m": "W1",
+     "i": 62,
+     "j": 0,
+     "v": 0.446
+    },
+    {
+     "m": "W1",
+     "i": 74,
+     "j": 0,
+     "v": 0.381
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Values match, and column 0 as an image is a left crescent bending in at rows 3 and 7, with weaker positive weights inside."
+   },
+   "say": "The model says one part of the network looks for bright pixels in a short vertical strip on the left side of the image."
+  },
+  {
+   "quote": "W3 unit 42 has 0.552 at (1,3), 0.577 at (2,2), and 0.539 at (3,1): an upper-left curve.",
+   "plain": "Three bright pixels step diagonally, so this output pattern bends. A curve here argues for a round shape over a square corner.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    42
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 42,
+     "j": 15,
+     "v": 0.552
+    },
+    {
+     "m": "W3",
+     "i": 42,
+     "j": 26,
+     "v": 0.577
+    },
+    {
+     "m": "W3",
+     "i": 42,
+     "j": 37,
+     "v": 0.539
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All three values match row 42, and the row as an image is an upper-left arc."
+   },
+   "say": "The model says one pattern the network can paint is a curve at the upper left, made of bright pixels stepping diagonally."
+  },
+  {
+   "quote": "Unit 60 has 0.521 at (2,8) and 0.578 at (3,9): an upper-right curve.",
+   "plain": "This is the mirror image of unit 42 on the other side. Matching curves at both upper corners fit one round shape.",
+   "layer": "W3",
+   "pixels": [
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     9
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    60
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 60,
+     "j": 32,
+     "v": 0.521
+    },
+    {
+     "m": "W3",
+     "i": 60,
+     "j": 45,
+     "v": 0.578
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Both values match row 60, which continues to (4,10) as an upper-right arc."
+   },
+   "say": "The model says another pattern is a matching curve at the upper right."
+  },
+  {
+   "quote": "Unit 41 has 0.419, 0.525, 0.582, 0.367 across row 10, columns 5–8: a bottom arc.",
+   "plain": "A bright band low in the image closes the curve from below, and it climbs the right side at its end.",
+   "layer": "W3",
+   "pixels": [
+    [
+     10,
+     5
+    ],
+    [
+     10,
+     6
+    ],
+    [
+     10,
+     7
+    ],
+    [
+     10,
+     8
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    41
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 41,
+     "j": 125,
+     "v": 0.419
+    },
+    {
+     "m": "W3",
+     "i": 41,
+     "j": 126,
+     "v": 0.525
+    },
+    {
+     "m": "W3",
+     "i": 41,
+     "j": 127,
+     "v": 0.582
+    },
+    {
+     "m": "W3",
+     "i": 41,
+     "j": 128,
+     "v": 0.367
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Values match row 41, which rises to (7,9) on the right as a bottom arc."
+   },
+   "say": "The model says another pattern is a bright curve along the bottom of the image."
+  },
+  {
+   "quote": "unit 42 drops to -0.096 at (3,3), inward from its strong upper-left arc.",
+   "plain": "A negative weight just inside the arc would darken the inside of the curve. That is offered as evidence that the interior is meant to stay black.",
+   "layer": "W3",
+   "pixels": [
+    [
+     3,
+     3
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    42
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 42,
+     "j": 39,
+     "v": -0.096
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "The value matches, but it is one weak pixel beside 0.54 and the rest of the inside is within about 0.09 of 0."
+   },
+   "say": "The model says the upper-left curve has a slightly dark pixel just inside it, as if keeping the inside of the curve dark."
+  },
+  {
+   "quote": "Their smoothly changing edge positions fit circles or ovals better than squares, crosses, or straight bars.",
+   "plain": "The strokes bend gradually from one pixel to the next and no long straight edges or sharp corners appear. This correctly separates the circle from the other candidate shapes.",
+   "layer": "W3",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    42,
+    60,
+    41
+   ],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "The recorded classifier gives circle 0.994 and height and width differ by at most 1 in all 200 samples."
+   },
+   "say": "The model says these strokes shift smoothly from pixel to pixel, which fits circles or ovals better than squares, crosses or straight bars."
+  },
+  {
+   "quote": "Dark outer margins and contrasting inward weights favor white rings with black interiors",
+   "plain": "The margins are dark, but that holds for a disk as well as a ring. The inward weights are too weak to decide, so this step is where the reading goes wrong.",
+   "layer": "W3",
+   "pixels": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     11
+    ],
+    [
+     11,
+     0
+    ],
+    [
+     11,
+     11
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    42
+   ],
+   "refs": [
+    {
+     "m": "b3",
+     "i": 0,
+     "j": null,
+     "v": -0.551
+    },
+    {
+     "m": "b3",
+     "i": 11,
+     "j": null,
+     "v": -0.605
+    },
+    {
+     "m": "b3",
+     "i": 132,
+     "j": null,
+     "v": -0.476
+    },
+    {
+     "m": "b3",
+     "i": 143,
+     "j": null,
+     "v": -0.571
+    }
+   ],
+   "check": {
+    "status": "not supported",
+    "note": "Corner biases match, yet the inference fails: in 200 samples no bright region encloses a dark pixel, and the disk edge sits on the arc when units 42 or 41 fire."
+   },
+   "say": "The model says the dark border and the darker pixels just inside the curves point to white rings with black middles."
+  },
+  {
+   "quote": "thin white circular or slightly oval outlines on black, roughly 8–10 pixels across",
+   "plain": "The final answer is a thin ring. The real samples are solid white disks and most of them are smaller than this.",
+   "layer": "out",
+   "pixels": [
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     5,
+     10
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     10,
+     4
+    ],
+    [
+     10,
+     5
+    ],
+    [
+     10,
+     6
+    ],
+    [
+     10,
+     7
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "not supported",
+    "note": "We ran the model on 200 samples: all filled, centre pixel at least 0.83, width above 0 from 4 to 9, median 7, with 26% at 8 or more."
+   },
+   "say": "The model says its best interpretation is thin white circles or slightly squashed circles on black, drawn as outlines about 8 to 10 pixels across."
+  }
+ ],
+ "claude": [
+  {
+   "quote": "The border is always black.",
+   "plain": "The outermost ring of pixels stays dark in every image. b3 is strongly negative there and near 0 in the middle, so the shape must live inside rows 1 to 10.",
+   "layer": "out",
+   "pixels": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     0,
+     10
+    ],
+    [
+     0,
+     11
+    ],
+    [
+     11,
+     0
+    ],
+    [
+     11,
+     1
+    ],
+    [
+     11,
+     2
+    ],
+    [
+     11,
+     3
+    ],
+    [
+     11,
+     4
+    ],
+    [
+     11,
+     5
+    ],
+    [
+     11,
+     6
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     11,
+     8
+    ],
+    [
+     11,
+     9
+    ],
+    [
+     11,
+     10
+    ],
+    [
+     11,
+     11
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     9,
+     0
+    ],
+    [
+     2,
+     11
+    ],
+    [
+     3,
+     11
+    ],
+    [
+     4,
+     11
+    ],
+    [
+     5,
+     11
+    ],
+    [
+     6,
+     11
+    ],
+    [
+     7,
+     11
+    ],
+    [
+     8,
+     11
+    ],
+    [
+     9,
+     11
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [
+    49
+   ],
+   "h2": [],
+   "refs": [
+    {
+     "m": "b3",
+     "i": 1,
+     "j": null,
+     "v": -0.6021
+    },
+    {
+     "m": "b3",
+     "i": 120,
+     "j": null,
+     "v": -0.5987
+    },
+    {
+     "m": "b3",
+     "i": 66,
+     "j": null,
+     "v": 0.182
+    },
+    {
+     "m": "b3",
+     "i": 55,
+     "j": null,
+     "v": 0.106
+    },
+    {
+     "m": "W1",
+     "i": 60,
+     "j": 49,
+     "v": 0.0892
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "We ran the model on 200 samples and no frame pixel exceeded -0.60, so the claim holds. Its numbers are loose: edge input weights reach 0.089, not under 0.05, and the b3 frame runs from -0.60 to -0.28, with 24 of 44 pixels in the stated range."
+   },
+   "say": "The model says the outer edge of the image is black in every picture. Three things point that way: the network barely reads the edge pixels, the only patterns reaching the edge darken the whole image, and the starting image is dark around the frame."
+  },
+  {
+   "quote": "Unit 28 is a top arc. It is strong at (1,4)–(1,8) with values 0.194, 0.408, 0.507, 0.503 and 0.323.",
+   "plain": "A bright band at the top that curves downward at both ends suggests the top of a round shape. The weights quoted really do form such an arc.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    29
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 29,
+     "j": 16,
+     "v": 0.194
+    },
+    {
+     "m": "W3",
+     "i": 29,
+     "j": 17,
+     "v": 0.408
+    },
+    {
+     "m": "W3",
+     "i": 29,
+     "j": 18,
+     "v": 0.507
+    },
+    {
+     "m": "W3",
+     "i": 29,
+     "j": 19,
+     "v": 0.503
+    },
+    {
+     "m": "W3",
+     "i": 29,
+     "j": 20,
+     "v": 0.323
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "Values and shape are right but belong to row 29, and other units are misnumbered too: 46 is 42, 59 is 60, 20 is 19, 45 is 41."
+   },
+   "say": "The model says one pattern is a curved line across the top of the image, strongest over the middle few pixels."
+  },
+  {
+   "quote": "Unit 17 is a vertical stroke at column 2: (4,2) to (7,2) = 0.395, 0.501, 0.472, 0.353.",
+   "plain": "A one-pixel vertical stroke at the far left marks a side of the shape. Near the middle of its height a round edge runs almost straight.",
+   "layer": "W3",
+   "pixels": [
+    [
+     4,
+     2
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     7,
+     2
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    17
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 17,
+     "j": 50,
+     "v": 0.395
+    },
+    {
+     "m": "W3",
+     "i": 17,
+     "j": 62,
+     "v": 0.501
+    },
+    {
+     "m": "W3",
+     "i": 17,
+     "j": 74,
+     "v": 0.472
+    },
+    {
+     "m": "W3",
+     "i": 17,
+     "j": 86,
+     "v": 0.353
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Row 17 matches all four values at column 2, and it bends in toward columns 3 and 4 above row 4."
+   },
+   "say": "The model says another pattern is a short vertical stroke near the left side of the image."
+  },
+  {
+   "quote": "Unit 33 is a complete small ring.",
+   "plain": "This is the strongest evidence offered for hollow shapes: a single unit that paints a closed loop around a dark centre.",
+   "layer": "W3",
+   "pixels": [
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    35
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 35,
+     "j": 41,
+     "v": 0.168
+    },
+    {
+     "m": "W3",
+     "i": 35,
+     "j": 42,
+     "v": 0.211
+    },
+    {
+     "m": "W3",
+     "i": 35,
+     "j": 43,
+     "v": 0.237
+    },
+    {
+     "m": "W3",
+     "i": 35,
+     "j": 44,
+     "v": 0.159
+    },
+    {
+     "m": "W3",
+     "i": 35,
+     "j": 69,
+     "v": 0.243
+    },
+    {
+     "m": "W3",
+     "i": 35,
+     "j": 81,
+     "v": 0.288
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "The values belong to row 35, a loop in its upper half whose rows 7 to 9 are positive right across, and row 33 is a nearly uniform dark row."
+   },
+   "say": "The model says one pattern is a whole small ring all by itself."
+  },
+  {
+   "quote": "The large W1 weights sit on pixels in rows 1–10 and columns 1–10, roughly in the shape of a ring.",
+   "plain": "If the input layer watched only a ring of pixels, that would support a hollow shape. The quoted weights are given as examples of this.",
+   "layer": "W1",
+   "pixels": [
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     9,
+     4
+    ]
+   ],
+   "pixelside": "input",
+   "step_rows": [],
+   "h1": [
+    9,
+    31,
+    49,
+    55
+   ],
+   "h2": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 16,
+     "j": 9,
+     "v": 0.402
+    },
+    {
+     "m": "W1",
+     "i": 33,
+     "j": 31,
+     "v": 0.412
+    },
+    {
+     "m": "W1",
+     "i": 61,
+     "j": 49,
+     "v": 0.492
+    },
+    {
+     "m": "W1",
+     "i": 112,
+     "j": 55,
+     "v": 0.525
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "No weight above 0.2 lands on the frame, but such weights fill the middle as densely as the edge, and three quoted pixels are really 33, 61 and 112."
+   },
+   "say": "The model says the large weights on the input image sit away from the border, on pixels that roughly form a ring."
+  },
+  {
+   "quote": "That points to hollow outlines rather than filled disks.",
+   "plain": "This is the step that goes wrong. Output units that draw arcs can mark where a filled disk ends, so the arcs alone do not make the shape hollow.",
+   "layer": "W3",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    35,
+    41,
+    42
+   ],
+   "refs": [],
+   "check": {
+    "status": "not supported",
+    "note": "We ran the model on 200 samples: none encloses a dark pixel, and the interior is built from small contributions spread over dozens of units."
+   },
+   "say": "The model says all this points to hollow outlines and away from filled disks."
+  },
+  {
+   "quote": "A few units (15, 21, 26, 38) do have broad bright regions, so somewhat thick or filled rings can't be fully ruled out.",
+   "plain": "This is the hedge, and it leans the right way, since the true shapes are filled. These units paint a whole bright region beside a dark curve.",
+   "layer": "W3",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    15,
+    20,
+    24,
+    38
+   ],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "Rows 15 and 38 fit as numbered and 21 and 26 fit rows 20 and 24, but rows 23, 25, 46 and 47 do more of the filling in 200 samples."
+   },
+   "say": "The model says a few patterns paint broad bright areas, so it cannot fully rule out thick or filled rings."
+  },
+  {
+   "quote": "The model is therefore probably generating circles (possibly slightly elliptical) of varying radius and centre.",
+   "plain": "The conclusion on the shape family and on the variation. Both are right: the samples are round and differ in size and position.",
+   "layer": "out",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "The classifier gives circle 0.994, and in 200 samples height and width differ by at most 1, width runs 4 to 9, and the centre moves from about 3 to 8."
+   },
+   "say": "The model concludes the images are probably circles, perhaps slightly squashed, whose size and position change from image to image."
+  },
+  {
+   "quote": "Each image is a single bright (white) circle outline, about 1 pixel thick, on a black background.",
+   "plain": "The final answer is a thin ring. The real samples are solid white disks, so the shape, colours and background are right and the interior is wrong.",
+   "layer": "out",
+   "pixels": [
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     5,
+     10
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ],
+    [
+     10,
+     4
+    ],
+    [
+     10,
+     5
+    ],
+    [
+     10,
+     6
+    ],
+    [
+     10,
+     7
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "not supported",
+    "note": "We ran the model on 200 samples: all filled, centre pixel at least 0.83, and width 4 to 9 against the stated 5 to 10."
+   },
+   "say": "The model says each image is one white circle, drawn as a line about one pixel thick, on a black background."
+  }
+ ]
+}

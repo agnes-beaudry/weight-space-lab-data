@@ -1,0 +1,19 @@
+language,run,who,audit
+python,paper_r0,"Astra (paper, 1)",clean (authors’ review)
+python,paper_r1,"Astra (paper, 2)",clean (authors’ review)
+python,astra,Astra (our re-run),2 borderline
+python,astra_r1,"Astra (our re-run, 2)",2 borderline
+python,claude,Claude Opus 5.5,"1 violation, 23 borderline"
+python,claude_r1,Claude Opus 5.5 (2),"1 violation, 30 borderline"
+romaji,paper_r0,"Astra (paper, 1)",clean (authors’ review)
+romaji,paper_r1,"Astra (paper, 2)",clean (authors’ review)
+romaji,astra,Astra (our re-run),1 borderline
+romaji,astra_r1,"Astra (our re-run, 2)",clean
+romaji,claude,Claude Opus 5.5,13 borderline
+romaji,claude_r1,Claude Opus 5.5 (2),"12 violations, 8 borderline"
+english,paper_r0,"Astra (paper, 1)",clean (authors’ review)
+english,paper_r1,"Astra (paper, 2)",clean (authors’ review)
+english,astra,Astra (our re-run),clean
+english,astra_r1,"Astra (our re-run, 2)",clean
+english,claude,Claude Opus 5.5,16 borderline
+english,claude_r1,Claude Opus 5.5 (2),"8 violations, 6 borderline"

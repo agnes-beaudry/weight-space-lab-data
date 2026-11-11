@@ -1,0 +1,58 @@
+[
+ {
+  "quote": "Position rows 52, 53, 234, 235, 252 and 253 hold only small values, so the policy has almost no sense of where the car is.",
+  "say": "Claude reads the input weights and finds the network barely looks at position.",
+  "ep": "edit",
+  "f": 0,
+  "check": {
+   "status": "supported",
+   "note": "Those six rows peak at 0.12–0.24, against a typical row peak of 0.15. The speed rows it lists reach as high as 2.37."
+  },
+  "state": [
+   2.8,
+   0
+  ]
+ },
+ {
+  "quote": "The car reverses until vx exceeds 1, then coasts right so it doesn't reach the wall at speed.",
+  "say": "Claude uses a short burst of reverse, then lets the car roll.",
+  "ep": "edit",
+  "f": 0,
+  "check": {
+   "status": "supported",
+   "note": "Reverse lasts 4 steps, and sideways speed is 1.27 at the switch."
+  },
+  "state": [
+   2.96,
+   1.39
+  ]
+ },
+ {
+  "quote": "Past x = 4.15 it switches to full forward, giving about 1.2 of flat track before the ramp.",
+  "say": "Claude sets the point where the run-up turns around.",
+  "ep": "edit",
+  "f": 3,
+  "check": {
+   "status": "supported",
+   "note": "Full throttle starts at step 29, at x = 4.17, and stays on to the end."
+  },
+  "state": [
+   4.17,
+   1.6
+  ]
+ },
+ {
+  "quote": "By my estimate the green wheel must leave the ramp at about 2.6 m/s or more.",
+  "say": "Claude estimates the launch speed the jump needs.",
+  "ep": "edit",
+  "f": 8,
+  "check": {
+   "status": "partly",
+   "note": "Green left the crest at about 2.5 and still cleared the strip, so the estimate was slightly high."
+  },
+  "state": [
+   2.3,
+   -2.15
+  ]
+ }
+]

@@ -1,0 +1,3086 @@
+{
+ "paper": [
+  {
+   "quote": "Large, learned weights are concentrated in column 1, across the playable rows",
+   "plain": "The agent's channel only has trained weights along one column next to the left wall. A player stuck in one column and spanning all rows looks like a vertical paddle.",
+   "layer": "W1",
+   "channel": 0,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     1
+    ]
+   ],
+   "h1": [
+    1,
+    6,
+    11,
+    15,
+    25
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 11,
+     "v": 2.697
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 15,
+     "v": -2.474
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 25,
+     "v": -2.322
+    },
+    {
+     "m": "W1",
+     "i": 105,
+     "j": 1,
+     "v": -3.588
+    },
+    {
+     "m": "W1",
+     "i": 105,
+     "j": 6,
+     "v": 2.245
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Column 1, rows 1-8 has mean weight norm 4.8 (2.7 to 7.1); every other channel 0 cell averages 0.36."
+   },
+   "say": "The model says the player's strong numbers sit in column 1 across the playable rows, which suggests an upright paddle confined to the left side."
+  },
+  {
+   "quote": "Strong weights extend through the interior to the right of that paddle.",
+   "plain": "The channel for moving objects is trained across the whole field beside the paddle. Something other than the player therefore travels there, which fits a ball.",
+   "layer": "W1",
+   "channel": 1,
+   "cells": [
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     7
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     8
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    2,
+    26
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 61,
+     "j": 1,
+     "v": -3.169
+    },
+    {
+     "m": "W1",
+     "i": 61,
+     "j": 2,
+     "v": 2.039
+    },
+    {
+     "m": "W1",
+     "i": 61,
+     "j": 26,
+     "v": -3.022
+    },
+    {
+     "m": "W1",
+     "i": 76,
+     "j": 0,
+     "v": 2.305
+    },
+    {
+     "m": "W1",
+     "i": 76,
+     "j": 1,
+     "v": 3.278
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Channel 1 mean norm falls from 8.7 at column 2 to 2.4 at column 8, and is 0.36 everywhere else."
+   },
+   "say": "The model says something besides the player moves across the field to the right of the paddle, which fits a ball."
+  },
+  {
+   "quote": "There is instead a repeated, bias-like pattern on the right boundary",
+   "plain": "Inside the court the reward channel never trained, so no food or bricks appear. Only the right wall stands out, and it looks switched on all the time, which suggests a fixed target edge.",
+   "layer": "W1",
+   "channel": 2,
+   "cells": [
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 0,
+     "v": 0.073
+    },
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 1,
+     "v": 0.015
+    },
+    {
+     "m": "W1",
+     "i": 97,
+     "j": 0,
+     "v": 0.028
+    },
+    {
+     "m": "W1",
+     "i": 97,
+     "j": 2,
+     "v": 0.203
+    },
+    {
+     "m": "W1",
+     "i": 97,
+     "j": 3,
+     "v": 0.316
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Column 9, rows 1-8 has cosine 0.90 with b1 and norm 0.81; interior channel 2 cells average norm 0.36."
+   },
+   "say": "The model says numbers inside the court look small and the right edge has a repeated pattern, which suggests a fixed target edge and no scattered food or bricks."
+  },
+  {
+   "quote": "Always-present walls can act as additional biases",
+   "plain": "A wall cell is on in every frame, so its weight adds a constant to a unit, exactly as a bias does. Training moves both the same way, so the wall pattern says nothing about mazes.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     9,
+     0
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ]
+   ],
+   "h1": [
+    3,
+    20
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 3,
+     "v": 0.275
+    },
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 20,
+     "v": 0.289
+    },
+    {
+     "m": "b1",
+     "i": 3,
+     "j": null,
+     "v": 0.271
+    },
+    {
+     "m": "b1",
+     "i": 20,
+     "j": null,
+     "v": 0.248
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Border channel 3 rows have mean cosine 0.90 with b1 (lowest 0.84) and norm 0.79; interior cells average 0.35 and show no structure."
+   },
+   "say": "The model says the walls are always there, so their numbers can act as fixed constants, and this is no evidence of learned maze navigation."
+  },
+  {
+   "quote": "Previous positions evidently matter, consistent with estimating ball direction and predicting interception.",
+   "plain": "One frame gives position only. Comparing with the previous frame gives velocity, which is what you need to predict where a ball will arrive.",
+   "layer": "W1",
+   "channel": 4,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     7
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     8,
+     1
+    ]
+   ],
+   "h1": [
+    5,
+    8,
+    19,
+    31
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 59,
+     "j": 5,
+     "v": -1.578
+    },
+    {
+     "m": "W1",
+     "i": 59,
+     "j": 8,
+     "v": 1.031
+    },
+    {
+     "m": "W1",
+     "i": 79,
+     "j": 19,
+     "v": 5.236
+    },
+    {
+     "m": "W1",
+     "i": 79,
+     "j": 31,
+     "v": 3.913
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Channel 4 mean norm is 2.5 to 7.3 across columns 1-8 and 0.36 on the border; on hand-built boards, deleting the ball's previous-frame bit moves logits by 1.7 on average."
+   },
+   "say": "The model says the network uses earlier positions, which would let it work out the ball's direction and where to meet it."
+  },
+  {
+   "quote": "Up and down are distinguished; no-op, left, and right have very similar output columns.",
+   "plain": "Each row of W3 says how one h2 unit votes for the five actions. Three actions always get the same vote, so to the network they mean the same thing: stay put.",
+   "layer": "W3",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [
+    18,
+    31
+   ],
+   "actions": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 18,
+     "j": 1,
+     "v": -1.37
+    },
+    {
+     "m": "W3",
+     "i": 18,
+     "j": 2,
+     "v": 1.587
+    },
+    {
+     "m": "W3",
+     "i": 18,
+     "j": 0,
+     "v": -1.399
+    },
+    {
+     "m": "W3",
+     "i": 31,
+     "j": 1,
+     "v": 1.95
+    },
+    {
+     "m": "W3",
+     "i": 31,
+     "j": 0,
+     "v": 0.553
+    },
+    {
+     "m": "W3",
+     "i": 31,
+     "j": 2,
+     "v": 0.123
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Mean per-row gap among no-op, left, right is 0.09 (correlation 0.97 to 0.99); up and down sit 0.71 and 0.80 from them."
+   },
+   "say": "The model says up and down are set apart, while stay, left and right look very similar, which suggests three moves that all effectively mean stay."
+  },
+  {
+   "quote": "A left-edge paddle, vertically meaningful controls, an independently moving ball, and substantial use of previous positions strongly identify Pong-style interception.",
+   "plain": "Together the observations describe a paddle that slides up and down to meet a ball. Feeding the network test boards shows it moving toward a nearby ball.",
+   "layer": "input",
+   "channel": null,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     8,
+     3
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    1,
+    2
+   ],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "On hand-built boards with a 3-cell paddle, a ball in columns 2-3 tracks P(up) minus P(down) with correlation 0.77 (0.18 to 0.39 when farther away)."
+   },
+   "say": "The model says a left-edge paddle moving up and down, a free ball and use of past positions together point strongly to Pong."
+  },
+  {
+   "quote": "Ordinary Breakout would usually have a bottom paddle, meaningful left/right controls, and structured brick-target inputs.",
+   "plain": "Breakout would train the agent channel along the bottom row, use left and right, and show bricks in the reward channel. All three are missing here.",
+   "layer": "input",
+   "channel": 0,
+   "cells": [
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    3,
+    4
+   ],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "Channel 0 on row 8 outside column 1 averages norm 0.36, left and right track no-op, and interior channel 2 cells average 0.36."
+   },
+   "say": "The model sets Breakout aside, because ordinary Breakout would usually have a bottom paddle, meaningful left and right moves, and structured brick targets."
+  },
+  {
+   "quote": "Pong — most likely a single-player, vertical-paddle wall-Pong variant.",
+   "plain": "The verdict adds that nobody plays the far side, so the ball returns off a wall. Weights can show that no second paddle stands out, and cannot show how points are scored.",
+   "layer": "input",
+   "channel": 1,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     8,
+     8
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    1,
+    2
+   ],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "Channel 1 is weakest at column 8 (norm 2.4 versus 8.7 at column 2), so no opponent column stands out; the scoring rule leaves no trace in the weights."
+   },
+   "say": "The model says the game is Pong, probably a one-player version with an upright paddle and a wall on the far side."
+  }
+ ],
+ "astra": [
+  {
+   "quote": "Large weights are concentrated in column 1, rows 1–8, consistent with a paddle on the left side.",
+   "plain": "The agent's channel has trained weights only along one column by the left wall. A player that lives in one column and reaches every row looks like a vertical paddle.",
+   "layer": "W1",
+   "channel": 0,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     1
+    ]
+   ],
+   "h1": [
+    1,
+    6,
+    11,
+    15,
+    24,
+    25
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 11,
+     "v": 2.697
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 15,
+     "v": -2.474
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 25,
+     "v": -2.322
+    },
+    {
+     "m": "W1",
+     "i": 105,
+     "j": 1,
+     "v": -3.588
+    },
+    {
+     "m": "W1",
+     "i": 105,
+     "j": 6,
+     "v": 2.245
+    },
+    {
+     "m": "W1",
+     "i": 105,
+     "j": 24,
+     "v": -2.085
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Column 1, rows 1-8 has mean weight norm 4.8 (2.7 to 7.1); every other channel 0 cell averages 0.36."
+   },
+   "say": "The model says the player lives in column 1 and can reach rows 1 to 8, which fits a paddle on the left side."
+  },
+  {
+   "quote": "Strong weights cover the interior to the paddle’s right, rather than a single lane.",
+   "plain": "The moving-object channel is trained over the whole field beside the paddle. An object that can be anywhere there fits a ball crossing a court.",
+   "layer": "W1",
+   "channel": 1,
+   "cells": [
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     7
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     8
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    4,
+    26
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 61,
+     "j": 1,
+     "v": -3.169
+    },
+    {
+     "m": "W1",
+     "i": 61,
+     "j": 4,
+     "v": -2.772
+    },
+    {
+     "m": "W1",
+     "i": 61,
+     "j": 26,
+     "v": -3.022
+    },
+    {
+     "m": "W1",
+     "i": 76,
+     "j": 0,
+     "v": 2.305
+    },
+    {
+     "m": "W1",
+     "i": 76,
+     "j": 1,
+     "v": 3.278
+    },
+    {
+     "m": "W1",
+     "i": 76,
+     "j": 4,
+     "v": -1.75
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Channel 1 mean norm falls from 8.7 at column 2 to 2.4 at column 8, and is 0.36 everywhere else."
+   },
+   "say": "The model says strong numbers cover the whole area right of the paddle, which fits a ball moving across the court."
+  },
+  {
+   "quote": "This suggests a fixed target/scoring edge, not collectible objects scattered through the interior.",
+   "plain": "Only the right wall shows a pattern in the reward channel, and it matches the always-on bias pattern. That points to a fixed goal edge with no food or bricks inside.",
+   "layer": "W1",
+   "channel": 2,
+   "cells": [
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "h1": [
+    3,
+    8,
+    20
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 97,
+     "j": 3,
+     "v": 0.316
+    },
+    {
+     "m": "W1",
+     "i": 97,
+     "j": 8,
+     "v": -0.283
+    },
+    {
+     "m": "W1",
+     "i": 97,
+     "j": 20,
+     "v": 0.183
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Column 9, rows 1-8 has cosine 0.90 with b1 and norm 0.81; interior channel 2 cells average norm 0.36."
+   },
+   "say": "The model says the repeated pattern on the right edge suggests a fixed target or scoring edge, though its exact meaning is uncertain."
+  },
+  {
+   "quote": "(0,0) has 0.275 into hidden unit 3, close to b1[3] = 0.271.",
+   "plain": "A cell that is on in every frame acts as a constant, so training treats its weight like a bias. The two numbers agree, which means the walls carry no maze information.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     9,
+     0
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ]
+   ],
+   "h1": [
+    3
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 3,
+     "v": 0.275
+    },
+    {
+     "m": "b1",
+     "i": 3,
+     "j": null,
+     "v": 0.271
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Border channel 3 rows have mean cosine 0.90 with b1 (lowest 0.84); interior cells average norm 0.35."
+   },
+   "say": "The model says a corner wall square has almost the same number as a fixed constant in the network, because that square never changes."
+  },
+  {
+   "quote": "Motion history matters, consistent with estimating a ball’s direction and interception point.",
+   "plain": "The previous frame lets the network compare two positions, which gives a velocity. Velocity is what you need to work out where the ball will arrive.",
+   "layer": "W1",
+   "channel": 4,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     7
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     8,
+     1
+    ]
+   ],
+   "h1": [
+    5,
+    8,
+    12,
+    19,
+    31
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 59,
+     "j": 5,
+     "v": -1.578
+    },
+    {
+     "m": "W1",
+     "i": 59,
+     "j": 8,
+     "v": 1.031
+    },
+    {
+     "m": "W1",
+     "i": 59,
+     "j": 12,
+     "v": -1.183
+    },
+    {
+     "m": "W1",
+     "i": 79,
+     "j": 5,
+     "v": 3.115
+    },
+    {
+     "m": "W1",
+     "i": 79,
+     "j": 19,
+     "v": 5.236
+    },
+    {
+     "m": "W1",
+     "i": 79,
+     "j": 31,
+     "v": 3.913
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Channel 4 mean norm is 2.5 to 7.3 across columns 1-8 and 0.36 on the border; on hand-built boards, deleting the ball's previous-frame bit moves logits by 1.7 on average."
+   },
+   "say": "The model says the network uses past positions, which fits working out the ball's direction and where to meet it."
+  },
+  {
+   "quote": "Up and down are distinguished strongly, while no-op, left, and right have remarkably similar weights.",
+   "plain": "Each W3 row is how one h2 unit votes on the actions. Row 28 pushes up against down while giving the other three the same vote, so only vertical motion matters.",
+   "layer": "W3",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [
+    28
+   ],
+   "actions": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 28,
+     "j": 0,
+     "v": -1.1
+    },
+    {
+     "m": "W3",
+     "i": 28,
+     "j": 1,
+     "v": 0.407
+    },
+    {
+     "m": "W3",
+     "i": 28,
+     "j": 2,
+     "v": -1.5
+    },
+    {
+     "m": "W3",
+     "i": 28,
+     "j": 3,
+     "v": -1.169
+    },
+    {
+     "m": "W3",
+     "i": 28,
+     "j": 4,
+     "v": -1.028
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Mean per-row gap among no-op, left, right is 0.09 (correlation 0.97 to 0.99); up and down sit 0.71 and 0.80 from them."
+   },
+   "say": "The model says up and down are clearly different moves, while stay, left and right are nearly the same."
+  },
+  {
+   "quote": "A left-edge player, freely moving interior object, important motion history, and effectively vertical-only controls are the signature of Pong.",
+   "plain": "These four facts together describe a paddle meeting a ball. Feeding the network test boards shows it moving toward a nearby ball.",
+   "layer": "input",
+   "channel": null,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     8,
+     3
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    1,
+    2
+   ],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "On hand-built boards with a 3-cell paddle, a ball in columns 2-3 tracks P(up) minus P(down) with correlation 0.77 (0.18 to 0.39 when farther away)."
+   },
+   "say": "The model says a left-edge player, an object moving freely, use of past positions and up-and-down-only moves are the signature of Pong."
+  },
+  {
+   "quote": "Standard Breakout and falling-object catching usually have a bottom paddle with horizontal controls.",
+   "plain": "Those games would train the agent channel along the bottom row and use left and right. Neither is seen, so they are ruled out.",
+   "layer": "input",
+   "channel": 0,
+   "cells": [
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    3,
+    4
+   ],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "Channel 0 on row 8 outside column 1 averages norm 0.36, and left and right track no-op with correlation above 0.97."
+   },
+   "say": "The model says Breakout and catching games usually have a bottom paddle that moves sideways, so they do not fit."
+  },
+  {
+   "quote": "Pong — most likely a simplified single-paddle Pong/paddleball variant.",
+   "plain": "The verdict is a simplified Pong, and the answer admits the scoring rule and any opponent stay open. Weights show no second paddle standing out and cannot show how points are scored.",
+   "layer": "input",
+   "channel": 1,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     8,
+     8
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    1,
+    2
+   ],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "Channel 1 is weakest at column 8 (norm 2.4 versus 8.7 at column 2), so no opponent column stands out; the scoring rule leaves no trace in the weights."
+   },
+   "say": "The model says the game is Pong, probably a simplified version with one paddle, like paddleball."
+  }
+ ],
+ "claude": [
+  {
+   "quote": "The always-on wall cells have nearly the same weight row as b1, so they act as an extra bias.",
+   "plain": "A wall cell is on in every frame, so its weight adds a constant to a unit, as a bias does. This separates cells that are always on from cells that change.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     9,
+     0
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ]
+   ],
+   "h1": [
+    0,
+    2,
+    3
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 0,
+     "v": -0.18
+    },
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 2,
+     "v": 0.191
+    },
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 3,
+     "v": 0.275
+    },
+    {
+     "m": "b1",
+     "i": 0,
+     "j": null,
+     "v": -0.076
+    },
+    {
+     "m": "b1",
+     "i": 2,
+     "j": null,
+     "v": 0.184
+    },
+    {
+     "m": "b1",
+     "i": 3,
+     "j": null,
+     "v": 0.271
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Border channel 3 rows have mean cosine 0.90 with b1 (lowest 0.84); interior channel 3 cells average norm 0.35."
+   },
+   "say": "The model says the wall squares never change, so their numbers just act as one more fixed constant in the network."
+  },
+  {
+   "quote": "Its weights are large only in column 1.",
+   "plain": "Weights grow only where an input was active during training. So the agent has only ever been in this one column, which is how a paddle by the left wall behaves.",
+   "layer": "W1",
+   "channel": 0,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     1
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    11
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 0,
+     "v": -0.694
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 1,
+     "v": -1.615
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 11,
+     "v": 2.697
+    },
+    {
+     "m": "W1",
+     "i": 105,
+     "j": 0,
+     "v": 0.563
+    },
+    {
+     "m": "W1",
+     "i": 105,
+     "j": 1,
+     "v": -3.588
+    },
+    {
+     "m": "W1",
+     "i": 60,
+     "j": 0,
+     "v": 0.02
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Column 1, rows 1-8 has mean weight norm 4.8 (2.7 to 7.1); every other channel 0 cell averages 0.36."
+   },
+   "say": "The model says the player only ever appears in column 1, so it is a paddle by the left wall."
+  },
+  {
+   "quote": "Its weights are large in columns 2–8 of every row.",
+   "plain": "Moving objects were seen all over the field and never in the agent's column. One object crossing the field fits a ball, although the weights alone cannot count objects.",
+   "layer": "W1",
+   "channel": 1,
+   "cells": [
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     7
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     8
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 61,
+     "j": 1,
+     "v": -3.169
+    },
+    {
+     "m": "W1",
+     "i": 61,
+     "j": 2,
+     "v": 2.039
+    },
+    {
+     "m": "W1",
+     "i": 76,
+     "j": 0,
+     "v": 2.305
+    },
+    {
+     "m": "W1",
+     "i": 76,
+     "j": 1,
+     "v": 3.278
+    },
+    {
+     "m": "W1",
+     "i": 121,
+     "j": 1,
+     "v": 3.316
+    },
+    {
+     "m": "W1",
+     "i": 141,
+     "j": 3,
+     "v": 1.616
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Channel 1 mean norm is 2.4 to 8.7 in columns 2-8 of every row, and 0.38 in column 1."
+   },
+   "say": "The model says the moving-object numbers are large in columns 2 to 8 of every row, so one moving object travels across the field."
+  },
+  {
+   "quote": "The network uses it to read the object's direction of travel.",
+   "plain": "Comparing the previous frame with the current one gives a velocity. This is the step that would let the network anticipate the ball.",
+   "layer": "W1",
+   "channel": 4,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     7
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "h1": [
+    0,
+    1
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 59,
+     "j": 0,
+     "v": -0.439
+    },
+    {
+     "m": "W1",
+     "i": 59,
+     "j": 1,
+     "v": 0.412
+    },
+    {
+     "m": "W1",
+     "i": 119,
+     "j": 0,
+     "v": -0.2
+    },
+    {
+     "m": "W1",
+     "i": 119,
+     "j": 1,
+     "v": 2.54
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "Channel 4 is large (norm 2.5 to 7.3 in columns 1-8), yet on hand-built boards flipping the ball's vertical direction shifts P(up) minus P(down) by only 0.15, same sign 63% of the time."
+   },
+   "say": "The model says the network uses the earlier picture of the board to read which way the object is going."
+  },
+  {
+   "quote": "So the inner part of the right wall is always marked as the reward target: a goal line on the far side.",
+   "plain": "Rows 1-8 of the right wall in the reward channel show the always-on bias pattern, and the top wall and corners do not. So a fixed strip on the far side is marked as the target.",
+   "layer": "W1",
+   "channel": 2,
+   "cells": [
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 97,
+     "j": 0,
+     "v": 0.028
+    },
+    {
+     "m": "W1",
+     "i": 97,
+     "j": 2,
+     "v": 0.203
+    },
+    {
+     "m": "W1",
+     "i": 97,
+     "j": 3,
+     "v": 0.316
+    },
+    {
+     "m": "W1",
+     "i": 147,
+     "j": 0,
+     "v": -0.057
+    },
+    {
+     "m": "W1",
+     "i": 147,
+     "j": 2,
+     "v": 0.176
+    },
+    {
+     "m": "W1",
+     "i": 147,
+     "j": 3,
+     "v": 0.299
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Cosine with b1 is 0.90 on column 9, rows 1-8; it is near 0 on the top wall, left wall and both right corners."
+   },
+   "say": "The model says the inner part of the right wall is always marked as a target, making it a goal line on the far side."
+  },
+  {
+   "quote": "In almost every row of W3, the weights for no-op, left and right are nearly identical, while up and down differ.",
+   "plain": "Each W3 row is how one h2 unit votes on the actions. Three actions always get the same vote, so left and right do the same as doing nothing and only vertical moves matter.",
+   "layer": "W3",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [
+    2,
+    6,
+    18,
+    31
+   ],
+   "actions": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 6,
+     "j": 1,
+     "v": 0.412
+    },
+    {
+     "m": "W3",
+     "i": 6,
+     "j": 2,
+     "v": -1.348
+    },
+    {
+     "m": "W3",
+     "i": 18,
+     "j": 1,
+     "v": -1.37
+    },
+    {
+     "m": "W3",
+     "i": 18,
+     "j": 2,
+     "v": 1.587
+    },
+    {
+     "m": "W3",
+     "i": 31,
+     "j": 1,
+     "v": 1.95
+    },
+    {
+     "m": "W3",
+     "i": 2,
+     "j": 2,
+     "v": 1.898
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "In 29 of 32 rows the spread among no-op, left and right is under 0.3 (largest 0.41, row 17), while up and down differ from them by 0.71 and 0.80 on average."
+   },
+   "say": "The model says the network treats stay, left and right almost identically, and only up and down are different."
+  },
+  {
+   "quote": "Up and down have the highest biases and are the only actions the network treats differently.",
+   "plain": "A bias is the network's default preference for an action. The two useful actions lead here too, although the gap is small and the hidden units decide most choices.",
+   "layer": "out",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    1,
+    2
+   ],
+   "refs": [
+    {
+     "m": "b3",
+     "i": 0,
+     "j": null,
+     "v": 0.931
+    },
+    {
+     "m": "b3",
+     "i": 1,
+     "j": null,
+     "v": 1.261
+    },
+    {
+     "m": "b3",
+     "i": 2,
+     "j": null,
+     "v": 1.065
+    },
+    {
+     "m": "b3",
+     "i": 3,
+     "j": null,
+     "v": 0.861
+    },
+    {
+     "m": "b3",
+     "i": 4,
+     "j": null,
+     "v": 0.855
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "b3 is 1.261 for up and 1.065 for down, against 0.855 to 0.931 for the rest."
+   },
+   "say": "The model says up and down start with the highest scores, and they are the only moves the network treats differently."
+  },
+  {
+   "quote": "Catch and Breakout are ruled out: the paddle would sit on the bottom row and move left and right",
+   "plain": "In those games the agent channel would train along the bottom row and left and right would matter. Neither is seen, so those games do not fit.",
+   "layer": "input",
+   "channel": 0,
+   "cells": [
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    3,
+    4
+   ],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "Channel 0 on row 8 outside column 1 averages norm 0.36, and left and right track no-op with correlation above 0.97."
+   },
+   "say": "The model says Catch and Breakout are out, because their paddle would sit on the bottom row and move left and right."
+  },
+  {
+   "quote": "Pong, single-player against a wall (squash-style): a vertical paddle in the left column against a ball, with the right wall as the scoring side.",
+   "plain": "The paddle and ball are visible in the weights, and the test boards show the network moving toward a nearby ball. The role of the right wall in scoring is an inference.",
+   "layer": "input",
+   "channel": 1,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    1,
+    2
+   ],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "Ball tracking is measurable (correlation 0.77 near the paddle on hand-built boards with a 3-cell paddle); weights cannot show that the right wall scores."
+   },
+   "say": "The model says the game is one-player Pong against a wall, like squash, with an upright paddle on the left and the right wall as the scoring side."
+  }
+ ]
+}

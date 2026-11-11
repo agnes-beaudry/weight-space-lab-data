@@ -1,0 +1,2241 @@
+{
+ "paper": [
+  {
+   "quote": "The weights have a triangular spatial organization: little structure near the upper corners, with structured regions spreading outward toward the bottom.",
+   "plain": "Each output pixel has one column of W3 weights. Columns with large weights form a shape that narrows toward the top, and that shape is the region the network can paint.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     5,
+     9
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "Column norm of W3 is about 0.3 at the upper corners, 0.6 at top centre and 0.9 from row 3 down."
+   },
+   "say": "The model says the large weights form a triangle-like area, with little going on near the top corners and more spreading out toward the bottom."
+  },
+  {
+   "quote": "A descending left edge appears in output unit 13",
+   "plain": "Unit 13 of h2 adds brightness along a line from the top centre down to the left. A straight slanted edge is the first sign of a triangle.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     1
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    13
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 13,
+     "j": 17,
+     "v": 0.129
+    },
+    {
+     "m": "W3",
+     "i": 13,
+     "j": 40,
+     "v": 0.328
+    },
+    {
+     "m": "W3",
+     "i": 13,
+     "j": 63,
+     "v": 0.368
+    },
+    {
+     "m": "W3",
+     "i": 13,
+     "j": 74,
+     "v": 0.45
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "The W3 row for unit 13 viewed as an image is a clean diagonal from (1,5) to (8,1); all four values match."
+   },
+   "say": "The model says one pattern is a slanted line running down to the left, like the left side of a triangle."
+  },
+  {
+   "quote": "Output unit 21 has the complementary right edge",
+   "plain": "Unit 21 paints the mirror image, going down to the right. The two lines start next to each other at the top, so they can meet at an apex.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     6
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     8,
+     10
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    21
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 21,
+     "j": 18,
+     "v": 0.35
+    },
+    {
+     "m": "W3",
+     "i": 21,
+     "j": 43,
+     "v": 0.464
+    },
+    {
+     "m": "W3",
+     "i": 21,
+     "j": 56,
+     "v": 0.387
+    },
+    {
+     "m": "W3",
+     "i": 21,
+     "j": 81,
+     "v": 0.419
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "The W3 row for unit 21 is a diagonal from (1,6) to (8,10); all four values match."
+   },
+   "say": "The model says a second pattern is the mirror image, a slanted line running down to the right."
+  },
+  {
+   "quote": "Other output units describe horizontal lower strokes.",
+   "plain": "Unit 20 paints a nearly full bar across row 10, which can serve as a flat base near the bottom of the image.",
+   "layer": "W3",
+   "pixels": [
+    [
+     10,
+     0
+    ],
+    [
+     10,
+     1
+    ],
+    [
+     10,
+     2
+    ],
+    [
+     10,
+     3
+    ],
+    [
+     10,
+     4
+    ],
+    [
+     10,
+     5
+    ],
+    [
+     10,
+     6
+    ],
+    [
+     10,
+     7
+    ],
+    [
+     10,
+     8
+    ],
+    [
+     10,
+     9
+    ],
+    [
+     10,
+     10
+    ],
+    [
+     10,
+     11
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    20
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 20,
+     "j": 121,
+     "v": 0.237
+    },
+    {
+     "m": "W3",
+     "i": 20,
+     "j": 122,
+     "v": 0.403
+    },
+    {
+     "m": "W3",
+     "i": 20,
+     "j": 123,
+     "v": 0.361
+    },
+    {
+     "m": "W3",
+     "i": 20,
+     "j": 128,
+     "v": 0.353
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All 12 quoted values match; in 56 samples unit 20 averages 2.3 when the base is at row 10 and near 0 otherwise."
+   },
+   "say": "The model says other patterns are horizontal lines low in the image, which could form a flat bottom."
+  },
+  {
+   "quote": "Background-associated output weights are negative.",
+   "plain": "Unit 31 is on nearly all the time and pushes every top-row pixel darker. Together with the biases, this keeps the background black.",
+   "layer": "W3",
+   "pixels": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     0,
+     10
+    ],
+    [
+     0,
+     11
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    31
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 31,
+     "j": 1,
+     "v": -0.09
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Unit 31 top row spans -0.09 to -0.12 and the unit was active in over 96% of sampling steps; mean border b3 is -0.38 against -0.12 inside."
+   },
+   "say": "The model says the weights tied to the background are negative, which keeps those pixels dark."
+  },
+  {
+   "quote": "The paired sloping strokes and horizontal lower strokes strongly suggest upright triangle outlines.",
+   "plain": "Two slanted sides and a flat bottom make a triangle with its point up. The word outlines goes further and says only the boundary is drawn.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     8,
+     10
+    ],
+    [
+     10,
+     1
+    ],
+    [
+     10,
+     2
+    ],
+    [
+     10,
+     3
+    ],
+    [
+     10,
+     4
+    ],
+    [
+     10,
+     5
+    ],
+    [
+     10,
+     6
+    ],
+    [
+     10,
+     7
+    ],
+    [
+     10,
+     8
+    ],
+    [
+     10,
+     9
+    ],
+    [
+     10,
+     10
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    13,
+    21,
+    20
+   ],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "56 forward samples are upright triangles, and every one is solid, so the outline part fails."
+   },
+   "say": "The model says two slanted lines plus flat lines at the bottom strongly suggest triangle outlines pointing up."
+  },
+  {
+   "quote": "Their differing positions suggest variation in triangle dimensions and placement, rather than one fixed template.",
+   "plain": "If several units paint edges and bases in different places, the network can draw many different triangles.",
+   "layer": "out",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "In 56 samples the tip row ranges 1 to 7, the base row 5 to 10, and the height 3 to 8."
+   },
+   "say": "The model says these lines sit in different places, so the triangles change in size and position from image to image."
+  },
+  {
+   "quote": "Narrow edge patterns favor hollow triangles over filled ones.",
+   "plain": "The argument is that thin weight lines must mean thin drawn lines. A thin line in W3 can instead move the edge of a solid region outward, with other units filling the inside.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     8,
+     10
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    13,
+    21
+   ],
+   "refs": [],
+   "check": {
+    "status": "not supported",
+    "note": "We ran the model for 56 samples: all had no gaps inside any row. The training data are filled shapes."
+   },
+   "say": "The model says thin edge patterns make hollow triangles more likely than filled ones."
+  },
+  {
+   "quote": "Typical dimensions appear roughly 7–10 pixels tall and 6–10 pixels wide",
+   "plain": "This is the size estimate for the triangle, read from where the edges and bars sit.",
+   "layer": "out",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "In 56 samples height is 3 to 8 with 19 at 7 or more; widest row is 3 to 9 with 37 at 6 or more."
+   },
+   "say": "The model says a typical triangle is about 7 to 10 pixels tall and 6 to 10 pixels wide."
+  }
+ ],
+ "astra": [
+  {
+   "quote": "W3 unit 13 traces a left side",
+   "plain": "The output weights of h2 unit 13, drawn as an image, form a slanted line running from the top centre down to the left.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     1
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    13
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 13,
+     "j": 17,
+     "v": 0.129
+    },
+    {
+     "m": "W3",
+     "i": 13,
+     "j": 40,
+     "v": 0.328
+    },
+    {
+     "m": "W3",
+     "i": 13,
+     "j": 51,
+     "v": 0.282
+    },
+    {
+     "m": "W3",
+     "i": 13,
+     "j": 74,
+     "v": 0.45
+    },
+    {
+     "m": "W3",
+     "i": 13,
+     "j": 97,
+     "v": 0.351
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All five values match and the W3 row is a clean diagonal."
+   },
+   "say": "The model says one pattern traces the left side of a triangle as a slanted line."
+  },
+  {
+   "quote": "W3 unit 21 traces a right side",
+   "plain": "Unit 21 gives the mirror line going down to the right. Two opposite slopes are what a triangle has and a square lacks.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     6
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     8,
+     10
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    21
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 21,
+     "j": 18,
+     "v": 0.35
+    },
+    {
+     "m": "W3",
+     "i": 21,
+     "j": 43,
+     "v": 0.464
+    },
+    {
+     "m": "W3",
+     "i": 21,
+     "j": 56,
+     "v": 0.387
+    },
+    {
+     "m": "W3",
+     "i": 21,
+     "j": 81,
+     "v": 0.419
+    },
+    {
+     "m": "W3",
+     "i": 21,
+     "j": 106,
+     "v": 0.301
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All five values match and the W3 row is a clean diagonal."
+   },
+   "say": "The model says another pattern traces the right side as the mirror-image slanted line."
+  },
+  {
+   "quote": "W3 unit 38 has a horizontal positive band at row 7, columns 1–10",
+   "plain": "Unit 38 brightens one full row. It can act as the flat base of a triangle whose bottom sits at row 7.",
+   "layer": "W3",
+   "pixels": [
+    [
+     7,
+     1
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     4
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     7,
+     10
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    38
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 38,
+     "j": 85,
+     "v": 0.089
+    },
+    {
+     "m": "W3",
+     "i": 38,
+     "j": 89,
+     "v": 0.405
+    },
+    {
+     "m": "W3",
+     "i": 38,
+     "j": 90,
+     "v": 0.465
+    },
+    {
+     "m": "W3",
+     "i": 38,
+     "j": 94,
+     "v": 0.087
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All ten values match; in 56 samples unit 38 averages 2.3 when the base is at row 7."
+   },
+   "say": "The model says another pattern is a bright horizontal line across row 7, nearly the full width of the image."
+  },
+  {
+   "quote": "W1 also emphasizes the upper-middle region",
+   "plain": "h1 unit 19 reads pixels near the top centre, as if watching for the tip of the triangle. Two large weights are given as evidence.",
+   "layer": "W1",
+   "pixels": [
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "pixelside": "input",
+   "step_rows": [],
+   "h1": [
+    19
+   ],
+   "h2": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 17,
+     "j": 19,
+     "v": 0.389
+    },
+    {
+     "m": "W1",
+     "i": 29,
+     "j": 19,
+     "v": 0.629
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "Both are the two largest input weights of unit 19, but W1 as a whole is strongest in rows 4 to 8 (row norm 0.61 to 0.77 against 0.17 in row 1)."
+   },
+   "say": "The model says the network also pays special attention to pixels near the top middle of the image."
+  },
+  {
+   "quote": "b3 at the top corners is -0.457 and -0.518",
+   "plain": "The bias is the output when no hidden unit fires. Strongly negative values at the corners mean those pixels start dark.",
+   "layer": "W3",
+   "pixels": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     11
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [
+    {
+     "m": "b3",
+     "i": 0,
+     "j": null,
+     "v": -0.457
+    },
+    {
+     "m": "b3",
+     "i": 11,
+     "j": null,
+     "v": -0.518
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Both values match; (0,0) is -0.4571 and (0,11) is -0.5177."
+   },
+   "say": "The model says the background stands out from the drawing, with negative starting values at the top corners and nearly zero weights along the top row in most patterns."
+  },
+  {
+   "quote": "The paired diagonals converge near the upper center and spread toward the lower corners.",
+   "plain": "Extending the two slanted lines, they meet near the top middle and separate going down. That is the outline of a triangle pointing up.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     8,
+     10
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    13,
+    21
+   ],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "The lines start at (1,5) and (1,6) and reach (8,1) and (8,10)."
+   },
+   "say": "The model says the two slanted lines come together near the top middle and spread apart toward the bottom corners."
+  },
+  {
+   "quote": "The prominent narrow side patterns favor outlines over solid filled shapes.",
+   "plain": "The argument is that thin weight lines must mean thin drawn lines. A thin line in W3 can also move the edge of a solid region.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     8,
+     10
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    13,
+    21
+   ],
+   "refs": [],
+   "check": {
+    "status": "not supported",
+    "note": "We ran the model for 56 samples: all were solid, with no gaps inside any row."
+   },
+   "say": "The model says these thin side lines point to outlines more than solid shapes."
+  },
+  {
+   "quote": "a white outlined, approximately isosceles triangle on black",
+   "plain": "This is the final answer. Isosceles means the tip sits above the middle of the base.",
+   "layer": "out",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "In 55 of 56 samples the tip is within 1 pixel of the base centre, but all 56 are solid, so outlined fails."
+   },
+   "say": "The model says its best reading is a white triangle outline on black, with its two slanted sides about equal in length."
+  },
+  {
+   "quote": "Typically about 8–10 pixels wide and 7–10 pixels tall",
+   "plain": "This is the size estimate, read from where the longest edges and bars sit.",
+   "layer": "out",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "In 56 samples widest row is 3 to 9 with 20 at 8 or more; height is 3 to 8 with 19 at 7 or more."
+   },
+   "say": "The model says a typical triangle is about 8 to 10 pixels wide and 7 to 10 pixels tall."
+  }
+ ],
+ "claude": [
+  {
+   "quote": "Every input row for row 0 of the image (pixels 0–11), column 0 and column 11 has weights of about 0.01 or less.",
+   "plain": "The first layer ignores the outer ring of pixels, so nothing there matters to the network. Shapes never reach the frame.",
+   "layer": "W1",
+   "pixels": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     0,
+     10
+    ],
+    [
+     0,
+     11
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     9,
+     0
+    ],
+    [
+     10,
+     0
+    ],
+    [
+     11,
+     0
+    ],
+    [
+     1,
+     11
+    ],
+    [
+     2,
+     11
+    ],
+    [
+     3,
+     11
+    ],
+    [
+     4,
+     11
+    ],
+    [
+     5,
+     11
+    ],
+    [
+     6,
+     11
+    ],
+    [
+     7,
+     11
+    ],
+    [
+     8,
+     11
+    ],
+    [
+     9,
+     11
+    ],
+    [
+     10,
+     11
+    ],
+    [
+     11,
+     11
+    ]
+   ],
+   "pixelside": "input",
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "84% of these 34 x 64 weights are at most 0.01; the largest is 0.034, against up to 0.63 elsewhere."
+   },
+   "say": "The model says the network puts almost no weight on the outer edge of the input image, along the top row and both sides."
+  },
+  {
+   "quote": "So the average image is a wedge: a point at the top centre, widening downward.",
+   "plain": "The answer treats the output bias b3 as the typical image. A wedge narrowing upward would point to a triangle.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     3,
+     9
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [
+    {
+     "m": "b3",
+     "i": 17,
+     "j": null,
+     "v": -0.143
+    },
+    {
+     "m": "b3",
+     "i": 18,
+     "j": null,
+     "v": -0.105
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "b3 and the mean of 56 samples are both wedge-like (correlation 0.70), but b3 is not the average: background is about 0.6 higher in b3."
+   },
+   "say": "The model says the average image is a wedge, pointed at the top middle and getting wider toward the bottom."
+  },
+  {
+   "quote": "Unit 13: a positive diagonal from (1,5) down-left to (8,1): 0.129, 0.328, 0.282, 0.368, 0.450, 0.457, 0.351.",
+   "plain": "Unit 13 of h2 draws the left side of the triangle as a slanted line of positive output weights.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     1
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    13
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 13,
+     "j": 17,
+     "v": 0.129
+    },
+    {
+     "m": "W3",
+     "i": 13,
+     "j": 40,
+     "v": 0.328
+    },
+    {
+     "m": "W3",
+     "i": 13,
+     "j": 51,
+     "v": 0.282
+    },
+    {
+     "m": "W3",
+     "i": 13,
+     "j": 63,
+     "v": 0.368
+    },
+    {
+     "m": "W3",
+     "i": 13,
+     "j": 74,
+     "v": 0.45
+    },
+    {
+     "m": "W3",
+     "i": 13,
+     "j": 97,
+     "v": 0.351
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All seven values match along the diagonal."
+   },
+   "say": "The model says one pattern is a bright slanted line running from near the top middle down to the left."
+  },
+  {
+   "quote": "Units 20 and 34: positive diagonals from (1,6)/(1,7) down-right to (8,10), e.g. unit 34 has 0.556, 0.461, 0.619, 0.393.",
+   "plain": "The right side is claimed for two units. Only unit 34 fits, and its inner neighbours are positive too, so it fills beside the edge.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     7
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     10
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    20,
+    34
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 34,
+     "j": 44,
+     "v": 0.556
+    },
+    {
+     "m": "W3",
+     "i": 34,
+     "j": 56,
+     "v": 0.461
+    },
+    {
+     "m": "W3",
+     "i": 34,
+     "j": 69,
+     "v": 0.619
+    },
+    {
+     "m": "W3",
+     "i": 34,
+     "j": 82,
+     "v": 0.393
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "Unit 34 values match but its line ends at (6,10) and it fires in 2% of samples; unit 20 is a bar on row 10, and unit 21 is the true diagonal."
+   },
+   "say": "The model says two other patterns are bright slanted lines running from near the top middle down to the right."
+  },
+  {
+   "quote": "Units 21, 49 and 57: positive bars across row 10, e.g. unit 49 has 0.31, 0.45, 0.49, 0.45, 0.36.",
+   "plain": "Bars across row 10 would give a low flat base. Bars of this kind exist, but in other units than the three named here.",
+   "layer": "W3",
+   "pixels": [
+    [
+     10,
+     2
+    ],
+    [
+     10,
+     3
+    ],
+    [
+     10,
+     4
+    ],
+    [
+     10,
+     5
+    ],
+    [
+     10,
+     6
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    21,
+    49,
+    57
+   ],
+   "refs": [],
+   "check": {
+    "status": "not supported",
+    "note": "None of the three has this bar; the quoted numbers are unit 43, row 10, columns 2 to 6. Unit 57 never fired in the samples."
+   },
+   "say": "The model says three patterns are bright horizontal bars across row 10, near the bottom of the image."
+  },
+  {
+   "quote": "The bottom edge can sit at row 6, 8, 9, 10 or 11.",
+   "plain": "A base that can sit in several rows means the triangle changes height. The final image then varies from sample to sample.",
+   "layer": "W3",
+   "pixels": [
+    [
+     6,
+     1
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     8,
+     10
+    ],
+    [
+     10,
+     1
+    ],
+    [
+     10,
+     2
+    ],
+    [
+     10,
+     3
+    ],
+    [
+     10,
+     4
+    ],
+    [
+     10,
+     5
+    ],
+    [
+     10,
+     6
+    ],
+    [
+     10,
+     7
+    ],
+    [
+     10,
+     8
+    ],
+    [
+     10,
+     9
+    ],
+    [
+     10,
+     10
+    ],
+    [
+     11,
+     1
+    ],
+    [
+     11,
+     2
+    ],
+    [
+     11,
+     3
+    ],
+    [
+     11,
+     4
+    ],
+    [
+     11,
+     5
+    ],
+    [
+     11,
+     6
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     11,
+     8
+    ],
+    [
+     11,
+     9
+    ],
+    [
+     11,
+     10
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    12,
+    11,
+    20
+   ],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "In 56 samples the base is in rows 5 to 10, mostly 8 to 10, and never in row 11, whose mean output is -0.96."
+   },
+   "say": "The model says the bottom of the shape can sit at different heights, on row 6, 8, 9, 10 or 11."
+  },
+  {
+   "quote": "When unit 12 or 11 moves the base, whole rows below the new base go dark.",
+   "plain": "These units have a bright row with dark rows beneath, so firing one cuts the triangle off higher up. Whole-row darkening only matters if the rows were filled to begin with.",
+   "layer": "W3",
+   "pixels": [
+    [
+     6,
+     1
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     8,
+     10
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ],
+    [
+     9,
+     10
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    12,
+    11
+   ],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "Unit 12 averages 1.8 when the base is at row 6 or 7, unit 11 averages 1.8 at row 8, and their W3 rows match the pattern."
+   },
+   "say": "The model says that when certain patterns move the bottom edge up, every row below the new bottom turns dark."
+  },
+  {
+   "quote": "All of these fit a solid triangle. A thin outline would only change the base row and the two side pixels.",
+   "plain": "If the shape were an outline, a change of base would touch only a few pixels. Whole dark rows mean a filled region is being cut.",
+   "layer": "out",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "We ran the model for 56 samples: all were solid triangles with no gaps inside any row."
+   },
+   "say": "The model says all this fits a solid triangle, because an outline would need only the bottom row and two side pixels changed."
+  },
+  {
+   "quote": "A single solid white triangle on a black background, pointing up. The tip is near the top centre (row 1–2, columns 4–7).",
+   "plain": "This is the final answer, and it is the only one of the three to say filled. The tip position is given as a narrow range.",
+   "layer": "out",
+   "pixels": [
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "56 samples are solid upward triangles, but only 16 have the tip in rows 1 to 2; the tip ranges over rows 1 to 7."
+   },
+   "say": "The model says each image is one solid white triangle pointing up on black, with its tip near the top middle."
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+[
+ {
+  "quote": "The real solution is a run-up, using the free floor to the right (up to x = 5).",
+  "say": "Claude says the missing behaviour is a run-up, which training never found because backing away loses reward.",
+  "ep": "edit",
+  "f": 2,
+  "check": {
+   "status": "supported",
+   "note": "This is the behaviour that works. All three Claude edits and the paper’s Astra edit use a run-up."
+  },
+  "state": [
+   3.57,
+   1.72
+  ]
+ },
+ {
+  "quote": "I estimate full throttle from rest gives only about 2 m/s on the ramp, which is too slow to clear the strip and lands green on red (-1).",
+  "say": "Claude estimates by hand that driving straight at the ramp cannot work.",
+  "ep": "edit",
+  "f": 0,
+  "check": {
+   "status": "supported",
+   "note": "Astra’s third run happens to test this: full throttle from the start peaks at 1.92 sideways and lands green on red."
+  },
+  "state": [
+   2.8,
+   0
+  ]
+ },
+ {
+  "quote": "It coasts right until the wall at x ≈ 4.46 stops it.",
+  "say": "Claude uses the wall as a stop, then launches from it.",
+  "ep": "edit",
+  "f": 4,
+  "check": {
+   "status": "supported",
+   "note": "The body stops at x = 4.49 at step 34, close to the estimate."
+  },
+  "state": [
+   4.47,
+   -0.55
+  ]
+ },
+ {
+  "quote": "After about 1.5 m of run it should reach roughly 4 m/s, close to the wheels' 3.96 m/s limit.",
+  "say": "Claude predicts how fast the car will be going at the foot of the ramp.",
+  "ep": "edit",
+  "f": 6,
+  "check": {
+   "status": "supported",
+   "note": "Peak speed is 3.81 sideways at x = 2.92, after 1.57 of run."
+  },
+  "state": [
+   2.92,
+   -3.81
+  ]
+ },
+ {
+  "quote": "It keeps full throttle up the ramp and leaves the crest at about 3 m/s.",
+  "say": "Claude predicts its launch speed.",
+  "ep": "edit",
+  "f": 8,
+  "check": {
+   "status": "partly",
+   "note": "Green leaves the crest at about 2.5, below this estimate. It was still enough."
+  },
+  "state": [
+   2.06,
+   -2.06
+  ]
+ }
+]

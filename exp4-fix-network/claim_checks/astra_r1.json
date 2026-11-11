@@ -1,0 +1,58 @@
+[
+ {
+  "quote": "The policy learns safe partial progress, then stalls.",
+  "say": "Astra says training settled on creeping forward and stopping.",
+  "ep": "edit",
+  "f": 0,
+  "check": {
+   "status": "supported",
+   "note": "The trained network stalls at x ≈ 2.00 and times out in all 256 episodes."
+  },
+  "state": [
+   2.8,
+   0
+  ]
+ },
+ {
+  "quote": "These edits are algebraically equivalent to adding `5 × (2.8 − body_x)` to the horizontal velocities of the chassis and both wheels before the original embedding.",
+  "say": "Astra rewrites one row of weights so the network sees false speed readings that grow as the car moves left.",
+  "ep": "edit",
+  "f": 1,
+  "check": {
+   "status": "supported",
+   "note": "Checked on 200 random inputs: the new first layer matches the old one with that shift to within 3e-13. No other layer was changed."
+  },
+  "state": [
+   2.59,
+   -1.29
+  ]
+ },
+ {
+  "quote": "Initially, the offset is zero, preserving the original action probabilities.",
+  "say": "At the starting position the edit has no effect.",
+  "ep": "edit",
+  "f": 0,
+  "check": {
+   "status": "supported",
+   "note": "The offset is 5 × (2.8 − x), which is 0 at the start, and the network still chooses off with probability 1.00 at step 0."
+  },
+  "state": [
+   2.8,
+   0
+  ]
+ },
+ {
+  "quote": "The intended result is a faster ramp ascent and a jump across the red strip.",
+  "say": "Astra expects the car to speed up on the ramp and jump.",
+  "ep": "edit",
+  "f": 10,
+  "check": {
+   "status": "not supported",
+   "note": "Reverse never occurs in the recorded episode and leftward speed peaks at 1.87. Of 1,024 episodes, 811 timed out and 213 hit red. None reached blue."
+  },
+  "state": [
+   2.09,
+   0
+  ]
+ }
+]

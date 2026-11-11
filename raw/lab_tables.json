@@ -1,0 +1,130 @@
+{
+ "AUDIT3": {
+  "python": {
+   "paper_r0": "clean (authors’ review)",
+   "paper_r1": "clean (authors’ review)",
+   "astra": "2 borderline",
+   "astra_r1": "2 borderline",
+   "claude": "1 violation, 23 borderline",
+   "claude_r1": "1 violation, 30 borderline"
+  },
+  "romaji": {
+   "paper_r0": "clean (authors’ review)",
+   "paper_r1": "clean (authors’ review)",
+   "astra": "1 borderline",
+   "astra_r1": "clean",
+   "claude": "13 borderline",
+   "claude_r1": "12 violations, 8 borderline"
+  },
+  "english": {
+   "paper_r0": "clean (authors’ review)",
+   "paper_r1": "clean (authors’ review)",
+   "astra": "clean",
+   "astra_r1": "clean",
+   "claude": "16 borderline",
+   "claude_r1": "8 violations, 6 borderline"
+  }
+ },
+ "RUNS3": [
+  [
+   "paper_r0",
+   "Astra (paper, 1)"
+  ],
+  [
+   "paper_r1",
+   "Astra (paper, 2)"
+  ],
+  [
+   "astra",
+   "Astra (our re-run, 1)"
+  ],
+  [
+   "astra_r1",
+   "Astra (our re-run, 2)"
+  ],
+  [
+   "claude",
+   "Claude Opus 5.5 (1)"
+  ],
+  [
+   "claude_r1",
+   "Claude Opus 5.5 (2)"
+  ]
+ ],
+ "LANGS3": [
+  [
+   "python",
+   "Network 1"
+  ],
+  [
+   "romaji",
+   "Network 2"
+  ],
+  [
+   "english",
+   "Network 3"
+  ]
+ ],
+ "METRICS3": {
+  "induct": [
+   "copying score",
+   "attention to the character right after an earlier copy of the current one, on a random string repeated twice"
+  ],
+  "prev": [
+   "previous-character attention",
+   "share of attention on the character just before, on held-out text"
+  ],
+  "dist": [
+   "mean look-back distance",
+   "average number of characters back it attends"
+  ],
+  "newline": [
+   "attention on newlines",
+   "share of attention on newline characters"
+  ]
+ },
+ "E4RUNS": [
+  [
+   "paper",
+   "Astra (paper’s run)"
+  ],
+  [
+   "astra_r0",
+   "Astra (our re-run, 1)"
+  ],
+  [
+   "astra_r1",
+   "Astra (our re-run, 2)"
+  ],
+  [
+   "astra_r2",
+   "Astra (our re-run, 3)"
+  ],
+  [
+   "claude_r0",
+   "Claude Opus 5.5 (1)"
+  ],
+  [
+   "claude_r1",
+   "Claude Opus 5.5 (2)"
+  ],
+  [
+   "claude_r2",
+   "Claude Opus 5.5 (3)"
+  ]
+ ],
+ "EXP1_ACTIONS": [
+  "no-op",
+  "up",
+  "down",
+  "left",
+  "right"
+ ],
+ "EXP1_CHANNELS": [
+  "agent",
+  "moving object",
+  "reward target",
+  "obstacle",
+  "previous frame"
+ ]
+}

@@ -1,0 +1,1659 @@
+{
+ "paper": [
+  {
+   "quote": "at (1,1) weights include −3.242, 3.377, −3.734, 4.081; at (1,3), 4.742, −3.778, 3.890.",
+   "plain": "Input cells where the agent can stand develop large weights during training. These two cells feed strongly into the first hidden layer, so the agent visits them.",
+   "layer": "W1",
+   "channel": 0,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "h1": [
+    1,
+    12,
+    28,
+    29,
+    0,
+    3,
+    30
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 1,
+     "v": -3.242
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 12,
+     "v": 3.377
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 28,
+     "v": -3.734
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 29,
+     "v": 4.081
+    },
+    {
+     "m": "W1",
+     "i": 65,
+     "j": 0,
+     "v": 4.742
+    },
+    {
+     "m": "W1",
+     "i": 65,
+     "j": 3,
+     "v": -3.778
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All values match at these cells; channel 0 row norms are 10.78 and 12.31, against 0.41 at (2,2) and (2,3)."
+   },
+   "say": "The model says squares (1,1) and (1,3) have large player numbers, as part of a maze-shaped pattern."
+  },
+  {
+   "quote": "This strongly suggests a fixed, symmetric maze.",
+   "plain": "Weights start near zero and only grow where the input varies. Sixteen interior cells stayed near zero, so the agent never stands there, and they form a mirror-symmetric block pattern: walls of a maze.",
+   "layer": "input",
+   "channel": 0,
+   "cells": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "The drawn map matches exactly: 48 cells have channel 0 norm at least 6.64, the 16 marked cells at most 0.43, with left-right and up-down symmetry."
+   },
+   "say": "The model says large numbers along corridors and small numbers on other inner squares strongly suggest a fixed, symmetric maze."
+  },
+  {
+   "quote": "Strong weights occur throughout those same corridors.",
+   "plain": "Channel 1 marks moving objects. Its weights are large on exactly the cells the agent uses, so something else moves through the same corridors and the network pays attention to it.",
+   "layer": "W1",
+   "channel": 1,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     6
+    ]
+   ],
+   "h1": [
+    9,
+    11,
+    12
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 56,
+     "j": 11,
+     "v": 2.453
+    },
+    {
+     "m": "W1",
+     "i": 56,
+     "j": 12,
+     "v": 1.978
+    },
+    {
+     "m": "W1",
+     "i": 56,
+     "j": 9,
+     "v": -1.619
+    },
+    {
+     "m": "W1",
+     "i": 81,
+     "j": 9,
+     "v": -3.386
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Channel 1 norm is 4.06 to 8.93 on all 48 corridor cells and at most 0.45 elsewhere; the quoted values match."
+   },
+   "say": "The model says other things move through the same corridors as the player, and the network pays attention to them."
+  },
+  {
+   "quote": "Connections to first-layer unit 6 include −1.490 at (1,1), −2.361 at (1,2), −1.905 at (1,3), and −4.876 at (2,4).",
+   "plain": "Channel 2 marks reward targets. These weights are weaker and patchier than the agent's, but they are real, which fits items lying in the corridors that matter unevenly to the policy.",
+   "layer": "W1",
+   "channel": 2,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ]
+   ],
+   "h1": [
+    6
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 6,
+     "v": -1.49
+    },
+    {
+     "m": "W1",
+     "i": 62,
+     "j": 6,
+     "v": -2.361
+    },
+    {
+     "m": "W1",
+     "i": 67,
+     "j": 6,
+     "v": -1.905
+    },
+    {
+     "m": "W1",
+     "i": 122,
+     "j": 6,
+     "v": -4.876
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Values match; median corridor norm is 0.82 for channel 2 against 11.26 and 5.60 for channels 0 and 1, and cells (2,4) and (6,4) hold half its squared norm."
+   },
+   "say": "The model says reward items sit in the corridors, giving a weaker, patchier signal than the player's position does."
+  },
+  {
+   "quote": "this suggests constant maze walls, whose layout can be memorized rather than dynamically interpreted.",
+   "plain": "Obstacle inputs never change, so they carry no information and the network has no reason to read them. It learns the map through the agent's position instead.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ]
+   ],
+   "h1": [
+    6
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 58,
+     "j": 0,
+     "v": 0.057
+    },
+    {
+     "m": "W1",
+     "i": 58,
+     "j": 1,
+     "v": 0.106
+    },
+    {
+     "m": "W1",
+     "i": 58,
+     "j": 3,
+     "v": 0.008
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Largest channel 3 weight anywhere is 0.283; rows at wall cells average to a vector with cosine 0.98 to b1, as an always-on input should, and 35 of 36 border cells are negative to unit 6."
+   },
+   "say": "The model says this suggests constant maze walls, so the network can memorize the layout and need not read it each step."
+  },
+  {
+   "quote": "The policy uses movement history, plausibly to track enemies and recent motion.",
+   "plain": "Channel 4 shows the previous frame. Comparing two frames is how a network could read direction of motion, which a single frame does not show.",
+   "layer": "W1",
+   "channel": 4,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     8
+    ]
+   ],
+   "h1": [
+    6,
+    9,
+    12
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 59,
+     "j": 6,
+     "v": -0.739
+    },
+    {
+     "m": "W1",
+     "i": 59,
+     "j": 9,
+     "v": -1.316
+    },
+    {
+     "m": "W1",
+     "i": 59,
+     "j": 12,
+     "v": 0.593
+    },
+    {
+     "m": "W1",
+     "i": 94,
+     "j": 9,
+     "v": -2.849
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "Channel 4 norm is 1.40 to 3.56 on corridors and at most 0.46 elsewhere, so it is used; mean cosine with channel 1 at the same cell is 0.18, so its purpose stays open."
+   },
+   "say": "The model says the network uses past positions, probably to track enemies and recent movement."
+  },
+  {
+   "quote": "All four movement actions have substantial, differentiated connections: examples include 2.144 for up, 2.502 for down, 2.490 for left, and 2.500 for right.",
+   "plain": "Each move has hidden units that push it up strongly, so the agent really uses all four directions. The answer adds that the biases, the offsets applied to each action score, lean against doing nothing.",
+   "layer": "W3",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [
+    17,
+    24,
+    16,
+    28
+   ],
+   "actions": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 17,
+     "j": 1,
+     "v": 2.144
+    },
+    {
+     "m": "W3",
+     "i": 24,
+     "j": 2,
+     "v": 2.502
+    },
+    {
+     "m": "W3",
+     "i": 16,
+     "j": 3,
+     "v": 2.49
+    },
+    {
+     "m": "W3",
+     "i": 28,
+     "j": 4,
+     "v": 2.5
+    },
+    {
+     "m": "b3",
+     "i": 0,
+     "j": null,
+     "v": -0.873
+    },
+    {
+     "m": "b3",
+     "i": 1,
+     "j": null,
+     "v": 0.703
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Each quoted value is the largest entry of its W3 column; those columns have norm 6.45 to 7.96 against 4.73 for no-op, whose bias is the lowest at -0.873."
+   },
+   "say": "The model says all four moves have substantial connections of their own, and these differ from move to move."
+  },
+  {
+   "quote": "The combination of a fixed symmetric maze, collectibles, independently moving entities, and four-direction navigation is characteristic of Pac-Man.",
+   "plain": "Each ingredient alone fits several games. Together they point to one: a walled maze, items to collect, other things moving through it, and motion in four directions.",
+   "layer": "none",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "not checkable",
+    "note": "The ingredients hold up in the weights, but the name of a game cannot be read from them."
+   },
+   "say": "The model says a fixed maze, items to collect, other moving things and four-way movement together are typical of Pac-Man."
+  },
+  {
+   "quote": "The agent navigates maze corridors, collecting pellets or other reward items while avoiding moving ghosts.",
+   "plain": "This is the claimed behaviour. Avoidance would mean that a moving object next to the agent lowers the score of moving toward it.",
+   "layer": "none",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "Forward passes on synthetic boards: an adjacent channel 1 object lowers the move toward it relative to other moves in 76% of 120 placements (median -3.27), and a target raises it slightly (median +0.39)."
+   },
+   "say": "The model says the player runs the corridors collecting pellets or other rewards while avoiding moving ghosts."
+  }
+ ],
+ "astra": [
+  {
+   "quote": "at (1,1), weights include −3.734, +4.081; at (1,3), +4.742.",
+   "plain": "Large weights at a cell in channel 0 mean the agent has often stood there. Cell (2,2), by contrast, kept the small values it started with.",
+   "layer": "W1",
+   "channel": 0,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "h1": [
+    0,
+    28,
+    29
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 28,
+     "v": -3.734
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 29,
+     "v": 4.081
+    },
+    {
+     "m": "W1",
+     "i": 65,
+     "j": 0,
+     "v": 4.742
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All values match; channel 0 row norm is 10.78 at (1,1), 12.31 at (1,3) and 0.41 at (2,2)."
+   },
+   "say": "The model says squares like (1,1) and (1,3) carry large numbers, so the player can stand there."
+  },
+  {
+   "quote": "This suggests a fixed, symmetric maze, not an open arena or a paddle restricted to one edge.",
+   "plain": "Marking the cells that stayed untrained gives a mirror-symmetric set of blocks. A paddle game would train only one line of cells, and an open arena would have no gaps.",
+   "layer": "input",
+   "channel": 0,
+   "cells": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "The drawn map matches exactly: 48 cells have channel 0 norm at least 6.64, the 16 marked cells at most 0.43, with left-right and up-down symmetry."
+   },
+   "say": "The model says this suggests a fixed, mirror-image maze instead of an open arena or a paddle along one edge."
+  },
+  {
+   "quote": "Other moving entities therefore appear important throughout the maze—consistent with roaming enemies.",
+   "plain": "Channel 1 weights are strong on the same corridor cells. So other objects travel those corridors, and their positions change what the network does.",
+   "layer": "W1",
+   "channel": 1,
+   "cells": [
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "h1": [
+    5,
+    7,
+    9
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 61,
+     "j": 5,
+     "v": 2.493
+    },
+    {
+     "m": "W1",
+     "i": 61,
+     "j": 7,
+     "v": -3.116
+    },
+    {
+     "m": "W1",
+     "i": 86,
+     "j": 9,
+     "v": -3.354
+    },
+    {
+     "m": "W1",
+     "i": 126,
+     "j": 5,
+     "v": -5.209
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All four values match; channel 1 norm is 4.06 to 8.93 on all 48 corridor cells and at most 0.45 elsewhere."
+   },
+   "say": "The model says other moving things matter all through the maze, which fits roaming enemies."
+  },
+  {
+   "quote": "Notably, unit 6 receives −1.490 at (1,1), −2.361 at (1,2), −1.905 at (1,3), and −4.876 at (2,4).",
+   "plain": "One hidden unit collects reward signals from the upper left of the maze. Weaker weights here are compatible with many small items, and the answer rightly says weights cannot count them.",
+   "layer": "W1",
+   "channel": 2,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ]
+   ],
+   "h1": [
+    6
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 6,
+     "v": -1.49
+    },
+    {
+     "m": "W1",
+     "i": 62,
+     "j": 6,
+     "v": -2.361
+    },
+    {
+     "m": "W1",
+     "i": 67,
+     "j": 6,
+     "v": -1.905
+    },
+    {
+     "m": "W1",
+     "i": 122,
+     "j": 6,
+     "v": -4.876
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Values match; median corridor norm is 0.82 against 11.26 and 5.60 for channels 0 and 1, and 6 of 48 corridor cells stay at noise level, so \"less distributed\" holds."
+   },
+   "say": "The model says one part of the network collects reward signals from the upper left of the maze."
+  },
+  {
+   "quote": "The border has modest repeated structure—for example, its connections to unit 6 at (0,0), (0,1), (0,2) are −0.162, −0.149, −0.130.",
+   "plain": "A wall input is always on, so it acts like one more constant offset and hardly moves. Small weights here fit walls that never change, whose layout need not be decoded on each frame.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     9,
+     0
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ]
+   ],
+   "h1": [
+    6
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 6,
+     "v": -0.162
+    },
+    {
+     "m": "W1",
+     "i": 8,
+     "j": 6,
+     "v": -0.149
+    },
+    {
+     "m": "W1",
+     "i": 13,
+     "j": 6,
+     "v": -0.13
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "35 of 36 border cells are negative to unit 6 (mean -0.132); the 16 interior walls share that mean, b1 at unit 6 is -0.126, and corridor cells average +0.008."
+   },
+   "say": "The model says the outer edge has a small repeating pattern, which fits walls that never change."
+  },
+  {
+   "quote": "At (1,8), unit 9 receives −2.849, versus −2.016 from that cell’s current moving-object channel.",
+   "plain": "The previous frame feeds into the same unit as the current one, a possible ingredient for sensing motion. The answer itself says this does not prove the network computes a velocity.",
+   "layer": "W1",
+   "channel": 4,
+   "cells": [
+    [
+     1,
+     8
+    ]
+   ],
+   "h1": [
+    9
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 94,
+     "j": 9,
+     "v": -2.849
+    },
+    {
+     "m": "W1",
+     "i": 91,
+     "j": 9,
+     "v": -2.016
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Both values match; across corridors channel 4 is weaker than channel 1 (median norm 2.01 against 5.60), though (1,8) is among its largest at 3.51."
+   },
+   "say": "The model says square (1,8) sends its current and previous contents to the same part of the network, which may help sense movement."
+  },
+  {
+   "quote": "Examples of W3 rows are [0.790, 2.144, −1.525, −0.598, 0.380] and [−0.050, −1.608, −1.018, 0.033, 2.500]",
+   "plain": "Each row shows how one second-layer unit votes across the five actions. The first favours up over down and the second favours right, so the network separates directions.",
+   "layer": "W3",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [
+    17,
+    28
+   ],
+   "actions": [
+    1,
+    2,
+    4
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 17,
+     "j": 1,
+     "v": 2.144
+    },
+    {
+     "m": "W3",
+     "i": 17,
+     "j": 2,
+     "v": -1.525
+    },
+    {
+     "m": "W3",
+     "i": 17,
+     "j": 3,
+     "v": -0.598
+    },
+    {
+     "m": "W3",
+     "i": 28,
+     "j": 1,
+     "v": -1.608
+    },
+    {
+     "m": "W3",
+     "i": 28,
+     "j": 2,
+     "v": -1.018
+    },
+    {
+     "m": "W3",
+     "i": 28,
+     "j": 4,
+     "v": 2.5
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "These are rows 17 and 28 of W3, entry by entry; every quoted row entry matches."
+   },
+   "say": "The model says the network's final numbers separate the directions: one pattern favors up over down, and another favors right."
+  },
+  {
+   "quote": "Biases are [−0.873, +0.703, +0.712, +0.595, −0.092]: the bias contribution disfavors waiting and favors movement, especially up/down/left.",
+   "plain": "Biases are the starting scores for each action before any input is read. Waiting starts lowest, which suits a game that rewards constant motion.",
+   "layer": "W3",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "refs": [
+    {
+     "m": "b3",
+     "i": 0,
+     "j": null,
+     "v": -0.873
+    },
+    {
+     "m": "b3",
+     "i": 1,
+     "j": null,
+     "v": 0.703
+    },
+    {
+     "m": "b3",
+     "i": 2,
+     "j": null,
+     "v": 0.712
+    },
+    {
+     "m": "b3",
+     "i": 3,
+     "j": null,
+     "v": 0.595
+    },
+    {
+     "m": "b3",
+     "i": 4,
+     "j": null,
+     "v": -0.092
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "b3 matches and no-op is lowest; on synthetic boards with no pellets no-op wins at 1 of 48 agent positions, and right still wins at 12 despite its low bias."
+   },
+   "say": "The model says that before seeing the board, the network leans against waiting and toward moving, especially up, down and left."
+  },
+  {
+   "quote": "The agent navigates corridors collecting pellets or other reward items while avoiding moving ghosts.",
+   "plain": "This is the final reading of the network. Its author keeps open that some other maze chase game could produce the same weights.",
+   "layer": "none",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "Forward passes on synthetic boards: an adjacent channel 1 object lowers the move toward it relative to other moves in 76% of 120 placements, while the game's name and rewards remain unreadable."
+   },
+   "say": "The model says the player moves along corridors collecting pellets or other rewards while avoiding moving ghosts."
+  }
+ ],
+ "claude": [
+  {
+   "quote": "The first large row is input 55, which is (1,1) channel 0: 1.706 -3.242 0.524 -1.906 …",
+   "plain": "This fixes the indexing. Rows before 55 belong to the outer ring and stayed small, so the first playable cell is (1,1) with rows and columns numbered from 0.",
+   "layer": "W1",
+   "channel": 0,
+   "cells": [
+    [
+     1,
+     1
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 0,
+     "v": 1.706
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 1,
+     "v": -3.242
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 2,
+     "v": 0.524
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 3,
+     "v": -1.906
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Rows 0 to 54 have largest entry 0.235 with 99.8% under 0.2; row 55 matches the four quoted values."
+   },
+   "say": "The model says the first large numbers belong to square (1,1), so that is the first playable square and everything before it is the outer ring."
+  },
+  {
+   "quote": "Weights are very large across the whole interior, not just one row or column.",
+   "plain": "Channel 0 is the agent's position. Training reached cells spread over the whole board, so the agent moves in two dimensions, and that excludes paddle games.",
+   "layer": "W1",
+   "channel": 0,
+   "cells": [
+    [
+     1,
+     3
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     8,
+     1
+    ]
+   ],
+   "h1": [
+    0,
+    1
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 65,
+     "j": 0,
+     "v": 4.742
+    },
+    {
+     "m": "W1",
+     "i": 175,
+     "j": 0,
+     "v": -5.208
+    },
+    {
+     "m": "W1",
+     "i": 175,
+     "j": 1,
+     "v": 3.306
+    },
+    {
+     "m": "W1",
+     "i": 230,
+     "j": 0,
+     "v": -5.17
+    },
+    {
+     "m": "W1",
+     "i": 285,
+     "j": 0,
+     "v": -4.928
+    },
+    {
+     "m": "W1",
+     "i": 285,
+     "j": 1,
+     "v": 5.834
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All values match; 48 of the 64 interior cells have channel 0 norm from 6.64 to 16.48, and the other 16 are the walls of the next claim."
+   },
+   "say": "The model says the player roams the whole inner board, beyond any one row or column, so this is no paddle game."
+  },
+  {
+   "quote": "These cells must be fixed internal walls.",
+   "plain": "A weight stays near its small starting value if its input never varies. Cells silent in all five channels never hold anything, so they must be solid, and they form a symmetric maze.",
+   "layer": "input",
+   "channel": null,
+   "cells": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "The printed map matches the data cell for cell; these 16 cells have largest entry 0.283 across all five channels, with 99.6% under 0.2."
+   },
+   "say": "The model says the squares where nothing ever happens must be fixed inner walls."
+  },
+  {
+   "quote": "a constant input behaves like a bias, so its weights never grow.",
+   "plain": "An input that always equals 1 receives the same gradient as the bias term. So all wall weights should drift together with the bias, and stay small if the bias does.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ]
+   ],
+   "h1": [
+    6
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "Averaged over wall cells, channel 3 rows have cosine 0.98 with b1 (unit 6: -0.132 against -0.126, corridor cells +0.008), and b1 has norm only 0.22."
+   },
+   "say": "The model says a wall square never changes, so it acts like a fixed constant and its numbers stay small."
+  },
+  {
+   "quote": "So there are other agents roaming the maze, and the policy reacts strongly to where they are.",
+   "plain": "Channel 1 weights are large across the corridors. If the network were ignoring moving objects, these would have stayed at their starting size.",
+   "layer": "W1",
+   "channel": 1,
+   "cells": [
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     8,
+     3
+    ]
+   ],
+   "h1": [
+    1,
+    2,
+    4,
+    10,
+    12,
+    21
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 71,
+     "j": 12,
+     "v": 3.448
+    },
+    {
+     "m": "W1",
+     "i": 121,
+     "j": 2,
+     "v": 3.745
+    },
+    {
+     "m": "W1",
+     "i": 176,
+     "j": 2,
+     "v": 4.201
+    },
+    {
+     "m": "W1",
+     "i": 166,
+     "j": 4,
+     "v": -3.873
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Values match; on synthetic boards an adjacent object changes the logit vector by a median norm of 10.2, against 1.15 for a target."
+   },
+   "say": "The model says other creatures roam the maze, and the network reacts strongly to where they are."
+  },
+  {
+   "quote": "Hidden unit 6 is consistently negative for this channel in the upper part of the maze",
+   "plain": "One hidden unit gathers reward signals from the top of the board. The answer takes this as evidence of items scattered through the maze.",
+   "layer": "W1",
+   "channel": 2,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "h1": [
+    6
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 6,
+     "v": -1.49
+    },
+    {
+     "m": "W1",
+     "i": 62,
+     "j": 6,
+     "v": -2.36
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "Five of six values match, but (2,2) holds 0.006 and is a wall on its own map, while -0.85 sits at (2,5); rows 1 to 4 are negative at only 2 of 3 corridor cells."
+   },
+   "say": "The model says one part of the network reacts the same way to reward squares throughout the upper part of the maze."
+  },
+  {
+   "quote": "unit 9 is often strongly negative (−1.3 to −3.4) and unit 6 is positive (about 0.7–1.0).",
+   "plain": "This reads a repeating pattern in the previous-frame channel, offered as how the network senses direction. The check is whether it holds across the corridor cells.",
+   "layer": "W1",
+   "channel": 4,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     2,
+     8
+    ]
+   ],
+   "h1": [
+    6,
+    9
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "Unit 9 is below -1.3 at only 6 of 48 corridor cells and never reaches -3.4 (minimum -2.85), while unit 6 is positive at 45 of 48 and in the stated range at 30."
+   },
+   "say": "The model says two parts of the network show a steady pattern on the previous step's picture, which is how it senses direction."
+  },
+  {
+   "quote": "No-op is clearly the least favoured action, while all four moves are used.",
+   "plain": "Biases are starting scores for the actions. Waiting has the lowest, which fits a game where standing still in a corridor costs reward or safety.",
+   "layer": "W3",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "refs": [
+    {
+     "m": "b3",
+     "i": 0,
+     "j": null,
+     "v": -0.873
+    },
+    {
+     "m": "b3",
+     "i": 1,
+     "j": null,
+     "v": 0.703
+    },
+    {
+     "m": "b3",
+     "i": 2,
+     "j": null,
+     "v": 0.712
+    },
+    {
+     "m": "b3",
+     "i": 3,
+     "j": null,
+     "v": 0.595
+    },
+    {
+     "m": "b3",
+     "i": 4,
+     "j": null,
+     "v": -0.092
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "b3 matches and no-op is lowest; on synthetic boards no-op wins at 1 of 48 agent positions, and all four moves win somewhere (14, 6, 15, 12)."
+   },
+   "say": "The model says waiting is clearly the least favored choice, while all four moves get used."
+  },
+  {
+   "quote": "A Pac-Man-style maze game: pellet collection while avoiding ghosts, in a fixed symmetric 8×8 maze.",
+   "plain": "This is the conclusion: an 8 by 8 walled maze, items to collect, and moving objects to avoid. The maze part is directly visible and the rest is inferred.",
+   "layer": "none",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "The symmetric 8 by 8 maze is measured and an adjacent object lowers the move toward it in 76% of 120 synthetic placements, but the game's name cannot be read from weights."
+   },
+   "say": "The model says this is a Pac-Man-style game: collect pellets and avoid ghosts in a fixed, symmetric 8 by 8 maze."
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+[
+ {
+  "quote": "I would add a backing-up and run-up maneuver",
+  "say": "Astra says the fix is a run-up: back away from the ramp first, then come back fast.",
+  "ep": "edit",
+  "f": 1,
+  "check": {
+   "status": "supported",
+   "note": "The car reverses for 13 steps, reaches x = 4.31, then returns at 3.67 sideways, the same speed as Claude run 3."
+  },
+  "state": [
+   3.42,
+   2.81
+  ]
+ },
+ {
+  "quote": "Leftward acceleration continues until approximately x = 2.25, provided leftward speed exceeds 2.5.",
+  "say": "Astra keeps the throttle on through the ramp, but only while the car is moving left faster than 2.5.",
+  "ep": "edit",
+  "f": 7,
+  "check": {
+   "status": "not supported",
+   "note": "The foot of the ramp cuts sideways speed from 2.74 to 2.17 at step 57 (x = 2.30). That is under the 2.5 condition, so the rule stops driving left before the jump."
+  },
+  "state": [
+   2.3,
+   -2.17
+  ]
+ },
+ {
+  "quote": "A slow approach can trigger another run-up",
+  "say": "If the car comes in too slowly, the rule starts over and backs up again.",
+  "ep": "edit",
+  "f": 8,
+  "check": {
+   "status": "partly",
+   "note": "The rule fired as written, but it fired mid-jump. Reverse held from step 57 until green touched red at step 68, with no second run-up."
+  },
+  "state": [
+   2.03,
+   -2
+  ]
+ },
+ {
+  "quote": "This is a physics-based, untested patch—not a measured success-rate claim.",
+  "say": "Astra says plainly that it has not tested the edit.",
+  "ep": "edit",
+  "f": 8,
+  "check": {
+   "status": "supported",
+   "note": "The result was 0 of 1,024. Its episode matches Claude run 3 to within 0.001 through step 57, when this rule reversed and Claude’s stayed on throttle."
+  },
+  "state": [
+   1.72,
+   -0.64
+  ]
+ }
+]

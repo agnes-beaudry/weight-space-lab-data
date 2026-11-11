@@ -1,0 +1,44 @@
+[
+ {
+  "quote": "The motor direction already works: action **1** moves the car left, up the ramp.",
+  "say": "Astra sees that the car drives the right way and that direction is not the problem.",
+  "ep": "edit",
+  "f": 1,
+  "check": {
+   "status": "supported",
+   "note": "Under action 1 the car moves left from x = 2.80 to x = 1.55."
+  },
+  "state": [
+   2.58,
+   -1.34
+  ]
+ },
+ {
+  "quote": "Once active, the relay makes action 1 overwhelmingly likely",
+  "say": "Astra’s relay locks the throttle on so the car stops hesitating.",
+  "ep": "edit",
+  "f": 2,
+  "check": {
+   "status": "supported",
+   "note": "Action 1 is chosen on every step from step 2 onward, with probability at least 0.9995."
+  },
+  "state": [
+   2.25,
+   -1.54
+  ]
+ },
+ {
+  "quote": "The intended result is enough momentum to carry the green wheel across red and into blue.",
+  "say": "Astra expects steady throttle from the start to be enough for the jump.",
+  "ep": "edit",
+  "f": 4,
+  "check": {
+   "status": "not supported",
+   "note": "With no run-up the car peaks at 1.92 sideways. Green hit red at step 33 in all 1,024 episodes, at x = 1.33."
+  },
+  "state": [
+   1.55,
+   -1.73
+  ]
+ }
+]

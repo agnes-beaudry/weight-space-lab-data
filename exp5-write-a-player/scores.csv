@@ -1,0 +1,10 @@
+game,who,mean_score,ppo_100M,ppo_500M,sample_game_score,sample_game_steps,nonzero_weights,edit_statements_ok
+breakout,Astra (paper run),517.4,15.8,25.3,738,10000,815,92
+breakout,Astra (our re-run),377.8,15.8,25.3,606,10000,2752,170
+breakout,Claude Opus 5.5,494.9,15.8,25.3,624,10000,1142,155
+asterix,Astra (paper run),53.2,25.8,55.2,94,1303,637,55
+asterix,Astra (our re-run),32.2,25.8,55.2,55,1127,3200,138
+asterix,Claude Opus 5.5,56.6,25.8,55.2,184,1682,565,89
+seaquest,Astra (paper run),53.1,5.6,88.9,128,3000,803,122
+seaquest,Astra (our re-run),1.6,5.6,88.9,8,291,1072,146
+seaquest,Claude Opus 5.5,3.6,5.6,88.9,10,236,1369,139

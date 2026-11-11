@@ -1,0 +1,2363 @@
+{
+ "paper": [
+  {
+   "quote": "conspicuous horizontal and vertical strips, rather than diagonal or curved patterns",
+   "plain": "The learned patterns run along rows and columns. Shapes with straight, axis-aligned sides would produce this, and round or slanted shapes would not.",
+   "layer": "W3",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "All 47 W3 rows with a weight of at least 0.3 hold more squared weight in their best row or column than on any diagonal."
+   },
+   "say": "The model says the patterns the network can paint are mostly straight horizontal and vertical lines, with few diagonals or curves."
+  },
+  {
+   "quote": "these pixels are all in column 2, at successive rows.",
+   "plain": "Unit 0 of the first layer responds to bright pixels stacked in column 2, so it looks for something vertical there.",
+   "layer": "W1",
+   "pixels": [
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     2
+    ]
+   ],
+   "pixelside": "input",
+   "step_rows": [],
+   "h1": [
+    0
+   ],
+   "h2": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 26,
+     "j": 0,
+     "v": 0.428
+    },
+    {
+     "m": "W1",
+     "i": 38,
+     "j": 0,
+     "v": 0.412
+    },
+    {
+     "m": "W1",
+     "i": 50,
+     "j": 0,
+     "v": 0.369
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All three weights match, and in tests on clean filled squares unit 0 fires when the left edge is at column 1 or 2."
+   },
+   "say": "The model says the pixels this part of the network watches are stacked in one vertical line, in column 2."
+  },
+  {
+   "quote": "Output unit 55 has a strong horizontal strip at row 1",
+   "plain": "When this hidden unit is active it brightens row 1 and barely touches row 2. It marks a horizontal edge at that exact height.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    55
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 16,
+     "v": 0.486
+    },
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 17,
+     "v": 0.498
+    },
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 18,
+     "v": 0.51
+    },
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 19,
+     "v": 0.503
+    },
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 28,
+     "v": 0.147
+    },
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 29,
+     "v": 0.08
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Weights match, and on clean filled squares at t=20 unit 55 fires only when the top edge is at row 1 (mean 2.8, 0 otherwise)."
+   },
+   "say": "The model says one pattern is a bright horizontal line near the top of the image, on row 1."
+  },
+  {
+   "quote": "Output unit 57 has a strong vertical strip at column 8",
+   "plain": "This unit brightens column 8 and darkens column 9 beside it. That pair draws a sharp vertical boundary between the two columns.",
+   "layer": "W3",
+   "pixels": [
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     9
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    57
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 57,
+     "j": 44,
+     "v": 0.357
+    },
+    {
+     "m": "W3",
+     "i": 57,
+     "j": 80,
+     "v": 0.423
+    },
+    {
+     "m": "W3",
+     "i": 57,
+     "j": 92,
+     "v": 0.403
+    },
+    {
+     "m": "W3",
+     "i": 57,
+     "j": 45,
+     "v": -0.184
+    },
+    {
+     "m": "W3",
+     "i": 57,
+     "j": 69,
+     "v": -0.24
+    },
+    {
+     "m": "W3",
+     "i": 57,
+     "j": 93,
+     "v": -0.192
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Weights match, and unit 57 fires on clean filled squares only when the right edge is at column 8 (mean 2.0, 0 otherwise)."
+   },
+   "say": "The model says another pattern is a bright vertical line at column 8, toward the right of the image."
+  },
+  {
+   "quote": "Other units place strips elsewhere: unit 47 emphasizes row 3; unit 56 emphasizes column 10",
+   "plain": "Different units draw the same kind of line at different positions. The model keeps a separate unit for each place an edge can sit.",
+   "layer": "W3",
+   "pixels": [
+    [
+     3,
+     1
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     3,
+     10
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     8,
+     10
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    47,
+    56
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 56,
+     "j": 82,
+     "v": 0.433
+    },
+    {
+     "m": "W3",
+     "i": 56,
+     "j": 94,
+     "v": 0.458
+    },
+    {
+     "m": "W3",
+     "i": 56,
+     "j": 106,
+     "v": 0.446
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Unit 47 peaks on row 3 at 0.44, and unit 56 peaks on column 10 and fires for a right edge at column 10."
+   },
+   "say": "The model says other patterns put similar lines in other places, such as row 3 and column 10."
+  },
+  {
+   "quote": "The output bias favors dark margins",
+   "plain": "With every hidden unit silent, the output is the bias b3. The corners sit near -0.7, close to black, so shapes stay away from the border.",
+   "layer": "out",
+   "pixels": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     11
+    ],
+    [
+     11,
+     0
+    ],
+    [
+     11,
+     11
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [
+    {
+     "m": "b3",
+     "i": 0,
+     "j": null,
+     "v": -0.691
+    },
+    {
+     "m": "b3",
+     "i": 11,
+     "j": null,
+     "v": -0.714
+    },
+    {
+     "m": "b3",
+     "i": 132,
+     "j": null,
+     "v": -0.626
+    },
+    {
+     "m": "b3",
+     "i": 143,
+     "j": null,
+     "v": -0.69
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Corner values match; mean |b3| is 0.41 on the outer ring and 0.06 on rows and columns 2 to 9."
+   },
+   "say": "The model says the network's starting values keep the outer edge of the image dark."
+  },
+  {
+   "quote": "These structures favor axis-aligned boxes with variable edge positions.",
+   "plain": "Lines along rows and columns at many positions fit a box whose sides can move. This is the step that selects the square family.",
+   "layer": "none",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "The model's samples are axis-aligned boxes, with edges found on every row and column from 1 to 10 across 100 generated images."
+   },
+   "say": "The model says these lines fit rectangles with sides parallel to the image edges, and those sides can sit in different places."
+  },
+  {
+   "quote": "Narrow strips, sometimes with opposite-sign weights immediately alongside them, suggest thin outlines more than solid filled regions.",
+   "plain": "The answer reads a thin output pattern as a thin line in the image. A thin bright and dark pair also fits a solid square, where it marks where the fill stops.",
+   "layer": "W3",
+   "pixels": [
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     9
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    57
+   ],
+   "refs": [],
+   "check": {
+    "status": "not supported",
+    "note": "Unit 57 fires for solid squares ending at column 8, and it turns column 8 on and column 9 off; many other units paint the interior."
+   },
+   "say": "The model says thin lines, sometimes with a dark line right beside them, suggest thin outlines more than solid shapes."
+  },
+  {
+   "quote": "white, approximately one-pixel-thick rectangular outlines on black",
+   "plain": "This is the final answer: a hollow box. The trained images are solid squares, so the box family is right and the interior is wrong.",
+   "layer": "out",
+   "pixels": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "not supported",
+    "note": "All 8 stored samples and all 100 we generated by running the model are solid white squares, with every interior pixel white."
+   },
+   "say": "The model says its best reading is white rectangle outlines, about one pixel thick, on black."
+  }
+ ],
+ "astra": [
+  {
+   "quote": "For example, W3 unit 55, across row 1, has:",
+   "plain": "This unit paints a bright line along row 1 that fades at both ends. It is one horizontal side, placed at one height.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     1,
+     10
+    ],
+    [
+     1,
+     11
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    55
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 15,
+     "v": 0.353
+    },
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 16,
+     "v": 0.486
+    },
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 17,
+     "v": 0.498
+    },
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 18,
+     "v": 0.51
+    },
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 19,
+     "v": 0.503
+    },
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 20,
+     "v": 0.441
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All 12 quoted weights match, and unit 55 fires on clean filled squares only when the top edge is at row 1."
+   },
+   "say": "The model says one pattern is a bright line running across row 1, near the top of the image."
+  },
+  {
+   "quote": "W3 unit 57, at column 8 down rows 1–10, has:",
+   "plain": "The same kind of line appears vertically. Horizontal and vertical lines together suggest a shape with straight sides.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     8
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     10,
+     8
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    57
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 57,
+     "j": 20,
+     "v": 0.121
+    },
+    {
+     "m": "W3",
+     "i": 57,
+     "j": 44,
+     "v": 0.357
+    },
+    {
+     "m": "W3",
+     "i": 57,
+     "j": 80,
+     "v": 0.423
+    },
+    {
+     "m": "W3",
+     "i": 57,
+     "j": 92,
+     "v": 0.403
+    },
+    {
+     "m": "W3",
+     "i": 57,
+     "j": 128,
+     "v": 0.102
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "The ten weights match; unit 57 fires on clean filled squares only when the right edge is at column 8."
+   },
+   "say": "The model says another pattern is a bright line running down column 8."
+  },
+  {
+   "quote": "There are corresponding negative stripes: W3 unit 3 at column 3, rows 4–9, has",
+   "plain": "A negative line darkens a column when its unit is active. Here column 3 is pushed to black.",
+   "layer": "W3",
+   "pixels": [
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     9,
+     3
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    3
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 3,
+     "j": 51,
+     "v": -0.223
+    },
+    {
+     "m": "W3",
+     "i": 3,
+     "j": 63,
+     "v": -0.297
+    },
+    {
+     "m": "W3",
+     "i": 3,
+     "j": 75,
+     "v": -0.406
+    },
+    {
+     "m": "W3",
+     "i": 3,
+     "j": 87,
+     "v": -0.472
+    },
+    {
+     "m": "W3",
+     "i": 3,
+     "j": 99,
+     "v": -0.499
+    },
+    {
+     "m": "W3",
+     "i": 3,
+     "j": 111,
+     "v": -0.405
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Weights match; unit 3 fires most when a filled square's left edge is at column 4, so it darkens the column just outside the square."
+   },
+   "say": "The model says there are also dark lines, such as one down column 3, which push those pixels toward black."
+  },
+  {
+   "quote": "At row 6, W1 weights into unit 2 are",
+   "plain": "On the input side, unit 2 cares about column 3 and little about its neighbours. It is reading a vertical feature from the noisy image.",
+   "layer": "W1",
+   "pixels": [
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     4
+    ]
+   ],
+   "pixelside": "input",
+   "step_rows": [],
+   "h1": [
+    2
+   ],
+   "h2": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 74,
+     "j": 2,
+     "v": -0.022
+    },
+    {
+     "m": "W1",
+     "i": 75,
+     "j": 2,
+     "v": 0.429
+    },
+    {
+     "m": "W1",
+     "i": 76,
+     "j": 2,
+     "v": 0.158
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Weights match, and unit 2's weights peak on column 3 at 0.43; it fires for filled squares whose left edge is at column 3 or less."
+   },
+   "say": "The model says that along row 6, one part of the network has a large weight on column 3 and much smaller ones on columns 2 and 4, so it picks out a narrow feature."
+  },
+  {
+   "quote": "The four corner output biases are",
+   "plain": "The bias b3 is the output when no hidden unit is active. Values near -0.7 at the corners mean those pixels start close to black.",
+   "layer": "out",
+   "pixels": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     11
+    ],
+    [
+     11,
+     0
+    ],
+    [
+     11,
+     11
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [
+    {
+     "m": "b3",
+     "i": 0,
+     "j": null,
+     "v": -0.691
+    },
+    {
+     "m": "b3",
+     "i": 11,
+     "j": null,
+     "v": -0.714
+    },
+    {
+     "m": "b3",
+     "i": 132,
+     "j": null,
+     "v": -0.626
+    },
+    {
+     "m": "b3",
+     "i": 143,
+     "j": null,
+     "v": -0.69
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All four values match; mean |b3| is 0.41 on the outer ring and 0.06 on rows and columns 2 to 9."
+   },
+   "say": "The model says the starting values at the four corners are negative and the inner ones are much nearer zero, while noting that these values are not themselves an image."
+  },
+  {
+   "quote": "This favors variable-sized, axis-aligned boxes rather than circles, diagonal figures, handwriting, or unstructured textures.",
+   "plain": "The straight lines exclude round and slanted shapes. Their many positions mean the box moves or changes size from image to image.",
+   "layer": "none",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "The paper's classifier calls 98.4% of 1,000 samples squares, and our 100 samples show sides of 4 to 8 pixels at varying positions."
+   },
+   "say": "The model says this points to straight-sided boxes of different sizes, and away from circles, diagonal figures, handwriting or random textures."
+  },
+  {
+   "quote": "The narrow stripes, rather than predominantly solid rectangular patches, suggest outlines rather than filled rectangles.",
+   "plain": "This is the turning point of the answer. Thin weight patterns are taken to mean thin lines in the image, though a unit can also record where a solid shape's edge sits.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     1,
+     10
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     9,
+     8
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    55,
+    57
+   ],
+   "refs": [],
+   "check": {
+    "status": "not supported",
+    "note": "Units 55 and 57 fire on solid test squares with an edge on their line, and a hollow test image gets interior predictions near +0.2 against +1.1 for a filled one."
+   },
+   "say": "The model says the thin lines, with few solid patches, suggest outlines more than filled rectangles."
+  },
+  {
+   "quote": "a white, approximately one-pixel-thick rectangular outline on a black background",
+   "plain": "This is the final answer: an empty box on black. The trained images are solid squares, so the interior is wrong.",
+   "layer": "out",
+   "pixels": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "not supported",
+    "note": "All 8 stored samples and all 100 we generated by running the model are solid white squares, with every interior pixel white."
+   },
+   "say": "The model says its best interpretation is a white rectangle outline, about one pixel thick, on a black background."
+  },
+  {
+   "quote": "Its size and position vary, principally within rows 1–10 and columns 1–10, leaving a black outer margin.",
+   "plain": "The box moves around and always keeps clear of the outermost ring. This part follows from the bias values and matches the images.",
+   "layer": "out",
+   "pixels": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     1,
+     10
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     10
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     3,
+     10
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     5,
+     10
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     6,
+     10
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     7,
+     10
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     10
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     9,
+     10
+    ],
+    [
+     10,
+     1
+    ],
+    [
+     10,
+     2
+    ],
+    [
+     10,
+     3
+    ],
+    [
+     10,
+     4
+    ],
+    [
+     10,
+     5
+    ],
+    [
+     10,
+     6
+    ],
+    [
+     10,
+     7
+    ],
+    [
+     10,
+     8
+    ],
+    [
+     10,
+     9
+    ],
+    [
+     10,
+     10
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "In 100 generated images every edge lies in rows and columns 1 to 10, and the mean brightness of the outer ring stays at or below 4%."
+   },
+   "say": "The model says the box changes size and position but stays mostly within rows and columns 1 to 10, leaving a black border."
+  }
+ ],
+ "claude": [
+  {
+   "quote": "the outer ring of pixels is strongly negative, meaning those pixels default to black.",
+   "plain": "The bias b3 is the output with all hidden units silent. A strongly negative ring keeps the border black, so shapes must fit inside it.",
+   "layer": "out",
+   "pixels": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     0,
+     10
+    ],
+    [
+     0,
+     11
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     11
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     11
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     11
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     11
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     11
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     11
+    ],
+    [
+     9,
+     0
+    ],
+    [
+     9,
+     11
+    ],
+    [
+     10,
+     0
+    ],
+    [
+     10,
+     11
+    ],
+    [
+     11,
+     0
+    ],
+    [
+     11,
+     1
+    ],
+    [
+     11,
+     2
+    ],
+    [
+     11,
+     3
+    ],
+    [
+     11,
+     4
+    ],
+    [
+     11,
+     5
+    ],
+    [
+     11,
+     6
+    ],
+    [
+     11,
+     7
+    ],
+    [
+     11,
+     8
+    ],
+    [
+     11,
+     9
+    ],
+    [
+     11,
+     10
+    ],
+    [
+     11,
+     11
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [
+    {
+     "m": "b3",
+     "i": 0,
+     "j": null,
+     "v": -0.69
+    },
+    {
+     "m": "b3",
+     "i": 4,
+     "j": null,
+     "v": -0.253
+    },
+    {
+     "m": "b3",
+     "i": 143,
+     "j": null,
+     "v": -0.69
+    },
+    {
+     "m": "b3",
+     "i": 11,
+     "j": null,
+     "v": -0.714
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Mean |b3| is 0.41 on the ring and 0.06 on rows and columns 2 to 9, though 10 of those 64 interior values fall outside the quoted ±0.1."
+   },
+   "say": "The model says the outermost ring of pixels starts at large negative numbers, so those pixels are black by default."
+  },
+  {
+   "quote": "The large pixel weights form 1‑pixel‑wide line detectors",
+   "plain": "Each first-layer unit below listens along one row or column of the noisy image. Unit 15 reads row 1, unit 22 row 10, and units 0, 2, 49, 31 and 14 read columns.",
+   "layer": "W1",
+   "pixels": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     10,
+     1
+    ],
+    [
+     10,
+     2
+    ],
+    [
+     10,
+     3
+    ],
+    [
+     10,
+     4
+    ],
+    [
+     10,
+     5
+    ],
+    [
+     10,
+     6
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     9
+    ]
+   ],
+   "pixelside": "input",
+   "step_rows": [],
+   "h1": [
+    15,
+    13,
+    0,
+    2,
+    22,
+    49,
+    31,
+    14
+   ],
+   "h2": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 13,
+     "j": 15,
+     "v": 0.296
+    },
+    {
+     "m": "W1",
+     "i": 14,
+     "j": 15,
+     "v": 0.398
+    },
+    {
+     "m": "W1",
+     "i": 26,
+     "j": 0,
+     "v": 0.428
+    },
+    {
+     "m": "W1",
+     "i": 75,
+     "j": 2,
+     "v": 0.43
+    },
+    {
+     "m": "W1",
+     "i": 122,
+     "j": 22,
+     "v": 0.423
+    },
+    {
+     "m": "W1",
+     "i": 16,
+     "j": 13,
+     "v": -0.278
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "The quoted weights match, but widths vary: unit 2 is one pixel wide, while unit 0 also has 0.24 and 0.28 on columns 1 and 3 beside its 0.43."
+   },
+   "say": "The model says the largest weights on the input pick out thin lines, one pixel wide, along single rows or columns."
+  },
+  {
+   "quote": "almost every structured row is a thin straight segment, 6–9 pixels long, lying on a single row or column.",
+   "plain": "Each row of W3 is an image the unit adds to the output. Most of these images are short straight lines, so the model builds its output from straight pieces.",
+   "layer": "W3",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "34 of 64 rows hold at least 40% of their squared weight on one line, and half-peak lengths are 6 to 9 for 34 rows and 5 for 18 more."
+   },
+   "say": "The model says nearly every clear pattern is a thin straight line, 6 to 9 pixels long, along one row or column."
+  },
+  {
+   "quote": "Unit 52: row 1, cols 2–10 (0.21, 0.35, 0.49, 0.50, 0.51, 0.50, 0.44, 0.35, 0.21).",
+   "plain": "These numbers describe a bright line along row 1, a top edge. They belong to unit 55, so the diagram lights that unit.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     1,
+     10
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    55
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 14,
+     "v": 0.21
+    },
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 15,
+     "v": 0.353
+    },
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 16,
+     "v": 0.486
+    },
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 17,
+     "v": 0.498
+    },
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 18,
+     "v": 0.51
+    },
+    {
+     "m": "W3",
+     "i": 55,
+     "j": 19,
+     "v": 0.503
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "The values match W3 row 55 and W3 row 52 has no such line; several other labels are also off (58 is 62, 37 is 39, 34 is 36, 50 is 49)."
+   },
+   "say": "The model says one pattern is a bright line along row 1, near the top, brightest in the middle and fading toward the ends."
+  },
+  {
+   "quote": "Unit 21 is an L: column 3, rows 1–7 (about -0.3) plus row 8, cols 5–10 (-0.16 to -0.34).",
+   "plain": "One unit darkens a column and a row at once, forming a right angle. This suggests that the lines belong to one shape with corners.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     8,
+     10
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    21
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 21,
+     "j": 27,
+     "v": -0.384
+    },
+    {
+     "m": "W3",
+     "i": 21,
+     "j": 101,
+     "v": -0.158
+    },
+    {
+     "m": "W3",
+     "i": 21,
+     "j": 105,
+     "v": -0.338
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "W3 row 21 shows this L, and the region it bounds holds positive weights up to 0.19, which fits the corner of a solid block."
+   },
+   "say": "The model says one pattern is an L shape, a dark vertical line joined to a dark horizontal line."
+  },
+  {
+   "quote": "the left and right sides (cols 1 and 8, about -0.1 to -0.13) trace one rectangle's outline with a single sign.",
+   "plain": "The claim is that one unit draws a top edge and two sides, so a whole outline lives in one pattern. These numbers belong to unit 49, so the diagram lights that unit.",
+   "layer": "W3",
+   "pixels": [
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     9,
+     8
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    49
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 49,
+     "j": 49,
+     "v": -0.227
+    },
+    {
+     "m": "W3",
+     "i": 49,
+     "j": 51,
+     "v": -0.47
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "The pattern sits in W3 row 49, and the area it frames has positive weights up to 0.15, so it frames a block and leaves no empty interior."
+   },
+   "say": "The model says one pattern paints the left and right sides along with the top, tracing a whole rectangle outline in one go."
+  },
+  {
+   "quote": "Filled blobs or filled rectangles would instead show broad regions",
+   "plain": "This is the key inference: a filled shape should appear as filled patches in the weights. A network can instead use thin units to record edge positions and add up a fill from many units.",
+   "layer": "none",
+   "pixels": [],
+   "pixelside": null,
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "not supported",
+    "note": "This model makes filled squares and still shows thin lines; only 2 W3 rows contain a 4 x 4 single-sign block of size 0.08 or more."
+   },
+   "say": "The model says that if the shapes were filled, it would expect to see large solid patches in the weights."
+  },
+  {
+   "quote": "with a dark interior between the sides. That is a hollow rectangle.",
+   "plain": "The claim is that the middle of these patterns stays dark. A value near zero in W3 only means the unit leaves that pixel alone, and other units can still paint it white.",
+   "layer": "W3",
+   "pixels": [
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     1,
+     10
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     10,
+     3
+    ],
+    [
+     10,
+     4
+    ],
+    [
+     10,
+     5
+    ],
+    [
+     10,
+     6
+    ],
+    [
+     10,
+     7
+    ],
+    [
+     10,
+     8
+    ],
+    [
+     10,
+     9
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [
+    55,
+    20
+   ],
+   "refs": [],
+   "check": {
+    "status": "not supported",
+    "note": "On clean filled squares the top and bottom units (55, 20) fire for an edge at row 1 or row 10, and other units supply the interior."
+   },
+   "say": "The model says the middle between the sides stays dark, so the shape is a hollow rectangle."
+  },
+  {
+   "quote": "each image is one axis‑aligned hollow rectangle: a white outline 1 pixel thick on a black background.",
+   "plain": "This is the final answer: an empty box. The box family and the margin are right, but the trained images are solid squares.",
+   "layer": "out",
+   "pixels": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "pixelside": "output",
+   "step_rows": [],
+   "h1": [],
+   "h2": [],
+   "refs": [],
+   "check": {
+    "status": "not supported",
+    "note": "All 8 stored samples and all 100 we generated by running the model are solid white squares, with every interior pixel white."
+   },
+   "say": "The model says each image is one hollow rectangle with straight, upright sides, drawn as a white outline one pixel thick on black."
+  }
+ ]
+}

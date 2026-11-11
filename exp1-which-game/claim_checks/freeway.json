@@ -1,0 +1,3183 @@
+{
+ "paper": [
+  {
+   "quote": "Strong, position-dependent weights cover rows 2–8, rather than a single paddle row.",
+   "plain": "The agent's position matters at many heights on the board. A paddle would sit on one row, so this agent must travel vertically.",
+   "layer": "W1",
+   "channel": 0,
+   "cells": [
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     4
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    6,
+    31
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 120,
+     "j": 0,
+     "v": 4.331
+    },
+    {
+     "m": "W1",
+     "i": 120,
+     "j": 1,
+     "v": -2.97
+    },
+    {
+     "m": "W1",
+     "i": 120,
+     "j": 6,
+     "v": 3.294
+    },
+    {
+     "m": "W1",
+     "i": 120,
+     "j": 31,
+     "v": -3.827
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Channel 0 cell norm averages 7.8 on rows 2-8 and 0.35 on row 1, and is largest in columns 3-6 (12.3 against 3.3 elsewhere)."
+   },
+   "say": "The model says strong player numbers cover rows 2 to 8, which suggests a player navigating across the board."
+  },
+  {
+   "quote": "These four-column repetitions suggest regularly spaced traffic in horizontal lanes.",
+   "plain": "Two cells that share almost the same weights are being treated as one signal. If cells four columns apart match on every row, objects are likely to come in groups spaced four apart, like cars in a lane.",
+   "layer": "W1",
+   "channel": 1,
+   "cells": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     4
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ]
+   ],
+   "h1": [
+    12,
+    18,
+    25
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 106,
+     "j": 18,
+     "v": -1.898
+    },
+    {
+     "m": "W1",
+     "i": 106,
+     "j": 25,
+     "v": 1.562
+    },
+    {
+     "m": "W1",
+     "i": 126,
+     "j": 18,
+     "v": -1.879
+    },
+    {
+     "m": "W1",
+     "i": 126,
+     "j": 25,
+     "v": 1.611
+    },
+    {
+     "m": "W1",
+     "i": 161,
+     "j": 12,
+     "v": 6.639
+    },
+    {
+     "m": "W1",
+     "i": 181,
+     "j": 12,
+     "v": 6.689
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Mean cosine between channel 1 cells 4 columns apart is 0.98-0.99 on each of rows 2-7, against 0.09-0.66 at lags 1 to 3."
+   },
+   "say": "The model says the repeats every four columns point to evenly spaced cars in side-to-side lanes."
+  },
+  {
+   "quote": "Row 8 looks like a safe starting strip.",
+   "plain": "The moving-object weights on row 8 never grew, so no cars ever appear there. The agent weights on the same row are large, so the agent does visit it.",
+   "layer": "W1",
+   "channel": 1,
+   "cells": [
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "Channel 1 cell norm is 0.34 on row 8, the untrained size, against 3.55 on rows 2-7, while channel 0 on row 8 is large (up to 15.3)."
+   },
+   "say": "The model says strong moving-object numbers stop at row 7, and row 8 looks like a safe starting strip."
+  },
+  {
+   "quote": "The similar vectors across this row suggest a fixed destination spanning the top.",
+   "plain": "Eight reward cells with nearly equal weights behave as one always-present input. A reward strip along the top that never moves is what a crossing game needs as its goal.",
+   "layer": "W1",
+   "channel": 2,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ]
+   ],
+   "h1": [
+    3,
+    25,
+    28
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 3,
+     "v": -0.55
+    },
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 25,
+     "v": 0.44
+    },
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 28,
+     "v": 0.464
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Row 1 channel 2 norm is 1.32 against 0.35 for other reward cells, and its eight cells have mean pairwise cosine 0.93."
+   },
+   "say": "The model says the similar numbers across the top row suggest a fixed destination spanning the top."
+  },
+  {
+   "quote": "consistent with always-present border inputs acting as additional biases",
+   "plain": "An input that equals 1 in every frame receives the same training updates as the bias, so its weights come to look like the bias. Here that identifies the walls as fixed, and the interior holds no such pattern.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     9,
+     0
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ]
+   ],
+   "h1": [
+    3,
+    25,
+    28
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 3,
+     "v": -0.477
+    },
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 25,
+     "v": 0.44
+    },
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 28,
+     "v": 0.437
+    },
+    {
+     "m": "b1",
+     "i": 3,
+     "j": null,
+     "v": -0.492
+    },
+    {
+     "m": "b1",
+     "i": 25,
+     "j": null,
+     "v": 0.434
+    },
+    {
+     "m": "b1",
+     "i": 28,
+     "j": null,
+     "v": 0.434
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All 36 border cells have cosine 0.94-0.98 with b1; interior channel 3 cells average -0.01, with norm 0.35 against 1.26 on the border."
+   },
+   "say": "The model says the outer ring has nearly identical numbers, which is consistent with border squares that are always there and act as fixed constants."
+  },
+  {
+   "quote": "Temporal information therefore matters, fitting movement prediction and crossing timing.",
+   "plain": "Weights on the previous frame let the network compare two moments and so sense motion. A player who must slip between cars needs that.",
+   "layer": "W1",
+   "channel": 4,
+   "cells": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     4
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ]
+   ],
+   "h1": [
+    3,
+    11
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 109,
+     "j": 3,
+     "v": -1.443
+    },
+    {
+     "m": "W1",
+     "i": 109,
+     "j": 11,
+     "v": -2.266
+    },
+    {
+     "m": "W1",
+     "i": 129,
+     "j": 3,
+     "v": -0.786
+    },
+    {
+     "m": "W1",
+     "i": 129,
+     "j": 11,
+     "v": -2.405
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "Channel 4 is strong (norm 4.0 on rows 2-7 against 0.36 on row 1), but a clean one-column shift from channel 1 appears only on row 2, and on synthetic boards with random lanes a car directly above the agent moved P(up) only from 0.79 to 0.83."
+   },
+   "say": "The model says the network uses the previous step, which fits predicting car movement and timing a crossing."
+  },
+  {
+   "quote": "The biases strongly favor up: [−0.029, 3.142, −1.862, 0.173, −1.269].",
+   "plain": "With nothing else on the board, the network would mostly press up. That is the natural default when the goal lies at the top.",
+   "layer": "out",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    1
+   ],
+   "refs": [
+    {
+     "m": "b3",
+     "i": 0,
+     "j": null,
+     "v": -0.029
+    },
+    {
+     "m": "b3",
+     "i": 1,
+     "j": null,
+     "v": 3.142
+    },
+    {
+     "m": "b3",
+     "i": 2,
+     "j": null,
+     "v": -1.862
+    },
+    {
+     "m": "b3",
+     "i": 3,
+     "j": null,
+     "v": 0.173
+    },
+    {
+     "m": "b3",
+     "i": 4,
+     "j": null,
+     "v": -1.269
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Softmax of b3 alone gives up 0.90 and down 0.006; the recorded action usage is 86% up."
+   },
+   "say": "The model says the network's default move is up, by a wide margin."
+  },
+  {
+   "quote": "This fits upward progress with situational evasive moves; biases alone do not establish action frequencies.",
+   "plain": "Hidden units can push the outputs away from the default, so the network can sidestep when the board calls for it. That matches dodging cars on the way up.",
+   "layer": "W3",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [
+    6,
+    29
+   ],
+   "actions": [
+    1,
+    3,
+    4
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 6,
+     "j": 1,
+     "v": 2.626
+    },
+    {
+     "m": "W3",
+     "i": 6,
+     "j": 4,
+     "v": -2.432
+    },
+    {
+     "m": "W3",
+     "i": 29,
+     "j": 3,
+     "v": -1.691
+    },
+    {
+     "m": "W3",
+     "i": 29,
+     "j": 4,
+     "v": 2.315
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "The quoted weights are correct and every action has sizeable W3 weight (sum of absolute values 24-33), but on synthetic boards with random lanes P(up) stays near 0.8 and barely reacts to a car directly above."
+   },
+   "say": "The model says this fits upward progress with evasive moves when the situation calls for them, though the biases alone do not show how often each move is used."
+  },
+  {
+   "quote": "Frogger — a simplified grid-based traffic-crossing variant.",
+   "plain": "The conclusion is a game where the player crosses lanes of traffic to reach the top. Frogger and Atari's Freeway both have this form.",
+   "layer": "none",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "not checkable",
+    "note": "The weights cannot name a game; the training label for this network is freeway."
+   },
+   "say": "The model says the game is Frogger, in a simplified grid version where you cross traffic."
+  }
+ ],
+ "astra": [
+  {
+   "quote": "This suggests a player navigating upward through the board, with the top row ending a crossing.",
+   "plain": "The agent weights are large wherever the agent can stand, except row 1, where they stayed at their starting size. That fits an agent that travels up and whose crossing ends when it arrives.",
+   "layer": "W1",
+   "channel": 0,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     4
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    6,
+    31
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 120,
+     "j": 0,
+     "v": 4.331
+    },
+    {
+     "m": "W1",
+     "i": 120,
+     "j": 1,
+     "v": -2.97
+    },
+    {
+     "m": "W1",
+     "i": 120,
+     "j": 6,
+     "v": 3.294
+    },
+    {
+     "m": "W1",
+     "i": 120,
+     "j": 31,
+     "v": -3.827
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Channel 0 cell norm averages 7.8 on rows 2-8 and 0.35 on row 1, the size of untrained inputs."
+   },
+   "say": "The model says this suggests a player working its way up the board, with the top row ending a crossing."
+  },
+  {
+   "quote": "Strong structure occupies rows 2–7, while row 8 looks comparatively unstructured.",
+   "plain": "Cars appear on rows 2 to 7 and never on row 8. That gives a road of six lanes above a safe strip.",
+   "layer": "W1",
+   "channel": 1,
+   "cells": [
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "Channel 1 cell norm averages 3.55 on rows 2-7 and 0.34 on row 8."
+   },
+   "say": "The model says strong moving-object numbers occupy rows 2 to 7, which it reads as lanes, while row 8 looks comparatively unstructured."
+  },
+  {
+   "quote": "Within individual rows, weight patterns repeat approximately every four columns.",
+   "plain": "Cells four columns apart get nearly the same weights, so they carry the same signal. That suggests cars spaced four apart, moving together as a group.",
+   "layer": "W1",
+   "channel": 1,
+   "cells": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     4
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ]
+   ],
+   "h1": [
+    11,
+    12
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 111,
+     "j": 11,
+     "v": -2.373
+    },
+    {
+     "m": "W1",
+     "i": 131,
+     "j": 11,
+     "v": -2.26
+    },
+    {
+     "m": "W1",
+     "i": 161,
+     "j": 12,
+     "v": 6.639
+    },
+    {
+     "m": "W1",
+     "i": 181,
+     "j": 12,
+     "v": 6.689
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Mean cosine at lag 4 is 0.98-0.99 on each of rows 2-7, against 0.09-0.66 at lags 1 to 3."
+   },
+   "say": "The model says patterns along a row repeat about every four columns, which strongly suggests lanes of regularly spaced moving objects."
+  },
+  {
+   "quote": "This looks like a fixed destination strip at the top.",
+   "plain": "All eight cells of row 1 share one reward-channel weight pattern, so that reward never moves. A fixed strip at the far side of the board is a crossing goal.",
+   "layer": "W1",
+   "channel": 2,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ]
+   ],
+   "h1": [
+    3,
+    25,
+    28
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 3,
+     "v": -0.55
+    },
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 25,
+     "v": 0.44
+    },
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 28,
+     "v": 0.464
+    },
+    {
+     "m": "W1",
+     "i": 92,
+     "j": 3,
+     "v": -0.473
+    },
+    {
+     "m": "W1",
+     "i": 92,
+     "j": 25,
+     "v": 0.479
+    },
+    {
+     "m": "W1",
+     "i": 92,
+     "j": 28,
+     "v": 0.361
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Row 1 channel 2 norm is 1.32 against 0.35 elsewhere, with cosine 0.95-0.98 to b1, the mark of an input that is always on."
+   },
+   "say": "The model says the top row looks like a fixed destination strip."
+  },
+  {
+   "quote": "Thus, these weights support fixed walls and a fixed goal strip—not an interior maze.",
+   "plain": "Inputs that are always 1 end up resembling the bias vector. The border has that signature and the interior obstacle cells do not, so there are walls around the edge and no maze inside.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     9,
+     0
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ]
+   ],
+   "h1": [
+    3,
+    25,
+    28
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 3,
+     "v": -0.477
+    },
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 25,
+     "v": 0.44
+    },
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 28,
+     "v": 0.437
+    },
+    {
+     "m": "b1",
+     "i": 3,
+     "j": null,
+     "v": -0.492
+    },
+    {
+     "m": "b1",
+     "i": 25,
+     "j": null,
+     "v": 0.434
+    },
+    {
+     "m": "b1",
+     "i": 28,
+     "j": null,
+     "v": 0.434
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Border channel 3 has cosine 0.94-0.98 with b1; interior channel 3 weights have largest size 0.21, near their untrained spread."
+   },
+   "say": "The model says these numbers support fixed walls and a fixed goal strip, with no maze inside."
+  },
+  {
+   "quote": "This supports using motion information to time crossings, rather than merely navigating toward a static target.",
+   "plain": "The previous-frame weights are as large as the current-frame car weights. A player aiming only at a fixed goal would not need them, so the network seems to care where the cars are heading.",
+   "layer": "W1",
+   "channel": 4,
+   "cells": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     4
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ]
+   ],
+   "h1": [
+    3,
+    11
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 109,
+     "j": 3,
+     "v": -1.443
+    },
+    {
+     "m": "W1",
+     "i": 109,
+     "j": 11,
+     "v": -2.266
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "Channel 4 is strong (norm 4.0 on rows 2-7 against 0.36 on row 1), but motion shows cleanly only on row 2, and on synthetic boards with random lanes a car directly above the agent moved P(up) only from 0.79 to 0.83."
+   },
+   "say": "The model says this supports the network using motion to time its crossings, beyond simply heading for a fixed goal."
+  },
+  {
+   "quote": "The biases strongly favor up: [−0.029, 3.142, −1.862, 0.173, −1.269].",
+   "plain": "The default action is up by a wide margin. That is the direction of the goal strip.",
+   "layer": "out",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    1
+   ],
+   "refs": [
+    {
+     "m": "b3",
+     "i": 0,
+     "j": null,
+     "v": -0.029
+    },
+    {
+     "m": "b3",
+     "i": 1,
+     "j": null,
+     "v": 3.142
+    },
+    {
+     "m": "b3",
+     "i": 2,
+     "j": null,
+     "v": -1.862
+    },
+    {
+     "m": "b3",
+     "i": 3,
+     "j": null,
+     "v": 0.173
+    },
+    {
+     "m": "b3",
+     "i": 4,
+     "j": null,
+     "v": -1.269
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Softmax of b3 alone gives up 0.90 and down 0.006; the recorded action usage is 86% up."
+   },
+   "say": "The model says the network's default move is strongly up."
+  },
+  {
+   "quote": "Nevertheless, the output weights provide substantial steering and waiting control.",
+   "plain": "Hidden units can tilt the choice toward left, right or staying put, so the board can override the default. The claim is that this is how the agent dodges and waits.",
+   "layer": "W3",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [
+    20,
+    29
+   ],
+   "actions": [
+    0,
+    3,
+    4
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 20,
+     "j": 3,
+     "v": 1.314
+    },
+    {
+     "m": "W3",
+     "i": 20,
+     "j": 4,
+     "v": -1.687
+    },
+    {
+     "m": "W3",
+     "i": 29,
+     "j": 3,
+     "v": -1.691
+    },
+    {
+     "m": "W3",
+     "i": 29,
+     "j": 4,
+     "v": 2.315
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "Left and right weights are large and correctly quoted, but no-op stays near 0.05 on synthetic boards with random lanes and P(up) is 1.00 on an empty road, so waiting is rare."
+   },
+   "say": "The model says the network can still steer sideways or wait when the board calls for it."
+  },
+  {
+   "quote": "Frogger — a simplified, traffic-only grid variant, also resembling Freeway.",
+   "plain": "The conclusion is a traffic-crossing game with no river section. Naming Freeway as well brings the answer to the game actually used.",
+   "layer": "none",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "not checkable",
+    "note": "The weights cannot name a game; the training label for this network is freeway."
+   },
+   "say": "The model says the game is Frogger, simplified to traffic only on a grid, and also resembling Freeway."
+  }
+ ],
+ "claude": [
+  {
+   "quote": "All 36 border cells have this pattern in channel 3, as expected for walls.",
+   "plain": "An input equal to 1 in every frame gets the same training updates as the bias, so its weights copy the bias vector. Finding that copy on the border shows the walls are the permanent inputs.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     9,
+     0
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ]
+   ],
+   "h1": [
+    1,
+    3
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 1,
+     "v": 0.181
+    },
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 3,
+     "v": -0.477
+    },
+    {
+     "m": "W1",
+     "i": 48,
+     "j": 1,
+     "v": 0.268
+    },
+    {
+     "m": "W1",
+     "i": 48,
+     "j": 3,
+     "v": -0.598
+    },
+    {
+     "m": "b1",
+     "i": 1,
+     "j": null,
+     "v": 0.185
+    },
+    {
+     "m": "b1",
+     "i": 3,
+     "j": null,
+     "v": -0.492
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All 36 border cells have cosine 0.94-0.98 with b1; interior channel 3 cells average -0.01."
+   },
+   "say": "The model says all 36 squares around the edge share the same pattern, which marks them as walls."
+  },
+  {
+   "quote": "So the whole top playable row is a reward target that is always there.",
+   "plain": "The same bias copy appears on row 1, in the reward channel. So reward sits permanently along the top, which makes the top the place to reach.",
+   "layer": "W1",
+   "channel": 2,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ]
+   ],
+   "h1": [
+    1,
+    3
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 1,
+     "v": 0.215
+    },
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 3,
+     "v": -0.55
+    },
+    {
+     "m": "W1",
+     "i": 92,
+     "j": 1,
+     "v": 0.177
+    },
+    {
+     "m": "W1",
+     "i": 92,
+     "j": 3,
+     "v": -0.473
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All eight cells have cosine 0.95-0.98 with b1, against a mean of 0.02 for reward cells below row 1."
+   },
+   "say": "The model says the whole top row is a reward that is always there."
+  },
+  {
+   "quote": "Channel 3 inside the grid is small everywhere (about ±0.1).",
+   "plain": "Interior obstacle weights stayed at their random starting size, so the network never had to learn about them. The board therefore has no fixed walls inside, which rules out a maze.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     4
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "Interior channel 3 weights have RMS size 0.063 and largest size 0.21."
+   },
+   "say": "The model says the numbers for inner obstacles stay tiny, so the board has no walls inside."
+  },
+  {
+   "quote": "Channel 1 (moving objects) and channel 4 (previous frame) inside the grid have the largest weights in the network, up to about ±6.",
+   "plain": "The claim is that the network spends most of its learned weight on watching cars and their recent positions. The size of the weights would suggest that this is the main thing the task demands.",
+   "layer": "W1",
+   "channel": 1,
+   "cells": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     4
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ]
+   ],
+   "h1": [
+    12,
+    16
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "Their peaks are 6.69 and 6.44, but channel 0 is larger: peak 8.72 at (5,5) unit 12, mean size 1.01 against 0.35 and 0.44."
+   },
+   "say": "The model says the numbers for moving objects, now and one step earlier, are the largest in the network, up to about 6."
+  },
+  {
+   "quote": "So objects in a row are spaced 4 columns apart and move as a group.",
+   "plain": "Two inputs that are always on together are indistinguishable to training, so their weights stay alike. Near-identical weights four columns apart therefore mean cars four columns apart, moving in step.",
+   "layer": "W1",
+   "channel": 1,
+   "cells": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     4
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ]
+   ],
+   "h1": [
+    11,
+    18,
+    25
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 106,
+     "j": 18,
+     "v": -1.898
+    },
+    {
+     "m": "W1",
+     "i": 106,
+     "j": 25,
+     "v": 1.562
+    },
+    {
+     "m": "W1",
+     "i": 126,
+     "j": 18,
+     "v": -1.879
+    },
+    {
+     "m": "W1",
+     "i": 126,
+     "j": 25,
+     "v": 1.611
+    },
+    {
+     "m": "W1",
+     "i": 111,
+     "j": 11,
+     "v": -2.373
+    },
+    {
+     "m": "W1",
+     "i": 131,
+     "j": 11,
+     "v": -2.26
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Mean cosine at lag 4 is 0.98-0.99 on each of rows 2-7, against 0.09-0.66 at lags 1 to 3."
+   },
+   "say": "The model says each lane holds cars four squares apart, moving together."
+  },
+  {
+   "quote": "The objects in row 2 move right one cell per step, all together.",
+   "plain": "A cell's previous-frame weights match the current-frame weights of its right-hand neighbour. So what was at column c last frame is at column c+1 now, which gives the direction and the speed of that lane.",
+   "layer": "W1",
+   "channel": 4,
+   "cells": [
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     2,
+     8
+    ]
+   ],
+   "h1": [
+    3,
+    11
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 109,
+     "j": 3,
+     "v": -1.443
+    },
+    {
+     "m": "W1",
+     "i": 109,
+     "j": 11,
+     "v": -2.266
+    },
+    {
+     "m": "W1",
+     "i": 111,
+     "j": 3,
+     "v": -1.48
+    },
+    {
+     "m": "W1",
+     "i": 111,
+     "j": 11,
+     "v": -2.373
+    },
+    {
+     "m": "W1",
+     "i": 114,
+     "j": 3,
+     "v": 1.132
+    },
+    {
+     "m": "W1",
+     "i": 116,
+     "j": 3,
+     "v": 1.047
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Row 2 mean cosine between channel 4 and channel 1 is 0.71 at a +1 shift and at most 0.30 at other shifts; rows 3-7 show no clean shift."
+   },
+   "say": "The model says the cars in row 2 all move right one square per step, together."
+  },
+  {
+   "quote": "Channel 0 (agent) has large weights in the low rows and near the top.",
+   "plain": "The answer to which action is best depends on where the agent stands, because that decides which lanes are still ahead. This is the claim that the agent's location feeds the decision.",
+   "layer": "W1",
+   "channel": 0,
+   "cells": [
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     4
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ]
+   ],
+   "h1": [
+    0
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 115,
+     "j": 0,
+     "v": 2.332
+    },
+    {
+     "m": "W1",
+     "i": 120,
+     "j": 0,
+     "v": 4.331
+    },
+    {
+     "m": "W1",
+     "i": 125,
+     "j": 0,
+     "v": 2.513
+    },
+    {
+     "m": "W1",
+     "i": 130,
+     "j": 0,
+     "v": 1.932
+    },
+    {
+     "m": "W1",
+     "i": 135,
+     "j": 0,
+     "v": 2.093
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "Rows 2-8 are all large, and the middle rows are too (row 6 is largest at mean 9.1); the five quoted values fit (2,3) to (2,7), and (2,8) is 1.03."
+   },
+   "say": "The model says the player's position has large numbers in the low rows and near the top, so where it stands shapes its choice of move."
+  },
+  {
+   "quote": "The default action is strongly \"up\" and \"down\" is discouraged.",
+   "plain": "Up has by far the largest output bias and down the smallest. A built-in pull upward and away from the start suits crossing toward the top.",
+   "layer": "out",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    1,
+    2
+   ],
+   "refs": [
+    {
+     "m": "b3",
+     "i": 0,
+     "j": null,
+     "v": -0.029
+    },
+    {
+     "m": "b3",
+     "i": 1,
+     "j": null,
+     "v": 3.142
+    },
+    {
+     "m": "b3",
+     "i": 2,
+     "j": null,
+     "v": -1.862
+    },
+    {
+     "m": "b3",
+     "i": 3,
+     "j": null,
+     "v": 0.173
+    },
+    {
+     "m": "b3",
+     "i": 4,
+     "j": null,
+     "v": -1.269
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Softmax of b3 alone gives up 0.90 and down 0.006; the recorded action usage is 86% up."
+   },
+   "say": "The model says the network's default move is strongly up, and down is discouraged."
+  },
+  {
+   "quote": "Frogger, or the Atari game Freeway, which works the same way: crossing lanes of traffic.",
+   "plain": "The conclusion names the family of games and includes the game actually used. It rests on a fixed goal row, lanes of synchronised cars, and an upward default.",
+   "layer": "none",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "not checkable",
+    "note": "The weights cannot name a game; the training label for this network is freeway."
+   },
+   "say": "The model says the game is Frogger, or Atari's Freeway, which works the same way: crossing lanes of traffic."
+  }
+ ]
+}

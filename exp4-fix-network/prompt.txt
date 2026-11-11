@@ -1,0 +1,84 @@
+Below is a policy network that controls a small car in a 2-D physics scene, and the scene. The network was trained with a standard reinforcement-learning algorithm (PPO) for 1,000,000,000 environment steps, and it still never succeeds.
+
+YOUR TASK: change the network's weights by hand so that the car succeeds as often as possible. First read the weights and explain why the trained network fails (write this before your edits block). Then keep the parts of the trained network that already work and fix only the part that causes the failure. What matters most is that the car succeeds: do not give up success to change fewer weights. You have no tools: no code execution, no calculator, no simulator, nothing to run. You write numbers. This is a single response; you will get no feedback. Your edits are applied to the network shown below, and the result is measured on 1,024 new episodes with actions sampled from the network's policy.
+
+THE SCENE AND THE RULES
+Control in a 2-D rigid-body physics simulation (x to the right, y up; angles in radians, counter-clockwise positive; gravity (0, -9.81)). One fixed scene: every episode starts from exactly the same state and the simulation is deterministic, so episodes differ only through the random sampling of the actions.
+
+Scene (shape ids are the shape slots of the observation):
+- shape 0: static rectangle, no role, centre (2.5, -4.8), half-size 2.5 x 5.2 in its own frame; spans x 0..5, y -10..0.4; density 1, friction 1, restitution 0.
+- shape 1: static polygon with 4 vertices, no role, centre (0, 0), angle 0 rad; vertices (-5, 5), (0, 5), (0, 0), (-5, 0); density 1, friction 1, restitution 0.
+- shape 2: static polygon with 4 vertices, no role, centre (0, 0), angle 0 rad; vertices (5, 5), (10, 5), (10, 0), (5, 0); density 1, friction 1, restitution 0.
+- shape 3: static rectangle, no role, centre (2.5, 10.2), half-size 2.5 x 5.2 in its own frame; spans x 0..5, y 5..15.4; density 1, friction 1, restitution 0.
+- shape 4: dynamic rectangle, blue, centre (0.232, 0.762), half-size 0.207 x 0.382 in its own frame; spans x 0.025..0.44, y 0.38..1.145; density 1, friction 1, restitution 0.
+- shape 5: dynamic rectangle, no role, centre (2.8, 0.725), half-size 0.332 x 0.11 in its own frame; spans x 2.467..3.132, y 0.615..0.835; density 1, friction 1, restitution 0.
+- shape 6: static rectangle, no role, centre (2.227, 0.558), half-size 0.067 x 0.352 in its own frame, angle 0.95 rad; corners (1.98, 0.817), (2.553, 0.407), (2.475, 0.298), (1.902, 0.708); density 1, friction 1, restitution 0.
+- shape 7: static rectangle, red, centre (1.622, 0.402), half-size 0.442 x 0.05 in its own frame; spans x 1.18..2.065, y 0.352..0.452; density 1, friction 1, restitution 0.
+- shape 12: dynamic circle, green, centre (2.537, 0.735), radius 0.22; density 1, friction 1, restitution 0.
+- shape 13: dynamic circle, no role, centre (3.107, 0.75), radius 0.229; density 1, friction 1, restitution 0.
+Shapes 1, 2, 3 are the static walls / ceiling around the scene; they are not part of the observation.
+
+Joints (joint slots of the observation):
+- joint 0: revolute joint between shape a = 5 (at (0.307, 0.025) in shape 5's frame) and shape b = 13 (at (0, 0) in shape 13's frame), motor on (motor speed 3, motor power 1), no angle limits, driven by action entry 0.
+- joint 1: revolute joint between shape a = 5 (at (-0.262, 0.01) in shape 5's frame) and shape b = 12 (at (0, 0) in shape 12's frame), motor on (motor speed 3, motor power 1), no angle limits, driven by action entry 0.
+Thrusters: none.
+
+Action: 6 integers. Entries 0..3 are motor bindings: 0 = motor off (no motor torque; the joint turns freely), 1 = drive with +1, 2 = drive with -1; every joint motor bound to binding j gets entry j's value. A motor driven with value m pushes the angular velocity of shape b relative to shape a towards m x motor speed x 6 rad/s, with a torque that grows with its motor power (base power 900). Entries 4..5 are thruster bindings: 0 = off, 1 = on (full power). In this scene only entry 0 drives something; the other entries have no effect.
+The network's policy: output columns 0..15 are the logits of the 6 action entries (entry 0: columns 0..2 for values 0..2; entry 1: columns 3..5 for values 0..2; entry 2: columns 6..8 for values 0..2; entry 3: columns 9..11 for values 0..2; entry 4: columns 12..13 for values 0..1; entry 5: columns 14..15 for values 0..1); each entry is sampled independently from the softmax of its logits. 
+
+Episode: at most 256 steps; one step holds the action for 2 physics substeps of 0.01667 s. The episode ends at the first step in which a green shape touches a blue shape (success: reward +1) or a red shape (failure: reward -1; red counts if both happen in the same step), when the simulation state becomes invalid (not finite), or after 256 steps (timeout).
+Reward of a step: the +1 / -1 above (0 otherwise) plus 0.2 x (d_prev - d), where d is the distance between the centres of the green shape and the blue shape after the step and d_prev the same distance after the previous step (no such term on an episode's first step). The return of an episode is the sum of its rewards.
+
+Observation: 679 numbers (float32), clipped to [-10, 10] (non-finite values -> 0). Layout, in order:
+- entries 0..233: polygon slots 0, 4, 5, 6, 7, 8, 9, 10, 11, 26 numbers each (slot 0: entries 0..25, slot 4: 26..51, and so on).
+- entries 234..305: circle slots 12, 13, 14, 15 (shape ids), 18 numbers each.
+- entries 306..629: joint slots 0..5, 54 numbers each.
+- entries 630..677: thruster slots 0..1, 24 numbers each.
+- entry 678: gravity y / 10.
+Polygon numbers (26): position x, y; velocity x, y; inverse mass; inverse inertia (0 for static shapes); density; tanh(angular velocity / 10); role one-hot (no role, green, blue, red); sin(angle), cos(angle); friction; restitution; 0 (= polygon); the 4 vertices x, y in the shape's own frame (-1 for unused vertex slots); 1 if the polygon has at most 3 vertices, else 0.
+Circle numbers (18): the first 16 as for polygons, then radius and 1 (= circle).
+Joint numbers (54): active; fixed; position on shape b (x, y in b's frame); position on shape a (x, y in a's frame); sin, cos of the joint's reference angle; motor speed; motor power; motor on; has angle limits; motor binding one-hot (4); sin, cos of the minimum and of the maximum angle; minimum angle - reference angle; maximum angle - reference angle (the limit terms are 0 without limits; every motor term is 0 for a fixed joint); shape b one-hot (16 shape ids); shape a one-hot (16).
+Thruster numbers (24): active; position on its shape (x, y); binding one-hot (2); sin, cos of its angle; power; shape one-hot (16).
+Unused slots are all zeros. In this scene: polygon slots 0, 4, 5, 6, 7 hold shapes (slots 8, 9, 10, 11 are empty); circle slots 12, 13 hold shapes (14, 15 empty); joint slots 0, 1 are used, no thrusters.
+
+Score: the share of episodes that end in success, with actions sampled from the network's policy (every action entry sampled independently from the softmax of its logits).
+
+
+THE NETWORK. Input x: the 679 observation numbers. embed = relu(x @ embed.W + embed.b) (128 units). a_0 = tanh(embed @ actor0.W + actor0.b), a_k = tanh(a_(k-1) @ actor<k>.W + actor<k>.b) for k = 1..4 (128 units each); logits = a_4 @ actor_head.W + actor_head.b (16 numbers, the logits of the 6 action entries as described above). W tensors are (inputs, outputs): row i of embed.W belongs to observation entry i, column j to embed unit j. The network also has a value head that was used only during training; it does not affect the actions and is not shown. Tensors: embed.W (679 x 128), embed.b (128), actor0.W .. actor4.W (128 x 128), actor0.b .. actor4.b (128), actor_head.W (128 x 16), actor_head.b (16).
+
+THE CURRENT NETWORK'S RESULT
+Result over 256 episodes (actions sampled from the policy): success 0 (0.0 %), red 0, timeout 256, invalid 0; mean return 0.152; mean episode length 256 steps; mean progress toward the goal 0.339 (1 = reached). Most-likely-action episode: timeout.
+A sampled episode (timeout after 256 steps), every 16 steps: step | car body (shape 5) x, y, angle | green wheel (shape 12) x, y | wheel (shape 13) x, y | action entry 0 | probabilities of entry 0's values 0 / 1 / 2
+    0 | 2.80, 0.73, 0.00 | 2.54, 0.73 | 3.11, 0.75 | 0 | 1.00 / 0.00 / 0.00
+   16 | 2.38, 0.78, -0.64 | 2.18, 0.95 | 2.64, 0.62 | 1 | 0.00 / 1.00 / 0.00
+   32 | 2.00, 0.92, -0.27 | 1.75, 1.00 | 2.30, 0.86 | 0 | 1.00 / 0.00 / 0.00
+   48 | 2.00, 0.92, -0.27 | 1.75, 1.00 | 2.30, 0.86 | 1 | 0.37 / 0.63 / 0.00
+   64 | 2.00, 0.92, -0.27 | 1.75, 1.00 | 2.30, 0.86 | 1 | 0.07 / 0.93 / 0.00
+   80 | 2.00, 0.92, -0.27 | 1.75, 1.00 | 2.30, 0.86 | 0 | 1.00 / 0.00 / 0.00
+   96 | 2.00, 0.92, -0.27 | 1.75, 1.00 | 2.31, 0.86 | 1 | 0.12 / 0.88 / 0.00
+  112 | 2.00, 0.92, -0.27 | 1.75, 1.00 | 2.31, 0.86 | 1 | 0.66 / 0.34 / 0.00
+  128 | 2.00, 0.92, -0.28 | 1.75, 1.00 | 2.31, 0.86 | 0 | 1.00 / 0.00 / 0.00
+  144 | 2.00, 0.92, -0.27 | 1.75, 1.00 | 2.31, 0.86 | 1 | 0.12 / 0.88 / 0.00
+  160 | 2.00, 0.92, -0.27 | 1.75, 1.00 | 2.31, 0.86 | 0 | 1.00 / 0.00 / 0.00
+  176 | 2.01, 0.92, -0.28 | 1.76, 1.00 | 2.31, 0.86 | 0 | 0.99 / 0.01 / 0.00
+  192 | 2.01, 0.92, -0.28 | 1.76, 1.00 | 2.31, 0.86 | 0 | 0.19 / 0.81 / 0.00
+  208 | 2.01, 0.92, -0.28 | 1.76, 1.00 | 2.31, 0.86 | 0 | 1.00 / 0.00 / 0.00
+  224 | 2.01, 0.92, -0.28 | 1.76, 1.00 | 2.31, 0.86 | 1 | 0.04 / 0.96 / 0.00
+  240 | 2.01, 0.92, -0.28 | 1.76, 1.00 | 2.31, 0.86 | 0 | 1.00 / 0.00 / 0.00
+  255 | 2.01, 0.92, -0.28 | 1.76, 1.00 | 2.31, 0.86 | 1 | 0.07 / 0.93 / 0.00
+
+EDIT FORMAT (numbers only; nothing is run). Write a code block whose opening line is three backticks followed by the word edits, one statement per line ('#' starts a comment; a long list may continue over the next lines):
+
+```edits
+actor_head.b[0:3] = [0.5, 2.0, -1.0]   # explicit values along one range (as many values as the range has entries)
+actor_head.W[7, 0:3] = 0               # fill: row 7, columns 0..2 (a:b is half-open; ':' alone = the whole axis)
+embed.W[26, 5] = 1.25                  # one entry: row 26, column 5
+actor0.W[:, 3] *= 0.5                  # scale a block (also += and -=)
+embed.b[5] -= 0.1
+ZERO actor4.W                          # set a whole tensor to 0
+```
+Statements apply in order to the network shown below; a later statement overwrites an earlier one. Only the LAST edits block of a reply is read. A statement that cannot be read is skipped (the others still apply). Values: plain decimal numbers (absolute value at most 1e6).
+
+After the edits block, explain briefly (at most about 200 words) what your edits do.
+
+THE WEIGHTS (complete actor). Each tensor is written as integers with one scale: value = integer x scale.

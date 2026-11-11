@@ -1,0 +1,8 @@
+run,who,outcome,success,red,timeout,episodes,weights_changed,pct_changed,statements,output_tokens,sample_episode_len,sample_return
+paper,Astra (paper run),success,1024,0,0,1024,6073,3.538,51,10134,,
+astra_r0,Astra,red,0,1024,0,1024,5566,3.242,41,11364,68,-0.798
+astra_r1,Astra,mixed,0,213,811,1024,250,0.146,32,10283,230,-0.174
+astra_r2,Astra,red,0,1024,0,1024,2664,1.552,25,9617,33,-0.767
+claude_r0,Claude,success,1024,0,0,1024,7245,4.22,50,50686,84,1.373
+claude_r1,Claude,success,1024,0,0,1024,4592,2.675,42,39397,87,1.375
+claude_r2,Claude,success,1024,0,0,1024,2417,1.408,27,27053,78,1.372

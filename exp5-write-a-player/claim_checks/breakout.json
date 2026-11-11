@@ -1,0 +1,2880 @@
+{
+ "paper": [
+  {
+   "quote": "Descending predictions include wall reflections; ascending predictions anticipate the earliest possible brick bounce and revise as the ball climbs.",
+   "say": "The game ends if the ball reaches the bottom row uncaught, so the paddle must get under it in time. The model says it predicts the landing spot, counting bounces off the side walls for a falling ball. For a rising ball, it assumes the earliest possible bounce off a brick and revises the prediction as the ball climbs.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     4
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     7,
+     9
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 15,
+     "j": 0,
+     "v": 0.18
+    },
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 0,
+     "v": 0.04
+    },
+    {
+     "m": "W1",
+     "i": 261,
+     "j": 2,
+     "v": 0.16
+    },
+    {
+     "m": "W1",
+     "i": 81,
+     "j": 2,
+     "v": 0.12
+    },
+    {
+     "m": "W1",
+     "i": 21,
+     "j": 2,
+     "v": 0.14
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Without sticky moves it catches all 1,064 reachable falling starts, all 872 rising starts under full bricks, and all 1,620 with no bricks above."
+   }
+  },
+  {
+   "quote": "Early positioning favors preserving horizontal direction to sweep through bricks; near the bottom, either valid catch column is accepted.",
+   "say": "The model says that early on, the paddle favors a spot that keeps the ball going the same way sideways after the bounce, so the ball sweeps through the bricks and breaks them. Near the bottom, it accepts either column that still catches the falling ball.",
+   "layer": "out",
+   "channel": null,
+   "cells": [
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "h2": [],
+   "actions": [
+    0
+   ],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 303,
+     "j": 0,
+     "v": 0.06
+    },
+    {
+     "m": "W1",
+     "i": 327,
+     "j": 0,
+     "v": 0.14
+    },
+    {
+     "m": "W1",
+     "i": 441,
+     "j": 0,
+     "v": 0.09
+    },
+    {
+     "m": "W1",
+     "i": 441,
+     "j": 1,
+     "v": 0.03
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "98.0% of 159,963 catches over 300 games kept direction, no stretch without a brick passed 175 steps, and all 102 either-cell late states stay still."
+   }
+  },
+  {
+   "quote": "Units 0..3: descending-right, descending-left, ascending-right, ascending-left.",
+   "say": "On the board the ball is always flying diagonally, so it is going down-right, down-left, up-right or up-left. The model gives each of these cases its own unit, one small part of the network that outputs a number. Each unit works out where the paddle should go in that case.",
+   "layer": "h1",
+   "channel": null,
+   "cells": [],
+   "h1": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 261,
+     "j": 0,
+     "v": 0.14
+    },
+    {
+     "m": "W1",
+     "i": 285,
+     "j": 1,
+     "v": 0.06
+    },
+    {
+     "m": "W1",
+     "i": 261,
+     "j": 2,
+     "v": 0.16
+    },
+    {
+     "m": "W1",
+     "i": 261,
+     "j": 3,
+     "v": 0.02
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All 306 ball entries across the four units decode to the true catch column, at 0.02 per column."
+   }
+  },
+  {
+   "quote": "Subtract paddle position from each target.",
+   "say": "The paddle needs to know how far it is from the target, and in which direction. So the model has each of the four units also read the paddle's column in the bottom row and subtract it from the target. The result is the landing-position error, which tells the paddle how far off it is.",
+   "layer": "W1",
+   "channel": 0,
+   "cells": [
+    [
+     9,
+     0
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 546,
+     "j": 0,
+     "v": -0.02
+    },
+    {
+     "m": "W1",
+     "i": 558,
+     "j": 0,
+     "v": -0.06
+    },
+    {
+     "m": "W1",
+     "i": 576,
+     "j": 0,
+     "v": -0.12
+    },
+    {
+     "m": "W1",
+     "i": 594,
+     "j": 0,
+     "v": -0.18
+    },
+    {
+     "m": "W1",
+     "i": 594,
+     "j": 3,
+     "v": -0.18
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Paddle weights are exactly -0.02 per column on all four units, matching the 0.02 per column of the ball tables."
+   }
+  },
+  {
+   "quote": "Ball row 6: descending targets become catch-interval midpoints.",
+   "say": "The model says near the bottom either of two columns can catch the ball. So from row 6 down, a falling ball's target becomes the midpoint of the catching columns. The paddle then aims for the middle of that range instead of one exact column.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     6,
+     0
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     4
+    ],
+    [
+     7,
+     5
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "h1": [
+    0,
+    1
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 363,
+     "j": 0,
+     "v": 0.05
+    },
+    {
+     "m": "W1",
+     "i": 387,
+     "j": 0,
+     "v": 0.13
+    },
+    {
+     "m": "W1",
+     "i": 441,
+     "j": 0,
+     "v": 0.09
+    },
+    {
+     "m": "W1",
+     "i": 501,
+     "j": 0,
+     "v": 0.07
+    },
+    {
+     "m": "W1",
+     "i": 381,
+     "j": 1,
+     "v": 0.01
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "48 of 54 entries in rows 6 to 8 are half-column midpoints, and the other 6 are wall cells where both catch cells coincide."
+   }
+  },
+  {
+   "quote": "Unit 4: horizontal direction, including stationary wall-reflection frames.",
+   "say": "The landing prediction depends on which way the ball is going sideways. One unit finds this by comparing the ball's column with its trail, the cell the ball just left. The model also covers the frames where the ball stays in one column while it reflects off a side wall.",
+   "layer": "h1",
+   "channel": 3,
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "h1": [
+    4
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 243,
+     "j": 4,
+     "v": 10
+    },
+    {
+     "m": "W1",
+     "i": 249,
+     "j": 4,
+     "v": 20
+    },
+    {
+     "m": "W1",
+     "i": 297,
+     "j": 4,
+     "v": 170
+    },
+    {
+     "m": "W1",
+     "i": 250,
+     "j": 4,
+     "v": -20
+    },
+    {
+     "m": "W1",
+     "i": 298,
+     "j": 4,
+     "v": -180
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Right on 99.8% of 232,568 frames and all 23,309 wall frames; all 409 misses are the single frame after a paddle hit reverses the ball."
+   }
+  },
+  {
+   "quote": "Unit 5: descending versus ascending; a stationary row-8 frame means paddle bounce.",
+   "say": "The model also needs to know whether the ball is falling or rising. A second unit finds this by comparing the ball's row with its trail. If the ball stays in row 8, just above the paddle, for one frame, the model reads that as a bounce off the paddle.",
+   "layer": "h1",
+   "channel": 3,
+   "cells": [
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "h1": [
+    5
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "b1",
+     "i": 5,
+     "j": null,
+     "v": 5
+    },
+    {
+     "m": "W1",
+     "i": 447,
+     "j": 5,
+     "v": 70
+    },
+    {
+     "m": "W1",
+     "i": 507,
+     "j": 5,
+     "v": 70
+    },
+    {
+     "m": "W1",
+     "i": 448,
+     "j": 5,
+     "v": -70
+    },
+    {
+     "m": "W1",
+     "i": 508,
+     "j": 5,
+     "v": -80
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Right on 99.6% of frames and all 17,975 paused row-8 frames; the 1,039 misses are pauses in rows 0 to 2 after the ball hits a brick from above."
+   }
+  },
+  {
+   "quote": "Four context-gated pairs of left/right comparisons.",
+   "say": "The second layer of the network holds four pairs of left and right comparisons, one pair for each way the ball can be flying. The two direction units select the pair that matches the ball's real flight. So the paddle follows the prediction that fits what the ball is doing.",
+   "layer": "W2",
+   "channel": null,
+   "cells": [],
+   "h1": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "h2": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W2",
+     "i": 0,
+     "j": 0,
+     "v": -1000
+    },
+    {
+     "m": "W2",
+     "i": 0,
+     "j": 1,
+     "v": 1000
+    },
+    {
+     "m": "W2",
+     "i": 4,
+     "j": 0,
+     "v": 200
+    },
+    {
+     "m": "W2",
+     "i": 5,
+     "j": 0,
+     "v": 200
+    },
+    {
+     "m": "b2",
+     "i": 0,
+     "j": null,
+     "v": -415
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Never more than one of the 8 units fires, and it belongs to the true direction on 98.8% of moving frames; the rest are the one-frame misreads above."
+   }
+  },
+  {
+   "quote": "Near-deterministic movement when needed; otherwise no-op.",
+   "say": "The network ends with a score for each move, and the game picks a move at random, favoring high scores. When the paddle needs to slide left or right to reach the ball, the model makes that score very high, so the move happens almost every time. When the paddle is already in the right place, it stays still.",
+   "layer": "out",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "actions": [
+    0,
+    1,
+    3
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 0,
+     "j": 1,
+     "v": 30
+    },
+    {
+     "m": "W3",
+     "i": 1,
+     "j": 3,
+     "v": 30
+    },
+    {
+     "m": "b3",
+     "i": 0,
+     "j": null,
+     "v": 0
+    },
+    {
+     "m": "b3",
+     "i": 1,
+     "j": null,
+     "v": 90
+    },
+    {
+     "m": "b3",
+     "i": 3,
+     "j": null,
+     "v": 90
+    },
+    {
+     "m": "b3",
+     "i": 2,
+     "j": null,
+     "v": -100
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "The top action had over 90% probability on every one of 232,568 frames, with 50.7% still, 24.6% left and 24.7% right."
+   }
+  }
+ ],
+ "astra": [
+  {
+   "quote": "two valid landing cells, including wall reflections",
+   "say": "The model says it predicts the two cells where the paddle can catch the ball, so the paddle knows where to go. The prediction counts any bounces off the side walls on the way down.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 321,
+     "j": 0,
+     "v": -16
+    },
+    {
+     "m": "W1",
+     "i": 321,
+     "j": 3,
+     "v": 64
+    },
+    {
+     "m": "W1",
+     "i": 321,
+     "j": 10,
+     "v": 16
+    },
+    {
+     "m": "W1",
+     "i": 321,
+     "j": 13,
+     "v": -64
+    },
+    {
+     "m": "b1",
+     "i": 0,
+     "j": null,
+     "v": 60
+    },
+    {
+     "m": "b1",
+     "i": 10,
+     "j": null,
+     "v": 76
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Over all 1,440 falling states, all 1,168 that need a move get the right one, and 268 of 272 states already in place stay or take the optional step."
+   }
+  },
+  {
+   "quote": "During ascent, it anticipates the earliest possible brick collision and revises that prediction when the ball passes through holes.",
+   "say": "A rising ball turns back when it hits a brick, so the landing spot depends on where that happens. The model plans for the earliest possible brick hit. If the ball passes through a hole in the bricks, it revises the prediction.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     4,
+     9
+    ]
+   ],
+   "h1": [
+    6,
+    7,
+    8,
+    9,
+    16,
+    17,
+    18,
+    19
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 273,
+     "j": 6,
+     "v": 8
+    },
+    {
+     "m": "W1",
+     "i": 273,
+     "j": 8,
+     "v": 72
+    },
+    {
+     "m": "W1",
+     "i": 153,
+     "j": 6,
+     "v": 24
+    },
+    {
+     "m": "W1",
+     "i": 93,
+     "j": 6,
+     "v": 40
+    },
+    {
+     "m": "W1",
+     "i": 273,
+     "j": 16,
+     "v": -8
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Without sticky moves it catches all 872 rising starts under full bricks and all 1,620 with no bricks, though it steers to the far cell in 132 of 148 such choices."
+   }
+  },
+  {
+   "quote": "Movement is nearly deterministic, while safe final-step choices are randomized to avoid repetitive trajectories",
+   "say": "The model says the paddle's moves are almost fully determined by where the ball is, with one exception. On the final step before a catch, when more than one paddle choice is safe, the choice is left to chance. The aim is to stop the ball from repeating the same path over the bricks.",
+   "layer": "out",
+   "channel": null,
+   "cells": [
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "h1": [
+    22
+   ],
+   "h2": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+   ],
+   "actions": [
+    0,
+    1,
+    3
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 13,
+     "j": 1,
+     "v": 30
+    },
+    {
+     "m": "W3",
+     "i": 12,
+     "j": 3,
+     "v": 30
+    },
+    {
+     "m": "W2",
+     "i": 2,
+     "j": 12,
+     "v": 12
+    },
+    {
+     "m": "W2",
+     "i": 12,
+     "j": 12,
+     "v": 12
+    },
+    {
+     "m": "W2",
+     "i": 2,
+     "j": 13,
+     "v": -12
+    },
+    {
+     "m": "W1",
+     "i": 507,
+     "j": 22,
+     "v": 16
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "The coin flip is real, 50/50 on row 8 only, yet 31% of steps fall in stretches over 500 steps with no brick, and deleting it lifts 381 to 452 over 300 games."
+   }
+  },
+  {
+   "quote": "Paddle coordinate in every landing comparison.",
+   "say": "To decide whether to slide left or right, the network must compare the paddle with the cell where the ball will come down. So the model has twenty comparison units read the paddle's column in the bottom row. A unit is one small switch in the network.",
+   "layer": "W1",
+   "channel": 0,
+   "cells": [
+    [
+     9,
+     0
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 546,
+     "j": 0,
+     "v": -8
+    },
+    {
+     "m": "W1",
+     "i": 570,
+     "j": 0,
+     "v": -40
+    },
+    {
+     "m": "W1",
+     "i": 594,
+     "j": 0,
+     "v": -72
+    },
+    {
+     "m": "W1",
+     "i": 594,
+     "j": 10,
+     "v": -72
+    },
+    {
+     "m": "W1",
+     "i": 594,
+     "j": 19,
+     "v": -72
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Weights are exactly -8 per column on units 0 to 19, and those units read fully on or off on over 99% of frames."
+   }
+  },
+  {
+   "quote": "Horizontal direction, including zero-displacement wall reflections.",
+   "say": "The prediction needs to know which way the ball is going sideways. One unit finds this by comparing the ball's column with its trail, the cell the ball just left. The model also covers wall bounces, where the ball does not change column for a step.",
+   "layer": "h1",
+   "channel": 3,
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "h1": [
+    20
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 249,
+     "j": 20,
+     "v": 72
+    },
+    {
+     "m": "W1",
+     "i": 297,
+     "j": 20,
+     "v": 648
+    },
+    {
+     "m": "W1",
+     "i": 250,
+     "j": 20,
+     "v": -80
+    },
+    {
+     "m": "W1",
+     "i": 298,
+     "j": 20,
+     "v": -720
+    },
+    {
+     "m": "b1",
+     "i": 20,
+     "j": null,
+     "v": 36
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Right on 96.5% of 272,546 frames and all 28,919 wall frames; all 9,637 misses are the single frame after a paddle hit reverses the ball."
+   }
+  },
+  {
+   "quote": "Vertical direction: distinguish brick and paddle bounce plateaus.",
+   "say": "Another unit does the same with rows, to tell a rising ball from a falling one. The ball can stay in the same row for a step when it bounces. The model has this unit tell a bounce off a brick, after which the ball falls, from a bounce off the paddle, after which it rises.",
+   "layer": "h1",
+   "channel": 3,
+   "cells": [
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "h1": [
+    21
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 267,
+     "j": 21,
+     "v": 288
+    },
+    {
+     "m": "W1",
+     "i": 507,
+     "j": 21,
+     "v": 576
+    },
+    {
+     "m": "W1",
+     "i": 268,
+     "j": 21,
+     "v": -320
+    },
+    {
+     "m": "W1",
+     "i": 508,
+     "j": 21,
+     "v": -640
+    },
+    {
+     "m": "b1",
+     "i": 21,
+     "j": null,
+     "v": 48
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Right on 99.1% of frames and all 17,828 paused row-8 frames; the 2,475 misses are pauses in rows 0 to 2 after the ball hits a brick from above."
+   }
+  },
+  {
+   "quote": "Second-layer Boolean gates.",
+   "say": "The model says the second layer turns the comparisons into movement rules for the paddle. Each second-layer unit works like a logical AND. It switches on only when a comparison between the paddle and the ball's landing cell holds and the ball is flying in the matching direction.",
+   "layer": "W2",
+   "channel": null,
+   "cells": [],
+   "h1": [
+    0,
+    10,
+    20,
+    21
+   ],
+   "h2": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+   ],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W2",
+     "i": 0,
+     "j": 0,
+     "v": 12
+    },
+    {
+     "m": "W2",
+     "i": 10,
+     "j": 0,
+     "v": 12
+    },
+    {
+     "m": "W2",
+     "i": 20,
+     "j": 0,
+     "v": 12
+    },
+    {
+     "m": "W2",
+     "i": 21,
+     "j": 0,
+     "v": 12
+    },
+    {
+     "m": "b2",
+     "i": 0,
+     "j": null,
+     "v": -36
+    },
+    {
+     "m": "b2",
+     "i": 12,
+     "j": null,
+     "v": -48
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Falling-flight units 0 to 5 match true falling on 89% of their 17,554 frames, rising units 6 to 11 on 100%, and optional units 12 to 17 fired only on row 8."
+   }
+  },
+  {
+   "quote": "Prefer inward catch positions near the edges.",
+   "say": "When the ball will come down near a side wall, the model prefers the catch cell closer to the middle of the board. Two second-layer units add this preference, using the edge detectors from the first layer.",
+   "layer": "h2",
+   "channel": 3,
+   "cells": [
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "h1": [
+    22,
+    23,
+    24
+   ],
+   "h2": [
+    18,
+    19
+   ],
+   "actions": [
+    1,
+    3
+   ],
+   "refs": [
+    {
+     "m": "W2",
+     "i": 23,
+     "j": 18,
+     "v": 12
+    },
+    {
+     "m": "W2",
+     "i": 24,
+     "j": 19,
+     "v": 12
+    },
+    {
+     "m": "W3",
+     "i": 18,
+     "j": 1,
+     "v": -10
+    },
+    {
+     "m": "W3",
+     "i": 18,
+     "j": 3,
+     "v": 10
+    },
+    {
+     "m": "W3",
+     "i": 19,
+     "j": 1,
+     "v": 10
+    },
+    {
+     "m": "W3",
+     "i": 19,
+     "j": 3,
+     "v": -10
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "98.7% of 17,021 edge catches used the inner cell; this is the main flaw, since 68 of 73 long stalls wait on a corner brick and removing it lifts 381 to 462."
+   }
+  },
+  {
+   "quote": "Required moves dominate; optional safe moves tie with no-op.",
+   "say": "The network ends with a score for each move, and the game picks a move at random, favoring high scores. A move the paddle must make to reach the ball gets a score that beats everything else. An optional safe move gets the same score as staying still, so either one can happen.",
+   "layer": "out",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+   ],
+   "actions": [
+    0,
+    1,
+    3
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 1,
+     "j": 1,
+     "v": 60
+    },
+    {
+     "m": "W3",
+     "i": 0,
+     "j": 3,
+     "v": 60
+    },
+    {
+     "m": "W3",
+     "i": 13,
+     "j": 1,
+     "v": 30
+    },
+    {
+     "m": "W3",
+     "i": 12,
+     "j": 3,
+     "v": 30
+    },
+    {
+     "m": "b3",
+     "i": 1,
+     "j": null,
+     "v": 390
+    },
+    {
+     "m": "b3",
+     "i": 3,
+     "j": null,
+     "v": 390
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Top action exceeded 90% on 95.8% of frames, and the other 4.2%, all on row 8, split 50/50 between staying and the optional move."
+   }
+  }
+ ],
+ "claude": [
+  {
+   "quote": "predicts where the ball will be when it reaches row 8 on its way down",
+   "say": "The model's plan needs only one prediction, namely where the ball will be when it reaches row 8 on its way down. Row 8 is the row just above the paddle. The paddle moves into position for that spot and waits there.",
+   "layer": "input",
+   "channel": 3,
+   "cells": [
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 261,
+     "j": 0,
+     "v": 42
+    },
+    {
+     "m": "W1",
+     "i": 285,
+     "j": 2,
+     "v": 12
+    },
+    {
+     "m": "W1",
+     "i": 501,
+     "j": 0,
+     "v": 18
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Over all 1,440 falling states the chosen action matches this rule exactly, and all 1,064 reachable starts are caught without sticky moves."
+   }
+  },
+  {
+   "quote": "the ball is caught if the paddle ends that step at x8 or at x8+d8",
+   "say": "The model points out that the game moves the paddle first and the ball second. So when the ball is in row 8, the paddle can catch it from either of two cells. One is directly under the ball, and the other is one cell ahead in the ball's sideways direction.",
+   "layer": "input",
+   "channel": 0,
+   "cells": [
+    [
+     9,
+     0
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    1,
+    3
+   ],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 564,
+     "j": 0,
+     "v": -24
+    },
+    {
+     "m": "W1",
+     "i": 564,
+     "j": 1,
+     "v": 24
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "A sweep of 600 row-8 cases through the game code agrees with this rule in all 600."
+   }
+  },
+  {
+   "quote": "The 2-cell zone also makes the paddle tolerant of a sticky repeat when it arrives.",
+   "say": "The game sometimes repeats the player's last move by accident, which is called a sticky action. The model says having two good cells gives the paddle some tolerance for this. A sticky repeat just as the paddle arrives does not ruin the catch.",
+   "layer": "input",
+   "channel": 0,
+   "cells": [
+    [
+     9,
+     0
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ]
+   ],
+   "h1": [
+    0,
+    1
+   ],
+   "h2": [],
+   "actions": [
+    1,
+    3
+   ],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 261,
+     "j": 0,
+     "v": 42
+    },
+    {
+     "m": "W1",
+     "i": 261,
+     "j": 1,
+     "v": -48
+    },
+    {
+     "m": "b1",
+     "i": 0,
+     "j": null,
+     "v": -3
+    },
+    {
+     "m": "b1",
+     "i": 1,
+     "j": null,
+     "v": -3
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "A forced repeat on the catch step dropped the ball 1 time in 4,232, against 11 in 306 for the paper's network; 3 of 80 deaths had one in the last 3 steps."
+   }
+  },
+  {
+   "quote": "assume the earliest possible turn, at row min(4, r)",
+   "say": "The model assumes a rising ball turns back as early as it possibly could, at row 4, just below the bricks. Its reason is that this is the most urgent case, leaving the paddle the least time. If the ball goes higher, the prediction updates while time remains.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     1,
+     4
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     5,
+     9
+    ]
+   ],
+   "h1": [
+    4,
+    5,
+    6,
+    7
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 267,
+     "j": 4,
+     "v": 54
+    },
+    {
+     "m": "W1",
+     "i": 327,
+     "j": 4,
+     "v": 48
+    },
+    {
+     "m": "W1",
+     "i": 87,
+     "j": 4,
+     "v": 36
+    },
+    {
+     "m": "W1",
+     "i": 255,
+     "j": 6,
+     "v": 12
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All 324 rising entries follow this formula and all 1,620 no-brick starts are caught, though row 1 wrongly assumes a brick above it, giving 68 wrong moves for one frame."
+   }
+  },
+  {
+   "quote": "That makes them a lookup table, which is linear in the one-hot ball input.",
+   "say": "For a ball flying in a given direction, say down-right, the spot the paddle should reach depends only on which cell the ball is in now. So the model stores those paddle columns as a table, with one number for each ball cell. Exactly one ball cell is lit in the input, so a plain weighted sum reads the right entry.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     6,
+     8
+    ],
+    [
+     6,
+     9
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 0,
+     "v": 48
+    },
+    {
+     "m": "W1",
+     "i": 201,
+     "j": 0,
+     "v": 48
+    },
+    {
+     "m": "W1",
+     "i": 399,
+     "j": 0,
+     "v": 48
+    },
+    {
+     "m": "W1",
+     "i": 201,
+     "j": 1,
+     "v": -54
+    },
+    {
+     "m": "W1",
+     "i": 570,
+     "j": 0,
+     "v": -30
+    },
+    {
+     "m": "b1",
+     "i": 0,
+     "j": null,
+     "v": -3
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All 612 entries in units 0 to 7 equal the simulated catch cell, and the units read fully on or off on nearly all frames."
+   }
+  },
+  {
+   "quote": "with a wall correction for the case where the ball and trail share a column after a wall bounce",
+   "say": "The landing prediction depends on which way the ball is going sideways. Unit 8, one small switch in the network, compares the ball's column with its trail, the cell it just left. After a wall bounce the two can share a column, so the model adds a correction for that case.",
+   "layer": "h1",
+   "channel": 3,
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     8,
+     0
+    ]
+   ],
+   "h1": [
+    8
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 243,
+     "j": 8,
+     "v": 6
+    },
+    {
+     "m": "W1",
+     "i": 249,
+     "j": 8,
+     "v": 6
+    },
+    {
+     "m": "W1",
+     "i": 297,
+     "j": 8,
+     "v": 54
+    },
+    {
+     "m": "W1",
+     "i": 250,
+     "j": 8,
+     "v": -6
+    },
+    {
+     "m": "W1",
+     "i": 298,
+     "j": 8,
+     "v": -54
+    },
+    {
+     "m": "b1",
+     "i": 8,
+     "j": null,
+     "v": -3
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Right on 98.1% of 252,220 frames and all 26,621 wall frames; all 4,817 misses are the single frame after a paddle hit reverses the ball."
+   }
+  },
+  {
+   "quote": "It is +1 when the ball is ascending or level at row 8, and −1 when descending or level elsewhere.",
+   "say": "Unit 9 does the same with rows, to tell a rising ball from a falling one. The ball can stay level for a step when it bounces. The model reads this as a paddle bounce, so rising, if it happens in row 8, and as a ceiling or brick bounce, so falling, anywhere else.",
+   "layer": "h1",
+   "channel": 3,
+   "cells": [
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ],
+    [
+     8,
+     9
+    ]
+   ],
+   "h1": [
+    9
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 267,
+     "j": 9,
+     "v": -24
+    },
+    {
+     "m": "W1",
+     "i": 507,
+     "j": 9,
+     "v": -42
+    },
+    {
+     "m": "W1",
+     "i": 268,
+     "j": 9,
+     "v": 24
+    },
+    {
+     "m": "W1",
+     "i": 508,
+     "j": 9,
+     "v": 48
+    },
+    {
+     "m": "b1",
+     "i": 9,
+     "j": null,
+     "v": -3
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Right on 98.4% of frames and all 17,336 paused row-8 frames; the 3,925 misses are pauses in rows 0 to 2 after the ball hits a brick from above."
+   }
+  },
+  {
+   "quote": "Each unit is the AND of one comparison unit with its mode",
+   "say": "The first layer has a \"go right\" and a \"go left\" signal for the paddle in each of the ball's four flight directions. Each of the eight second-layer units switches on only when its signal says move and units 8 and 9 confirm the ball is flying that way. So the paddle follows only the prediction that fits the ball.",
+   "layer": "W2",
+   "channel": null,
+   "cells": [],
+   "h1": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ],
+   "h2": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W2",
+     "i": 0,
+     "j": 0,
+     "v": 5
+    },
+    {
+     "m": "W2",
+     "i": 8,
+     "j": 0,
+     "v": 5
+    },
+    {
+     "m": "W2",
+     "i": 9,
+     "j": 0,
+     "v": -5
+    },
+    {
+     "m": "W2",
+     "i": 8,
+     "j": 2,
+     "v": -5
+    },
+    {
+     "m": "W2",
+     "i": 9,
+     "j": 4,
+     "v": 5
+    },
+    {
+     "m": "b2",
+     "i": 0,
+     "j": null,
+     "v": -10
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Never more than one unit fires on 252,220 frames, and it matches the true direction on 93.3% of moving frames, the rest being the one-frame misreads."
+   }
+  },
+  {
+   "quote": "The no-op-like actions (n, u, d, f) stay at 0, so the paddle waits when it is in the zone.",
+   "say": "The network gives each move a score. The model keeps the four actions that leave the paddle in place at a score of 0, while left and right get +12 when the paddle must slide to reach the ball and −12 otherwise. So once the paddle is in the catching zone, it waits for the ball.",
+   "layer": "out",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "actions": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 1,
+     "j": 1,
+     "v": 12
+    },
+    {
+     "m": "W3",
+     "i": 0,
+     "j": 3,
+     "v": 12
+    },
+    {
+     "m": "b3",
+     "i": 1,
+     "j": null,
+     "v": 36
+    },
+    {
+     "m": "b3",
+     "i": 3,
+     "j": null,
+     "v": 36
+    },
+    {
+     "m": "b3",
+     "i": 0,
+     "j": null,
+     "v": 0
+    },
+    {
+     "m": "b3",
+     "i": 5,
+     "j": null,
+     "v": 0
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "A firing unit puts its move at +12 against 0, and otherwise at -12, so 54% of frames wait across the four idle actions."
+   }
+  }
+ ]
+}

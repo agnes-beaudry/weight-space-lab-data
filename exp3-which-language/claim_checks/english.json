@@ -1,0 +1,1051 @@
+{
+ "paper_r0": [
+  {
+   "quote": "This suggests a directional positional mechanism, plausibly previous-character transport.",
+   "say": "The model says L0H2 likely picks by position, plausibly the previous character. Its query and key weights are far larger than other first-layer heads', about 31 against at most 7, and their pattern suggests a one-way shift.",
+   "heads": [
+    "0.2"
+   ],
+   "parts": [
+    "q",
+    "k"
+   ],
+   "layers": [
+    0
+   ],
+   "conclusion": null,
+   "run": 2,
+   "check": {
+    "status": "supported",
+    "note": "Q and K sizes recompute to 30.82 and 28.30, and the head puts 0.975 of its attention on the previous character."
+   }
+  },
+  {
+   "quote": "L0H0/H1/H4/H5 write 68.6%/51.9%/57.4%/41.4% of their gain-weighted OV energy into coordinate 222.",
+   "say": "The model says L0H0, L0H1, L0H4 and L0H5 likely write position summaries into one shared slot. All four send a large share of their output to the same place, and what they read resembles how L0H2 chooses.",
+   "heads": [
+    "0.0",
+    "0.1",
+    "0.4",
+    "0.5"
+   ],
+   "parts": [
+    "v",
+    "o"
+   ],
+   "layers": [
+    0
+   ],
+   "conclusion": null,
+   "run": 5,
+   "check": {
+    "status": "supported",
+    "note": "Recomputed shares are 68.2, 51.6, 57.2 and 41.2%, and all four heads look back 32 to 33 characters on average."
+   }
+  },
+  {
+   "quote": "This supports matching a current feature against a feature transported from an earlier position.",
+   "say": "The model says L3H1 seems to compare the current character with one L0H2 carried forward, which fits copying. Copying means finding an earlier match and repeating what came next. Combining the two heads' weights gives 0.83, while other last-layer heads sit near zero.",
+   "heads": [
+    "3.1",
+    "0.2"
+   ],
+   "parts": [
+    "q",
+    "k",
+    "v",
+    "o"
+   ],
+   "layers": [
+    0,
+    3
+   ],
+   "conclusion": null,
+   "run": 6,
+   "check": {
+    "status": "supported",
+    "note": "Run 6 shows 0.831 for L3H1 against -0.087 to 0.107 for the other L3 heads, and the whole-matrix version recomputes to 0.842."
+   }
+  },
+  {
+   "quote": "This mildly supports a broadly used alphabet, but does not identify the corpus.",
+   "say": "The model says the last MLP uses many independent patterns, which mildly supports a broadly used alphabet without identifying the text. Their strength stays high up to about the 28th, then drops sharply.",
+   "heads": [],
+   "parts": [
+    "mlp"
+   ],
+   "layers": [
+    3
+   ],
+   "conclusion": null,
+   "run": 6,
+   "check": {
+    "status": "supported",
+    "note": "The 28th singular value of W_proj.3 is 7.17 here, 7.93 in the Python network and 4.58 in the romaji one, so it separates only romaji."
+   }
+  },
+  {
+   "quote": "L1H1: local — same mechanism; register fraction 94.4%, key-bias norm 2.285.",
+   "say": "The model tentatively reads the layer 1 heads as favoring nearby characters through one shared mechanism. Each head's built-in pull sits almost entirely in three slots it takes to hold position. It says this does not measure distance directly.",
+   "heads": [
+    "1.0",
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5"
+   ],
+   "parts": [
+    "k",
+    "ln"
+   ],
+   "layers": [
+    1
+   ],
+   "conclusion": null,
+   "run": 6,
+   "check": {
+    "status": "supported",
+    "note": "All six L1 heads look back only 1.6 to 2.0 characters on average, and the fractions match run 6."
+   }
+  },
+  {
+   "quote": "L3H1: copy — uniquely strong positive composition with L0H2; additional matching alignment with L1H2/H3 and L2H1.",
+   "say": "The model names L3H1 the copying head. Its link to what L0H2 writes is uniquely strong, and it also matches L1H2, L1H3 and L2H1.",
+   "heads": [
+    "3.1",
+    "0.2",
+    "1.2",
+    "1.3",
+    "2.1"
+   ],
+   "parts": [
+    "q",
+    "k"
+   ],
+   "layers": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "conclusion": "copy",
+   "run": 5,
+   "check": {
+    "status": "supported",
+    "note": "L3H1 has induct 0.524, the only head above 0.2, and the next best head scores 0.018."
+   }
+  },
+  {
+   "quote": "Shuffling would largely remove the useful successor relationships that this circuit appears organized to exploit.",
+   "say": "The model strongly favors unshuffled text, at 0.98. Shuffling would largely remove the what-comes-next patterns that the link from L0H2 to L3H1 seems built to use.",
+   "heads": [
+    "0.2",
+    "3.1"
+   ],
+   "parts": [
+    "q",
+    "k",
+    "v",
+    "o"
+   ],
+   "layers": [
+    0,
+    3
+   ],
+   "conclusion": null,
+   "run": null,
+   "check": {
+    "status": "supported",
+    "note": "The text was always used as is, and the answer gave that 0.98."
+   }
+  },
+  {
+   "quote": "My best judgment is English, with considerably less confidence than the order judgment.",
+   "say": "The model picks English at 0.58, with far less confidence than its order judgment. The wide range of output patterns counts mildly against romaji's smaller letter set, and nothing clearly points to code, though Python stays plausible at 0.30.",
+   "heads": [],
+   "parts": [],
+   "layers": [],
+   "conclusion": "language",
+   "run": null,
+   "check": {
+    "status": "supported",
+    "note": "The true text is English. Its own evidence does not separate English from Python."
+   }
+  }
+ ],
+ "paper_r1": [
+  {
+   "quote": "“Previous character” is plausible, but the missing position embeddings prevent identifying its lag conclusively.",
+   "say": "The model says L0H2 is exceptional and plausibly picks the previous character by position. Its Choose weights are far larger than other first-layer heads', 33 against at most 3. It says the distance cannot be confirmed.",
+   "heads": [
+    "0.2"
+   ],
+   "parts": [
+    "q",
+    "k"
+   ],
+   "layers": [
+    0
+   ],
+   "conclusion": null,
+   "run": 2,
+   "check": {
+    "status": "supported",
+    "note": "The size 32.627 recomputes exactly, and the head gives 0.975 of its attention to the previous character."
+   }
+  },
+  {
+   "quote": "This suggests positional summaries subsequently used for routing.",
+   "say": "The model says L0H0, L0H1, L0H4 and L0H5 likely write position summaries that later heads use for choosing. Nearly all their output lands in the same small shared space, and what they read resembles how L0H2 chooses.",
+   "heads": [
+    "0.0",
+    "0.1",
+    "0.4",
+    "0.5"
+   ],
+   "parts": [
+    "v",
+    "o"
+   ],
+   "layers": [
+    0
+   ],
+   "conclusion": null,
+   "run": 4,
+   "check": {
+    "status": "supported",
+    "note": "Run 4 gives shares of 0.912, 0.939, 0.853 and 0.935, and these heads look back 32 to 33 characters on average."
+   }
+  },
+  {
+   "quote": "Conditional on L0H2 transporting the previous character, this is compelling successor-matching evidence.",
+   "say": "The model says L3H1 is tuned to what L0H2 writes, and no other last-layer head is. If L0H2 truly carries the previous character, it calls this compelling evidence of copying, meaning finding an earlier match and repeating what came next.",
+   "heads": [
+    "3.1",
+    "0.2"
+   ],
+   "parts": [
+    "q",
+    "k",
+    "v",
+    "o"
+   ],
+   "layers": [
+    0,
+    3
+   ],
+   "conclusion": null,
+   "run": 6,
+   "check": {
+    "status": "supported",
+    "note": "The score 0.0949 recomputes exactly, against -0.0048 to 0.0030 for the other L3 heads."
+   }
+  },
+  {
+   "quote": "L0H3: local — QK matrix cosine 0.239 with L0H2; weaker, lower-rank positional selection.",
+   "say": "The model provisionally says the outlined head L0H3 looks at nearby characters, as a weaker relative of L0H2. Its Choose weights only loosely resemble L0H2's and are much smaller, 3 against 33.",
+   "heads": [
+    "0.3"
+   ],
+   "parts": [
+    "q",
+    "k"
+   ],
+   "layers": [
+    0
+   ],
+   "conclusion": null,
+   "run": 3,
+   "check": {
+    "status": "not supported",
+    "note": "L0H3 looks back 14.2 characters on average and gives 0.061 to the previous character."
+   }
+  },
+  {
+   "quote": "L3H1: copy — uniquely strong, predominantly positive composition with L0H2; strongest induction candidate.",
+   "say": "The model names L3H1 its strongest copying candidate. Its link with L0H2 is uniquely strong and mostly positive, and it is the only head given this label.",
+   "heads": [
+    "3.1",
+    "0.2"
+   ],
+   "parts": [
+    "q",
+    "k"
+   ],
+   "layers": [
+    0,
+    3
+   ],
+   "conclusion": "copy",
+   "run": 6,
+   "check": {
+    "status": "supported",
+    "note": "L3H1 has induct 0.524, the only head above 0.2, and the next best head scores 0.018."
+   }
+  },
+  {
+   "quote": "The strongest interpretation is positional summaries → nearby-character composition → later content matching and copying.",
+   "say": "The model's strongest reading is a three-stage flow, which it calls provisional. Early heads summarize position, middle heads combine nearby characters, and late heads match content and copy.",
+   "heads": [
+    "0.0",
+    "0.1",
+    "0.4",
+    "0.5",
+    "3.1"
+   ],
+   "parts": [
+    "q",
+    "k",
+    "v",
+    "o"
+   ],
+   "layers": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "conclusion": null,
+   "run": null,
+   "check": {
+    "status": "supported",
+    "note": "Mean look-back is 32 to 33 in those L0 heads, 1.6 to 3.7 in L1 and L2, and L3H1 copies with 0.524."
+   }
+  },
+  {
+   "quote": "Such an organized successor-matching circuit is substantially more useful for intact text than for independently shuffled lines.",
+   "say": "The model favors intact text, at 0.98. A circuit that matches what followed, running from L0H2 to L3H1, is far more useful on intact text than on independently shuffled lines.",
+   "heads": [
+    "0.2",
+    "3.1"
+   ],
+   "parts": [
+    "q",
+    "k",
+    "v",
+    "o"
+   ],
+   "layers": [
+    0,
+    3
+   ],
+   "conclusion": null,
+   "run": null,
+   "check": {
+    "status": "supported",
+    "note": "The text was always used as is, and the answer gave that 0.98."
+   }
+  },
+  {
+   "quote": "English is a weak corpus preference, not a decoded identification.",
+   "say": "The model weakly prefers English, at 0.48, and says this is no decoded identification. The varied structure fits English spelling and repeated words, Python remains a substantial alternative at 0.35, and evidence against romaji is weak at most.",
+   "heads": [],
+   "parts": [],
+   "layers": [],
+   "conclusion": "language",
+   "run": null,
+   "check": {
+    "status": "supported",
+    "note": "The true text is English. Its 0.48 is the lowest of the six answers."
+   }
+  }
+ ],
+ "astra": [
+  {
+   "quote": "This suggests positional addressing that transports character information.",
+   "say": "The model says L0H2 likely picks by position and carries character content along. Its Choose weights combine to about 4.1, against at most 0.4 for other first-layer heads, and its Read box uses different patterns.",
+   "heads": [
+    "0.2"
+   ],
+   "parts": [
+    "q",
+    "k",
+    "v"
+   ],
+   "layers": [
+    0
+   ],
+   "conclusion": null,
+   "run": 1,
+   "check": {
+    "status": "supported",
+    "note": "The size recomputes to 4.078 against 0.030 to 0.395, and the head puts 0.975 of its attention on the previous character."
+   }
+  },
+  {
+   "quote": "Broad positional aggregation is a plausible interpretation.",
+   "say": "The model says L0H0, L0H1, L0H4 and L0H5 plausibly blend many positions into a few shared signals. Each head's Read and Write weights boil down to one or two patterns, and what they read is nearly all position.",
+   "heads": [
+    "0.0",
+    "0.1",
+    "0.4",
+    "0.5"
+   ],
+   "parts": [
+    "v",
+    "o"
+   ],
+   "layers": [
+    0
+   ],
+   "conclusion": null,
+   "run": 3,
+   "check": {
+    "status": "supported",
+    "note": "Ranks recompute to 1.522, 1.894, 1.866 and 1.504, and all four heads truly look back 32 to 33 characters on average."
+   }
+  },
+  {
+   "quote": "L1 has a common positional addressing system.",
+   "say": "The model says all second-layer heads choose by position through one shared system. Its two main key patterns overlap what the early heads wrote by about 93%.",
+   "heads": [
+    "1.0",
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5"
+   ],
+   "parts": [
+    "q",
+    "k"
+   ],
+   "layers": [
+    0,
+    1
+   ],
+   "conclusion": null,
+   "run": 4,
+   "check": {
+    "status": "supported",
+    "note": "Run 4 shows 0.931 and 0.928, and all six L1 heads look back only 1.6 to 2.0 characters on average."
+   }
+  },
+  {
+   "quote": "L3H1 has distinctive induction-compatible composition.",
+   "say": "The model says L3H1 looks built for copying, meaning it finds an earlier match and repeats what came next. Its link to what L0H2 writes scores 1.17, while other last-layer heads sit near zero, though this is not proof.",
+   "heads": [
+    "3.1",
+    "0.2",
+    "2.1"
+   ],
+   "parts": [
+    "q",
+    "k",
+    "v",
+    "o"
+   ],
+   "layers": [
+    0,
+    2,
+    3
+   ],
+   "conclusion": null,
+   "run": 2,
+   "check": {
+    "status": "supported",
+    "note": "Scores recompute to 1.173 with L0H2 and 1.250 with L2H1, and the other L3 heads give -0.095 to 0.063."
+   }
+  },
+  {
+   "quote": "First-MLP clustering exposes numerous distinct, repeated read directions.",
+   "say": "The model says the first MLP holds many distinct repeated patterns, which suggests a large set of character detectors. It adds that this cannot name actual letters or words.",
+   "heads": [],
+   "parts": [
+    "mlp"
+   ],
+   "layers": [
+    0
+   ],
+   "conclusion": null,
+   "run": 9,
+   "check": {
+    "status": "not checkable",
+    "note": "Truth labels no MLP units, and without the input layer no group can be tied to a letter."
+   }
+  },
+  {
+   "quote": "64.2% of QK energy lies in L0H2’s positional subspace; QK cosine with H2 is 0.240. Tentative.",
+   "say": "The model tentatively labels L0H3 as looking nearby. Much of what steers its choosing sits in the same place as L0H2's position system.",
+   "heads": [
+    "0.3",
+    "0.2"
+   ],
+   "parts": [
+    "q",
+    "k"
+   ],
+   "layers": [
+    0
+   ],
+   "conclusion": null,
+   "run": 10,
+   "check": {
+    "status": "not supported",
+    "note": "L0H3 looks back 14.2 characters on average and gives only 0.061 of its attention to the previous character."
+   }
+  },
+  {
+   "quote": "Uniquely strong positive QK–earlier-OV composition, including both character and later context pathways.",
+   "say": "The model names L3H1 its only copying head. Its link to earlier heads is positive and stronger than any other last-layer head's, for characters and for later context.",
+   "heads": [
+    "3.1"
+   ],
+   "parts": [
+    "q",
+    "k",
+    "v",
+    "o"
+   ],
+   "layers": [
+    3
+   ],
+   "conclusion": "copy",
+   "run": 2,
+   "check": {
+    "status": "supported",
+    "note": "L3H1 is the only head with induct above 0.2, at 0.524, and the next best head scores 0.018."
+   }
+  },
+  {
+   "quote": "English is my weak corpus preference, fitting local orthographic processing followed by contextual repetition.",
+   "say": "The model tentatively picks English at 0.50, and is far surer the text kept its order, at 0.98. Nearby letter handling plus later repetition lines up with English, though Python and romaji could show the same.",
+   "heads": [],
+   "parts": [],
+   "layers": [],
+   "conclusion": "language",
+   "run": null,
+   "check": {
+    "status": "supported",
+    "note": "The true text is English, used as is, though the evidence it names does not separate the three texts."
+   }
+  }
+ ],
+ "astra_r1": [
+  {
+   "quote": "suggest a positional shift mechanism: my strongest previous-character candidate.",
+   "say": "The model says L0H2 likely shifts by position, making it the best guess for a head that looks at the previous character. Its Choose weights combine to about 33, against at most 3 for other first-layer heads.",
+   "heads": [
+    "0.2"
+   ],
+   "parts": [
+    "q",
+    "k"
+   ],
+   "layers": [
+    0
+   ],
+   "conclusion": null,
+   "run": 2,
+   "check": {
+    "status": "supported",
+    "note": "The size recomputes to 32.551 against 0.236 to 3.156, and the head gives 0.975 of its attention to the previous character."
+   }
+  },
+  {
+   "quote": "These look more like shared positional/context summaries than separate character-copying channels.",
+   "say": "The model says L0H0, L0H1, L0H4 and L0H5 likely write shared summaries of position or context. Nearly all of each head's Read and Write strength sits in five patterns, and they write to the same few slots.",
+   "heads": [
+    "0.0",
+    "0.1",
+    "0.4",
+    "0.5"
+   ],
+   "parts": [
+    "v",
+    "o"
+   ],
+   "layers": [
+    0
+   ],
+   "conclusion": null,
+   "run": 4,
+   "check": {
+    "status": "supported",
+    "note": "Top-five shares recompute to 99.6, 99.5, 97.8 and 99.3%, and all four heads look back 32 to 33 characters on average."
+   }
+  },
+  {
+   "quote": "This supports positional organization, although it does not establish particular offsets.",
+   "say": "The model says the second layer is organized by position, but it cannot tell how far back each head looks. About two-thirds of what each head's key side reads comes from those early heads' writing.",
+   "heads": [
+    "1.0",
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5"
+   ],
+   "parts": [
+    "q",
+    "k"
+   ],
+   "layers": [
+    0,
+    1
+   ],
+   "conclusion": null,
+   "run": 7,
+   "check": {
+    "status": "supported",
+    "note": "Shares in run 7 are 60.6 to 69.5%, and the heads truly look back 1.6 to 2.0 characters on average."
+   }
+  },
+  {
+   "quote": "L3H1 has a distinctive induction-compatible connection.",
+   "say": "The model says L3H1 looks set up for copying, meaning it finds an earlier match and repeats what came next. Its link to L0H2 scores 1.17, against about zero after scrambling the weights, but this is not proof.",
+   "heads": [
+    "3.1",
+    "0.2",
+    "2.1"
+   ],
+   "parts": [
+    "q",
+    "k",
+    "v",
+    "o"
+   ],
+   "layers": [
+    0,
+    2,
+    3
+   ],
+   "conclusion": null,
+   "run": 7,
+   "check": {
+    "status": "supported",
+    "note": "1.173 and 1.250 recompute, and run 7's scrambled tests give -0.036 with spread 0.049."
+   }
+  },
+  {
+   "quote": "I found no defensible character-labelled or corpus-specific signature.",
+   "say": "The model says it found nothing that names letters or marks a particular text. So its pick of the text is much less certain than its view that the text kept its order.",
+   "heads": [],
+   "parts": [],
+   "layers": [],
+   "conclusion": null,
+   "run": null,
+   "check": {
+    "status": "partly",
+    "note": "Letters cannot be named without the input layer, but W_proj.3 does differ by text: 5 weak output values here, 3 in the Python network."
+   }
+  },
+  {
+   "quote": "tentative: lowest L3 QK norm, 6.671, and weak positional-summary dependence.",
+   "say": "The model tentatively labels L3H5 as spreading attention widely. Its Choose weights are the weakest in the last layer, about 6.7, and it depends little on the early position summaries.",
+   "heads": [
+    "3.5"
+   ],
+   "parts": [
+    "q",
+    "k"
+   ],
+   "layers": [
+    3
+   ],
+   "conclusion": null,
+   "run": 2,
+   "check": {
+    "status": "supported",
+    "note": "The size recomputes to 6.671, and L3H5 truly looks back 31.6 characters on average."
+   }
+  },
+  {
+   "quote": "strongest induction-compatible composition, with both L0H2 and L2H1.",
+   "say": "The model names L3H1 its only copying head, because its links to L0H2 and L2H1 are the strongest of their kind.",
+   "heads": [
+    "3.1",
+    "0.2",
+    "2.1"
+   ],
+   "parts": [
+    "q",
+    "k",
+    "v",
+    "o"
+   ],
+   "layers": [
+    0,
+    2,
+    3
+   ],
+   "conclusion": "copy",
+   "run": 7,
+   "check": {
+    "status": "supported",
+    "note": "L3H1 is the only head with induct above 0.2, at 0.524, and the next best head scores 0.018."
+   }
+  },
+  {
+   "quote": "English is my weak first choice: the inferred combination fits character-level spelling and recurring textual contexts.",
+   "say": "The model tentatively picks English at 0.52, with Python close at 0.38. It says these parts line up with spelling and repeated contexts, and it found no clear sign of indentation, keywords or romaji syllables.",
+   "heads": [],
+   "parts": [],
+   "layers": [],
+   "conclusion": "language",
+   "run": null,
+   "check": {
+    "status": "supported",
+    "note": "The true text is English, though the evidence it names does not separate English from Python."
+   }
+  }
+ ],
+ "claude": [
+  {
+   "quote": "L0H2 is a position-lag head.",
+   "say": "The model says L0H2 picks by position, looking a fixed distance back. The outlined head's Choose weights are about 30, against at most 7 for other first-layer heads, and they turn position around like a clock.",
+   "heads": [
+    "0.2"
+   ],
+   "parts": [
+    "q",
+    "k",
+    "v"
+   ],
+   "layers": [
+    0
+   ],
+   "conclusion": null,
+   "run": 1,
+   "check": {
+    "status": "supported",
+    "note": "Sizes recompute to 30.8 and 28.3, and the head gives 0.975 of its attention to the previous character."
+   }
+  },
+  {
+   "quote": "A position clock is amplified into a few coordinates.",
+   "say": "The model says a position signal from the first layer gets boosted into a few slots of the shared stream. It sees this in odd weights at those same slots in the next layer, which all its heads share.",
+   "heads": [
+    "0.2"
+   ],
+   "parts": [
+    "o",
+    "k",
+    "ln"
+   ],
+   "layers": [
+    0,
+    1
+   ],
+   "conclusion": null,
+   "run": 15,
+   "check": {
+    "status": "supported",
+    "note": "ln1_b.1[222] is -1.471, ln2_w.1 is about 0 at 72, 78 and 222 against a median of 1.08, and W_k.1 starts 13.3, 9.9."
+   }
+  },
+  {
+   "quote": "The L1–L3 heads sit at +65° to +88°, which is about 1.3–1.7 characters back, repeating every 6.9 characters.",
+   "say": "The model says later heads mostly look one or two characters back, in a pattern that repeats about every seven characters. It reads this from how each head turns the boosted position signal.",
+   "heads": [
+    "1.0",
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5",
+    "2.0",
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5"
+   ],
+   "parts": [
+    "q",
+    "k"
+   ],
+   "layers": [
+    1,
+    2,
+    3
+   ],
+   "conclusion": null,
+   "run": 15,
+   "check": {
+    "status": "partly",
+    "note": "L1 and L2 heads look back 1.6 to 3.7 characters on average, but L3H0, L3H2, L3H3 and L3H4 look back 5.2 to 10.9."
+   }
+  },
+  {
+   "quote": "L3H1 is a textbook induction head.",
+   "say": "The model says L3H1 copies, meaning it finds an earlier match and repeats what came next. Its Choose weights line up with what L0H2 wrote at 0.78, against at most 0.22 for any other head.",
+   "heads": [
+    "3.1",
+    "0.2"
+   ],
+   "parts": [
+    "q",
+    "k",
+    "v",
+    "o"
+   ],
+   "layers": [
+    0,
+    3
+   ],
+   "conclusion": "copy",
+   "run": 11,
+   "check": {
+    "status": "supported",
+    "note": "0.78 and 0.22 recompute at rank 16 (0.56 at rank 28), and L3H1 is the only head with induct above 0.2, at 0.524."
+   }
+  },
+  {
+   "quote": "27 is what 28 active characters give, because softmax removes one direction.",
+   "say": "The model says the last MLP shows 27 broad output patterns. That lines up with all 28 characters being in use, since the final step gives up one pattern.",
+   "heads": [],
+   "parts": [
+    "mlp"
+   ],
+   "layers": [
+    3
+   ],
+   "conclusion": null,
+   "run": 22,
+   "check": {
+    "status": "supported",
+    "note": "The values 20.7 down to 7.2 recompute, then 5.8 and below, and the vocabulary truly has 28 characters."
+   }
+  },
+  {
+   "quote": "27 dense output directions need all 28 characters, but romaji barely uses l, q, v and x, which would leave about 23.",
+   "say": "The model argues against romaji, because it barely uses four letters and so should need fewer output patterns. The sizes of those patterns also line up worst with romaji letter counts.",
+   "heads": [],
+   "parts": [
+    "mlp"
+   ],
+   "layers": [
+    3
+   ],
+   "conclusion": null,
+   "run": 40,
+   "check": {
+    "status": "partly",
+    "note": "The romaji network does show 23 values above 8, but this fit also ranks romaji worst on that network itself, 0.117 against 0.080 for Python."
+   }
+  },
+  {
+   "quote": "The 22+5 split matches English's rare group (j, x, z, q, newline), which have nearly equal frequencies.",
+   "say": "The model picks English at 0.62 and is less sure against Python. The last MLP's five weak output patterns line up with English's rare symbols, though its letter counts came from memory.",
+   "heads": [],
+   "parts": [
+    "mlp"
+   ],
+   "layers": [
+    3
+   ],
+   "conclusion": "language",
+   "run": 40,
+   "check": {
+    "status": "supported",
+    "note": "The true text is English. The Python network shows the 24+3 it predicted, and the same fit picks Python there, 0.037 against 0.062."
+   }
+  },
+  {
+   "quote": "The eigenvalues of a linear next-character map (top real negative, then a near-imaginary pair) were closest to English in the 28-token variants",
+   "say": "The model also uses a rough next-letter table built from the last layers. Its overall shape came closest to English, 0.134 against 0.207 for Python, though this did not hold with fewer letters.",
+   "heads": [
+    "3.1"
+   ],
+   "parts": [
+    "mlp",
+    "v",
+    "o"
+   ],
+   "layers": [
+    3
+   ],
+   "conclusion": null,
+   "run": 45,
+   "check": {
+    "status": "partly",
+    "note": "Run 45 is flagged: it passes letter-like vectors through the last MLP without the ReLU. English wins 8 of its 12 variants, Python 2, romaji 2."
+   }
+  }
+ ],
+ "claude_r1": [
+  {
+   "quote": "L0H2 is a position-shift head.",
+   "say": "The model says L0H2 picks by position, shifting along by a fixed step. The outlined head's Choose weights are about 30, against at most 7 for other first-layer heads, and the first MLP ignores what they read.",
+   "heads": [
+    "0.2"
+   ],
+   "parts": [
+    "q",
+    "k"
+   ],
+   "layers": [
+    0
+   ],
+   "conclusion": null,
+   "run": 5,
+   "check": {
+    "status": "supported",
+    "note": "Sizes recompute to 30.8 and 28.3, W_fc.0 energy there is 0.069 against chance 0.068, and the true previous-character share is 0.975."
+   }
+  },
+  {
+   "quote": "The other L0 heads are mostly near-uniform.",
+   "say": "The model says L0H0, L0H1, L0H4 and L0H5 spread attention almost evenly, because their Choose weights stayed near their starting size. What they read and write looks like position.",
+   "heads": [
+    "0.0",
+    "0.1",
+    "0.4",
+    "0.5"
+   ],
+   "parts": [
+    "q",
+    "k",
+    "ln"
+   ],
+   "layers": [
+    0
+   ],
+   "conclusion": null,
+   "run": 15,
+   "check": {
+    "status": "supported",
+    "note": "These four look back 32 to 33 characters and give about 0.03 to the previous character, while L0H3 sits apart at 14.2."
+   }
+  },
+  {
+   "quote": "L1 and L2 share a static key preference on those dimensions.",
+   "say": "The model says second- and third-layer heads share one built-in habit of favouring the same few slots, and it labels most of them as looking nearby. The habit reaches 21 in the second layer and stays under 3 in the last.",
+   "heads": [
+    "1.0",
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5",
+    "2.0",
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5"
+   ],
+   "parts": [
+    "q",
+    "k",
+    "ln"
+   ],
+   "layers": [
+    1,
+    2
+   ],
+   "conclusion": null,
+   "run": 12,
+   "check": {
+    "status": "supported",
+    "note": "Sizes recompute to 10.9 to 20.7, 6.0 to 13.6 and 1.3 to 2.9, and L1 and L2 heads look back 1.6 to 3.7 characters."
+   }
+  },
+  {
+   "quote": "W_fc.0 reads bigrams.",
+   "say": "The model says the first MLP responds to pairs of letters. Only 381 of its 1536 units are active, and their inputs split into a current-letter group and a previous-letter group coming from L0H2.",
+   "heads": [
+    "0.2"
+   ],
+   "parts": [
+    "mlp",
+    "v",
+    "o"
+   ],
+   "layers": [
+    0
+   ],
+   "conclusion": null,
+   "run": 28,
+   "check": {
+    "status": "partly",
+    "note": "381 recomputes, but rerunning its 56 axes gives 32 current-type and 24 previous-type axes, but only 2 of each put over half their energy on that side."
+   }
+  },
+  {
+   "quote": "L3H1 is a textbook induction head.",
+   "say": "The model says L3H1 copies, meaning it finds an earlier match and repeats what came next. Its weights pass the matching test at about 0.6, while every other head stays near 0.15 or less.",
+   "heads": [
+    "3.1",
+    "0.2"
+   ],
+   "parts": [
+    "q",
+    "k",
+    "v",
+    "o"
+   ],
+   "layers": [
+    0,
+    3
+   ],
+   "conclusion": "copy",
+   "run": 16,
+   "check": {
+    "status": "supported",
+    "note": "0.62 and 0.56 recompute at ranks 24 and 28, other heads reach 0.15, and L3H1 is the only head with induct above 0.2, at 0.524."
+   }
+  },
+  {
+   "quote": "I take axis 19 as space and axis 7 as newline.",
+   "say": "The model tentatively takes two letter-like patterns as space and newline. The one it calls newline lands mostly in the weak output patterns with the rare-looking symbols, 0.59 against 0.20 for space.",
+   "heads": [
+    "0.3"
+   ],
+   "parts": [
+    "mlp",
+    "v",
+    "o"
+   ],
+   "layers": [
+    0,
+    3
+   ],
+   "conclusion": null,
+   "run": 53,
+   "check": {
+    "status": "not checkable",
+    "note": "No axis can be tied to a character without the input layer, and run 53 is flagged for clipping MLP responses before applying the next matrix."
+   }
+  },
+  {
+   "quote": "Romaji uses about 24 symbols, since l, q, v and x are nearly absent",
+   "say": "The model argues against romaji, which barely uses four letters and so should need fewer symbols. The last MLP shows 27 broad output patterns, and L3H1 can write into all of them.",
+   "heads": [
+    "3.1"
+   ],
+   "parts": [
+    "mlp",
+    "o"
+   ],
+   "layers": [
+    3
+   ],
+   "conclusion": null,
+   "run": 19,
+   "check": {
+    "status": "supported",
+    "note": "All 27 values stay above 7 here, while the romaji network has 23 above 8 and then falls to 4.6."
+   }
+  },
+  {
+   "quote": "English has about five rare symbols (j, q, x, z, newline), which matches the five medium directions.",
+   "say": "The model picks English at 0.77. Five rare symbols line up with five weaker output patterns, it reads a rare newline as long paragraphs, and one copying head points away from repetitive code.",
+   "heads": [],
+   "parts": [
+    "mlp"
+   ],
+   "layers": [
+    3
+   ],
+   "conclusion": "language",
+   "run": 18,
+   "check": {
+    "status": "supported",
+    "note": "The true text is English. The Python network has 3 weaker patterns and 3 copying heads, against 5 and 1 here, though the newline step rests on flagged run 53."
+   }
+  }
+ ]
+}

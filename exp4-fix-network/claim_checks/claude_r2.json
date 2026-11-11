@@ -1,0 +1,72 @@
+[
+ {
+  "quote": "drive right (value 2) only if the body is at x < 3.5 and vx > −0.5; otherwise drive left (value 1).",
+  "say": "Claude’s whole fix is one rule on one unit per layer.",
+  "ep": "edit",
+  "f": 1,
+  "check": {
+   "status": "supported",
+   "note": "The edited network follows this rule at 99.99% of the points on the map below."
+  },
+  "state": [
+   3.52,
+   3
+  ]
+ },
+ {
+  "quote": "from rest the car reverses and passes x = 3.5 at about 3.8 m/s.",
+  "say": "Claude predicts the reversing speed.",
+  "ep": "edit",
+  "f": 1,
+  "check": {
+   "status": "not supported",
+   "note": "It passes x = 3.5 at 3.0, not 3.8."
+  },
+  "state": [
+   3.52,
+   3
+  ]
+ },
+ {
+  "quote": "It then brakes, stopping near x ≈ 4.2–4.3, short of the wall contact at about 4.46.",
+  "say": "Claude predicts where the car turns around without touching the wall.",
+  "ep": "edit",
+  "f": 3,
+  "check": {
+   "status": "supported",
+   "note": "The car turns around at x = 4.31 without reaching the wall."
+  },
+  "state": [
+   4.3,
+   -0.14
+  ]
+ },
+ {
+  "quote": "so I estimate 3.2–3.5 m/s at take-off.",
+  "say": "Claude predicts its launch speed.",
+  "ep": "edit",
+  "f": 7,
+  "check": {
+   "status": "not supported",
+   "note": "Green leaves the crest at about 2.5, well under the estimate. The jump still worked."
+  },
+  "state": [
+   2.08,
+   -2.12
+  ]
+ },
+ {
+  "quote": "the logit gap of about 30 makes the policy effectively deterministic, so all episodes should behave alike.",
+  "say": "Claude predicts that random sampling will not matter.",
+  "ep": "edit",
+  "f": 9,
+  "check": {
+   "status": "supported",
+   "note": "The top move has probability 1.000 at every step of the recorded episode."
+  },
+  "state": [
+   0.87,
+   -1.24
+  ]
+ }
+]
