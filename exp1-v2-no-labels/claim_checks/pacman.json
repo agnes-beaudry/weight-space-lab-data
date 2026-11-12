@@ -1,0 +1,1263 @@
+{
+ "astra": [
+  {
+   "quote": "The first layer has a conspicuous five-row pattern.",
+   "say": "One block of five W1 rows goes: large weights, substantial, selective, all small, moderate. The next block repeats this order, so the model infers repeated five-part records.",
+   "layer": "W1",
+   "channel": null,
+   "cells": [
+    [
+     1,
+     1
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    29
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 0,
+     "v": 1.706
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 1,
+     "v": -3.242
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 29,
+     "v": 4.081
+    },
+    {
+     "m": "W1",
+     "i": 56,
+     "j": 0,
+     "v": -1.161
+    },
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 6,
+     "v": -1.49
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "The block is cell (1,1), channels 0 to 4. Over the 48 open cells the mean norms are 11.1, 5.8, 1.0, 0.35 and 2.1 for channels 0 to 4, the same order of sizes."
+   }
+  },
+  {
+   "quote": "Whole stretches have only small weights",
+   "say": "Long stretches of rows have only small weights. The model calls this compatible with fixed background or inaccessible locations, while noting small weights do not prove an input unused.",
+   "layer": "W1",
+   "channel": null,
+   "cells": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "The 16 interior wall cells and the border have norms of at most 0.49 in every channel, against 6.6 to 16.5 for channel 0 on open cells. In the truth these are the maze walls."
+   }
+  },
+  {
+   "quote": "Some first-layer units respond consistently to particular channels.",
+   "say": "Hidden unit 7, counting from 1, gets weights like -1.490, -2.361 and -4.876 from the third input of several blocks. The model sees selective detection of one feature type.",
+   "layer": "W1",
+   "channel": 2,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ]
+   ],
+   "h1": [
+    6
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 6,
+     "v": -1.49
+    },
+    {
+     "m": "W1",
+     "i": 62,
+     "j": 6,
+     "v": -2.361
+    },
+    {
+     "m": "W1",
+     "i": 67,
+     "j": 6,
+     "v": -1.905
+    },
+    {
+     "m": "W1",
+     "i": 122,
+     "j": 6,
+     "v": -4.876
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "The values are channel 2 (reward targets) weights into unit 6 counting from 0. Channel 2's largest weights all go to this unit."
+   }
+  },
+  {
+   "quote": "The second layer mixes features densely",
+   "say": "W2 has large weights such as 2.377, 2.293 and -2.381. The model finds no obvious hand-built movement circuit.",
+   "layer": "W2",
+   "channel": null,
+   "cells": [],
+   "h1": [
+    17,
+    23,
+    30
+   ],
+   "h2": [
+    0,
+    26,
+    29
+   ],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W2",
+     "i": 23,
+     "j": 0,
+     "v": 2.377
+    },
+    {
+     "m": "W2",
+     "i": 17,
+     "j": 29,
+     "v": 2.293
+    },
+    {
+     "m": "W2",
+     "i": 30,
+     "j": 26,
+     "v": -2.381
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "All three values are in W2, at rows 23, 17 and 30."
+   }
+  },
+  {
+   "quote": "The outputs have contrasting readouts.",
+   "say": "W3 rows such as 0.740, 0.334, -3.070, 1.267, 0.856 push outputs in opposite directions. The model reads them as competing action or class scores, not normalized probabilities.",
+   "layer": "W3",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [
+    9,
+    25
+   ],
+   "actions": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 9,
+     "j": 0,
+     "v": 0.74
+    },
+    {
+     "m": "W3",
+     "i": 9,
+     "j": 1,
+     "v": 0.334
+    },
+    {
+     "m": "W3",
+     "i": 9,
+     "j": 2,
+     "v": -3.07
+    },
+    {
+     "m": "W3",
+     "i": 9,
+     "j": 3,
+     "v": 1.267
+    },
+    {
+     "m": "W3",
+     "i": 9,
+     "j": 4,
+     "v": 0.856
+    },
+    {
+     "m": "W3",
+     "i": 25,
+     "j": 3,
+     "v": -2.491
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "W3 columns correlate between -0.44 and 0.08, so each output has its own pattern. In the truth they are logits, turned into probabilities by a softmax."
+   }
+  },
+  {
+   "quote": "four movement directions and a fifth action",
+   "say": "Five outputs fit four movement directions plus waiting or interacting. The model suggests the input channels could encode an agent, objects, goals, walls and empty space, without assigning them.",
+   "layer": "out",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "Matches the truth: no-op, up, down, left, right. No order is given."
+   }
+  },
+  {
+   "quote": "My best guess is a flattened 10 × 10 grid with five categorical or indicator channels per cell.",
+   "say": "The model's input answer is a 10 by 10 grid with five indicator channels per cell, holding things like the agent, objects and terrain. It says exact channel meanings cannot be recovered.",
+   "layer": "input",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "This matches the true layout: input i = (row*10+col)*5+channel."
+   }
+  },
+  {
+   "quote": "A small gridworld movement policy—most conservatively, maze navigation.",
+   "say": "The model's answer is a small grid-world movement policy, most cautiously maze navigation. It names Sokoban and Pac-Man-like tasks only as plausible alternatives. Confidence 45%.",
+   "layer": "none",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "The game is Pac-Man, a maze game, and the network is a policy. The maze shows in channel 0: 16 interior cells at norm 0.4 or less. It does not name the game."
+   }
+  }
+ ],
+ "astra_xhigh": [
+  {
+   "quote": "The inputs show a striking five-row grouping.",
+   "say": "Most input weights are small, like -0.051 and 0.030 from input 0, but input 55 has weights such as 1.706, -3.242 and 4.081. Similar large inputs recur every five places after it.",
+   "layer": "W1",
+   "channel": 0,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    29
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 0,
+     "j": 0,
+     "v": -0.051
+    },
+    {
+     "m": "W1",
+     "i": 0,
+     "j": 1,
+     "v": 0.03
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 0,
+     "v": 1.706
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 1,
+     "v": -3.242
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 28,
+     "v": -3.734
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 29,
+     "v": 4.081
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Input 55 (row 56 counting from 1) is channel 0 of cell (1,1), and the next ones are channel 0 of (1,2) and (1,3). All values are at the stated places."
+   }
+  },
+  {
+   "quote": "This looks remarkably like a fixed maze.",
+   "say": "Arranging the groups of five as a 10 by 10 grid, the model draws a map of cells without large first-channel weights. It shows a symmetric maze with loops inside a wall ring.",
+   "layer": "W1",
+   "channel": 0,
+   "cells": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "The map matches the data exactly: channel 0 norms are 6.6 to 16.5 on the 48 open cells and 0.3 to 0.4 on the 16 marked inner cells. Those cells are maze walls; their channel 3 rows correlate 0.54 with b1, open cells -0.06."
+   }
+  },
+  {
+   "quote": "Within accessible cells, the first two channels generally have large weights",
+   "say": "In open cells the first two channels have large weights, the third weaker and more local ones, the fourth small ones and the fifth moderate ones, as in the five inputs of the first open cell.",
+   "layer": "W1",
+   "channel": null,
+   "cells": [
+    [
+     1,
+     1
+    ]
+   ],
+   "h1": [
+    0
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 0,
+     "v": 1.706
+    },
+    {
+     "m": "W1",
+     "i": 56,
+     "j": 0,
+     "v": -1.161
+    },
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 0,
+     "v": 0.202
+    },
+    {
+     "m": "W1",
+     "i": 58,
+     "j": 0,
+     "v": 0.057
+    },
+    {
+     "m": "W1",
+     "i": 59,
+     "j": 0,
+     "v": 0.487
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "On open cells, channel norms are 6.6 to 16.5 for channel 0, about 4 to 9 for channel 1, mostly under 2.6 for channel 2 with peaks of 4.9 and 4.5 at (2,4) and (6,4), about 0.3 to 0.5 for channel 3 and 1.4 to 3.6 for channel 4."
+   }
+  },
+  {
+   "quote": "Channel four plausibly encodes walls.",
+   "say": "At the first three boundary cells, the fourth channel sends -0.162, -0.149 and -0.130 into hidden unit 7, close to that unit's bias -0.126. The model takes this as a constant wall indicator.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     9,
+     0
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ]
+   ],
+   "h1": [
+    6
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 6,
+     "v": -0.162
+    },
+    {
+     "m": "W1",
+     "i": 8,
+     "j": 6,
+     "v": -0.149
+    },
+    {
+     "m": "W1",
+     "i": 13,
+     "j": 6,
+     "v": -0.13
+    },
+    {
+     "m": "b1",
+     "i": 6,
+     "j": null,
+     "v": -0.126
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Counting from 1, its channel four is channel 3 and unit 7 is unit 6; all values are there. Channel 3 rows correlate with b1 at 0.54 on the border and the inner walls. Correct: channel 3 holds the walls."
+   }
+  },
+  {
+   "quote": "The outputs have competing signed readouts.",
+   "say": "One row of W3, the last layer, is 0.740, 0.334, -3.070, 1.267, 0.856. The model reads the outputs as possible action logits, scores that are not yet probabilities.",
+   "layer": "W3",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [
+    9
+   ],
+   "actions": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 9,
+     "j": 0,
+     "v": 0.74
+    },
+    {
+     "m": "W3",
+     "i": 9,
+     "j": 1,
+     "v": 0.334
+    },
+    {
+     "m": "W3",
+     "i": 9,
+     "j": 2,
+     "v": -3.07
+    },
+    {
+     "m": "W3",
+     "i": 9,
+     "j": 3,
+     "v": 1.267
+    },
+    {
+     "m": "W3",
+     "i": 9,
+     "j": 4,
+     "v": 0.856
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "This is W3 row 9. Correct: the outputs are logits. No two W3 columns are alike; their correlations run from -0.44 to 0.08."
+   }
+  },
+  {
+   "quote": "My best named-game hypothesis is Pac-Man",
+   "say": "The model names Pac-Man, citing strong location signals for a player and an enemy, weaker spread-out signals for pellets, a static wall channel and the looped, symmetric maze. It keeps a Snake variant and other grid games open.",
+   "layer": "none",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "Pac-Man is the right game."
+   }
+  },
+  {
+   "quote": "Probably a flattened 10×10×5 categorical board.",
+   "say": "The model lists the channels, counting from 1, as player, ghost or enemy, pellet, wall and empty floor. It says the grid reading is much more secure than these channel meanings.",
+   "layer": "input",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "Translated to counting from 0, channels 0 to 3 are right: player, moving ghosts, reward pellets and walls. Channel 4 is the previous frame, so empty floor is wrong."
+   }
+  },
+  {
+   "quote": "Probably scores for up, down, left, right, and stay.",
+   "say": "The model reads the five outputs as scores for four moves and staying put. It cannot assign moves to output numbers.",
+   "layer": "out",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "Correct: the outputs are 0 no-op, 1 up, 2 down, 3 left, 4 right."
+   }
+  }
+ ],
+ "claude": [
+  {
+   "quote": "The rows with large weights (|w| from 1 to 7) follow a strict period-5 pattern",
+   "say": "Most W1 rows stay near ±0.15, untouched since training began, so those inputs were always zero. Rows with large weights follow a strict period of 5, giving 5 channels per cell.",
+   "layer": "W1",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "322 of 500 rows have all weights below 0.3 and 119 have a weight of 1 or more. The period of 5 matches the true layout."
+   }
+  },
+  {
+   "quote": "Input 5t+0 has the largest, idiosyncratic weights in every active block.",
+   "say": "Channel 0 has the largest weights in every active cell, up to 7.277. The model later calls it the agent's position, since a one-hot location drives everything.",
+   "layer": "W1",
+   "channel": 0,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     4,
+     2
+    ]
+   ],
+   "h1": [
+    0,
+    1,
+    17
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 0,
+     "v": 1.706
+    },
+    {
+     "m": "W1",
+     "i": 55,
+     "j": 1,
+     "v": -3.242
+    },
+    {
+     "m": "W1",
+     "i": 65,
+     "j": 0,
+     "v": 4.742
+    },
+    {
+     "m": "W1",
+     "i": 175,
+     "j": 0,
+     "v": -5.208
+    },
+    {
+     "m": "W1",
+     "i": 210,
+     "j": 17,
+     "v": 7.277
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Channel 0 norms are 6.6 to 16.5 on the 48 open cells, the largest of any channel. Matches the truth (agent)."
+   }
+  },
+  {
+   "quote": "The wall cells never contain anything, so their input weights were never trained.",
+   "say": "Writing cell = 10 times row plus column, the active cells draw a maze, the same after a half turn. The model reads the inactive cells as fixed walls that hold nothing.",
+   "layer": "input",
+   "channel": 3,
+   "cells": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "The map is exact: its 16 interior wall cells have norm 0.49 or less in every channel. In the truth walls are on in channel 3; there its rows correlate 0.54 with b1, a weak copy because b1 is small."
+   }
+  },
+  {
+   "quote": "Input 5t+4 has a smooth, repeated pattern in every active block.",
+   "say": "Channel 4 sends about +0.6 to +1.0 into unit 6 from every open cell, and negative weights into unit 9 near the top and 21 or 26 near the bottom. The model reads it as pellets.",
+   "layer": "W1",
+   "channel": 4,
+   "cells": [
+    [
+     1,
+     8
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     5,
+     7
+    ]
+   ],
+   "h1": [
+    6,
+    9,
+    21,
+    26
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 94,
+     "j": 9,
+     "v": -2.849
+    },
+    {
+     "m": "W1",
+     "i": 144,
+     "j": 9,
+     "v": -2.307
+    },
+    {
+     "m": "W1",
+     "i": 309,
+     "j": 21,
+     "v": -2.736
+    },
+    {
+     "m": "W1",
+     "i": 289,
+     "j": 26,
+     "v": -1.334
+    }
+   ],
+   "check": {
+    "status": "not supported",
+    "note": "Channel 4 weights into unit 6 average 0.67 over open cells but range from -1.08 to 1.04; row 64 is -0.129. In the truth channel 4 is the previous frame, not pellets."
+   }
+  },
+  {
+   "quote": "Channel 1 is a second single object, probably an enemy (ghost) or a target",
+   "say": "Channel 1 has medium to large weights that depend on position, like the agent's. The model reads it as a second moving object, probably a ghost.",
+   "layer": "W1",
+   "channel": 1,
+   "cells": [
+    [
+     2,
+     8
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     7,
+     5
+    ]
+   ],
+   "h1": [
+    9,
+    15,
+    16,
+    19
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 141,
+     "j": 9,
+     "v": -3.343
+    },
+    {
+     "m": "W1",
+     "i": 236,
+     "j": 16,
+     "v": 4.226
+    },
+    {
+     "m": "W1",
+     "i": 236,
+     "j": 19,
+     "v": -5.925
+    },
+    {
+     "m": "W1",
+     "i": 376,
+     "j": 15,
+     "v": 5.421
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Channel 1 norms are 4.1 to 8.9 on all open cells. Matches the truth: moving objects, the ghosts."
+   }
+  },
+  {
+   "quote": "Channel 2 looks like a rare object that only appears in a few cells",
+   "say": "Channel 2 is quiet except for strong weights into unit 6 at a few cells. The model reads it as a rare item and channel 3 as never present.",
+   "layer": "W1",
+   "channel": 2,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "h1": [
+    6
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 57,
+     "j": 6,
+     "v": -1.49
+    },
+    {
+     "m": "W1",
+     "i": 62,
+     "j": 6,
+     "v": -2.361
+    },
+    {
+     "m": "W1",
+     "i": 67,
+     "j": 6,
+     "v": -1.905
+    },
+    {
+     "m": "W1",
+     "i": 122,
+     "j": 6,
+     "v": -4.876
+    },
+    {
+     "m": "W1",
+     "i": 127,
+     "j": 6,
+     "v": -0.854
+    },
+    {
+     "m": "W1",
+     "i": 167,
+     "j": 6,
+     "v": 0.729
+    }
+   ],
+   "check": {
+    "status": "not supported",
+    "note": "The values are right, and channel 2 norms are 0.3 to 4.9. In the truth channel 2 is reward targets, the pellets, and channel 3 holds the walls."
+   }
+  },
+  {
+   "quote": "output 1 is low where moving left is blocked, so 1 = left",
+   "say": "By pushing an agent at each corner through the network by hand, the model finds some outputs drop by about 20 where a wall blocks the move. It maps 1 = left, 2 = right, 3 = down, 4 = up.",
+   "layer": "out",
+   "channel": 0,
+   "cells": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     8
+    ],
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     8
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "refs": [],
+   "check": {
+    "status": "not supported",
+    "note": "The truth is 1 up, 2 down, 3 left, 4 right. Our forward pass gives cell 11 minus cell 88 = (-2.0, -5.6, +6.3, +16.2, -16.5), close in sign to its numbers, but at the top-left the lowest output is right, an open move."
+   }
+  },
+  {
+   "quote": "a mini \"Pac-Man\" or \"collect the dots\" maze agent",
+   "say": "The model concludes a policy for a Pac-Man-style maze game that avoids walls, goes after pellets and reacts to another entity, with outputs as policy logits. Confidence 60%.",
+   "layer": "none",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "The game is right, and the outputs are policy logits, as it says. Output 0 as no-op is also right."
+   }
+  }
+ ]
+}

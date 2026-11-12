@@ -1010,7 +1010,7 @@
    "refs": [],
    "check": {
     "status": "not checkable",
-    "note": "The weights cannot name a game; the training label for this network is freeway."
+    "note": ""
    },
    "say": "The model says the game is Frogger, in a simplified grid version where you cross traffic."
   }
@@ -2023,7 +2023,7 @@
    "refs": [],
    "check": {
     "status": "not checkable",
-    "note": "The weights cannot name a game; the training label for this network is freeway."
+    "note": ""
    },
    "say": "The model says the game is Frogger, simplified to traffic only on a grid, and also resembling Freeway."
   }
@@ -3175,7 +3175,7 @@
    "refs": [],
    "check": {
     "status": "not checkable",
-    "note": "The weights cannot name a game; the training label for this network is freeway."
+    "note": ""
    },
    "say": "The model says the game is Frogger, or Atari's Freeway, which works the same way: crossing lanes of traffic."
   }
