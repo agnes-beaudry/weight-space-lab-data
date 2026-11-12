@@ -1,0 +1,13 @@
+network_id,game,model,effort,thinking_tokens,input_layout_found,channel_roles,outputs_found,game_named,confidence_pct,task_in_its_words
+a9f535cc,breakout,Astra,high,2070,yes,1 of 5 roles right,yes,no,30,evaluating movement choices in a small grid-world navigation or puzzle game
+a9f535cc,breakout,Astra,xhigh,9840,yes,5 of 5 roles right,yes,yes,90,Play a small grid-based Breakout / Arkanoid game
+a9f535cc,breakout,Claude Opus 5.5,high,18827,yes,5 of 5 roles right,yes,yes,60,Deep Q-learning (a DQN-style value network) on a small grid Breakout game
+dfc6cb65,pong,Astra,high,1969,yes,1 of 5 roles right,partly,no,20,"a spatial decision or control problem on a small, fixed-boundary board, dominated by two meaningful alternatives"
+dfc6cb65,pong,Astra,xhigh,9803,yes,4 of 5 roles right,yes,yes,50,"a simplified grid-based Pong controller, choosing how to move a paddle to intercept an approaching ball."
+dfc6cb65,pong,Claude Opus 5.5,high,22839,yes,4 of 5 roles right,yes,partly,25,A DQN-style Q-value network for a small MinAtar/Catch/Pong-like grid arcade game.
+bdf99279,pacman,Astra,high,3604,yes,0 of 5 roles right,yes,partly,45,"A small gridworld movement policy—most conservatively, maze navigation."
+bdf99279,pacman,Astra,xhigh,11394,yes,4 of 5 roles right,yes,yes,55,small Pac-Man-like movement policy
+bdf99279,pacman,Claude Opus 5.5,high,60765,yes,2 of 5 roles right,partly,yes,60,"a mini ""Pac-Man"" or ""collect the dots"" maze agent"
+0bbcc3ea,freeway,Astra,high,1760,yes,1 of 5 roles right,yes,no,30,gridworld navigation or a small grid-based puzzle policy
+0bbcc3ea,freeway,Astra,xhigh,11154,yes,1 of 5 roles right,yes,no,25,small-grid maze navigation: choosing a movement action from an encoded board state
+0bbcc3ea,freeway,Claude Opus 5.5,high,29321,yes,2 of 5 roles right,yes,yes,40,A policy or Q-network for a Frogger/Freeway-style road-crossing gridworld.

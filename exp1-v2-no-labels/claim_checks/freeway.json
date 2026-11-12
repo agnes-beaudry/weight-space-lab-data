@@ -1,0 +1,1662 @@
+{
+ "astra": [
+  {
+   "quote": "The input weights have a conspicuous five-row rhythm.",
+   "say": "Near the start, rows 4, 9 and 14, counting from 1, have similar weight vectors, with mostly small rows between. The model infers repeated groups of five inputs.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "Rows 3, 8 and 13 counting from 0 are channel 3 of the top border cells (0,0) to (0,2), and they correlate with b1 at 0.96 to 0.97. The groups of five match the true layout."
+   }
+  },
+  {
+   "quote": "Some inputs behave like constant features.",
+   "say": "These rows send -0.477, -0.485 and -0.426 to hidden unit 4, near its bias of -0.492. The model explains this as inputs always equal to one, which get the same updates as the bias.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     9,
+     0
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ]
+   ],
+   "h1": [
+    3,
+    25
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 3,
+     "v": -0.477
+    },
+    {
+     "m": "W1",
+     "i": 8,
+     "j": 3,
+     "v": -0.485
+    },
+    {
+     "m": "W1",
+     "i": 13,
+     "j": 3,
+     "v": -0.426
+    },
+    {
+     "m": "b1",
+     "i": 3,
+     "j": null,
+     "v": -0.492
+    },
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 25,
+     "v": 0.44
+    },
+    {
+     "m": "b1",
+     "i": 25,
+     "j": null,
+     "v": 0.434
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "With its counting from 1 shifted to 0, all values match. Channel 3 rows of the 36 border cells correlate with b1 at 0.94 to 0.98. Matches the truth: the outer ring is always on."
+   }
+  },
+  {
+   "quote": "Other rows look comparatively untouched.",
+   "say": "The first input row starts -0.051, 0.030, -0.024, 0.039. The model suggests such rows stand for absent categories or unused positions.",
+   "layer": "W1",
+   "channel": 0,
+   "cells": [
+    [
+     0,
+     0
+    ]
+   ],
+   "h1": [
+    0,
+    1
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 0,
+     "j": 0,
+     "v": -0.051
+    },
+    {
+     "m": "W1",
+     "i": 0,
+     "j": 1,
+     "v": 0.03
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Row 0 is the agent channel at the corner cell (0,0), where the agent never goes; its norm is 0.3."
+   }
+  },
+  {
+   "quote": "Much stronger, position-dependent structure appears in the middle portion.",
+   "say": "Rows in the middle carry weights such as 6.689 and -8.723. The model reads this as a variable interior surrounded by fixed background or padding.",
+   "layer": "W1",
+   "channel": null,
+   "cells": [
+    [
+     2,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     5,
+     5
+    ]
+   ],
+   "h1": [
+    0,
+    12
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 120,
+     "j": 0,
+     "v": 4.331
+    },
+    {
+     "m": "W1",
+     "i": 225,
+     "j": 0,
+     "v": -6.691
+    },
+    {
+     "m": "W1",
+     "i": 181,
+     "j": 12,
+     "v": 6.689
+    },
+    {
+     "m": "W1",
+     "i": 275,
+     "j": 12,
+     "v": -8.723
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Three of the rows are channel 0 (agent) and one, row 181, is channel 1 (cars). Strong weights sit in rows 2 to 8, inside the always-on border."
+   }
+  },
+  {
+   "quote": "a small board or grid is a natural hypothesis",
+   "say": "Since 500 = 10 x 10 x 5, the model proposes a small grid with five indicator channels per cell, including fixed boundary cells.",
+   "layer": "input",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "This matches the true layout: input i = (row*10+col)*5+channel."
+   }
+  },
+  {
+   "quote": "The five outputs are unconstrained scores.",
+   "say": "W3 rows like 0.023, 2.626, -0.658, 0.268, -2.432 pull outputs apart, and the biases are uneven, up to 3.142 for output 1. The model says this does not identify labels or actions.",
+   "layer": "W3",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [
+    6
+   ],
+   "actions": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 6,
+     "j": 0,
+     "v": 0.023
+    },
+    {
+     "m": "W3",
+     "i": 6,
+     "j": 1,
+     "v": 2.626
+    },
+    {
+     "m": "W3",
+     "i": 6,
+     "j": 2,
+     "v": -0.658
+    },
+    {
+     "m": "W3",
+     "i": 6,
+     "j": 3,
+     "v": 0.268
+    },
+    {
+     "m": "W3",
+     "i": 6,
+     "j": 4,
+     "v": -2.432
+    },
+    {
+     "m": "b3",
+     "i": 1,
+     "j": null,
+     "v": 3.142
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Values are at W3 row 6 and b3. In the truth output 1 is up, the move that crosses the road, which has the largest bias."
+   }
+  },
+  {
+   "quote": "Five scores could select four movement directions plus a stationary or special action.",
+   "say": "The model reads the outputs as five action scores, perhaps up, down, left, right and stay. It says their order cannot be identified.",
+   "layer": "out",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "Five moves match the truth: no-op, up, down, left, right."
+   }
+  },
+  {
+   "quote": "gridworld navigation or a small grid-based puzzle policy",
+   "say": "Its best guess is a grid-world navigation or small puzzle policy. It mentions Sokoban but says naming it would exceed the evidence. Confidence 30%.",
+   "layer": "none",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "The network is a grid policy in which the agent moves up the board, but the game, Freeway, is not named."
+   }
+  }
+ ],
+ "astra_xhigh": [
+  {
+   "quote": "The inputs have repeated structure.",
+   "say": "Inputs 4, 9 and 14, counting from 1, have nearly the same weights as the bias b1, such as -0.477 and -0.485 against -0.492. The model suggests repeated groups, possibly five channels per location.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ]
+   ],
+   "h1": [
+    3,
+    25,
+    28
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 3,
+     "v": -0.477
+    },
+    {
+     "m": "W1",
+     "i": 8,
+     "j": 3,
+     "v": -0.485
+    },
+    {
+     "m": "b1",
+     "i": 3,
+     "j": null,
+     "v": -0.492
+    },
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 25,
+     "v": 0.44
+    },
+    {
+     "m": "W1",
+     "i": 8,
+     "j": 25,
+     "v": 0.499
+    },
+    {
+     "m": "b1",
+     "i": 25,
+     "j": null,
+     "v": 0.434
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Counting from 0, these are W1 rows 3, 8, 13 and units 3, 25, 28; all values are there. The rows are channel 3 of cells (0,0) to (0,2) and correlate with b1 at 0.96 to 0.97."
+   }
+  },
+  {
+   "quote": "There are background-like regions and more differentiated regions.",
+   "say": "Many input rows hold small irregular values, while some connections reach 6.639, 6.689 and -8.723. The model notes that unknown input scales keep size alone from proving importance.",
+   "layer": "W1",
+   "channel": null,
+   "cells": [
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     5,
+     5
+    ]
+   ],
+   "h1": [
+    12
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 161,
+     "j": 12,
+     "v": 6.639
+    },
+    {
+     "m": "W1",
+     "i": 181,
+     "j": 12,
+     "v": 6.689
+    },
+    {
+     "m": "W1",
+     "i": 275,
+     "j": 12,
+     "v": -8.723
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "6.639 and 6.689 are channel 1 at (3,2) and (3,6); -8.723 is channel 0 at (5,5). Channel 0 norms reach 18 in columns 3 to 6 of rows 2 to 8, channel 1 norms are 2.5 to 7.2 in rows 2 to 7, and the border is 0.2 to 0.5."
+   }
+  },
+  {
+   "quote": "Some substantial patterns repeat.",
+   "say": "Two rows starting -0.148, -0.513 and -0.093, -0.553 are very similar, including 6.639 and 6.689 in their thirteenth places. The model suggests correlated or duplicated input features.",
+   "layer": "W1",
+   "channel": 1,
+   "cells": [
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     6
+    ]
+   ],
+   "h1": [
+    1,
+    12
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 161,
+     "j": 0,
+     "v": -0.148
+    },
+    {
+     "m": "W1",
+     "i": 161,
+     "j": 1,
+     "v": -0.513
+    },
+    {
+     "m": "W1",
+     "i": 181,
+     "j": 0,
+     "v": -0.093
+    },
+    {
+     "m": "W1",
+     "i": 181,
+     "j": 1,
+     "v": -0.553
+    },
+    {
+     "m": "W1",
+     "i": 161,
+     "j": 12,
+     "v": 6.639
+    },
+    {
+     "m": "W1",
+     "i": 181,
+     "j": 12,
+     "v": 6.689
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "These are inputs 161 and 181, channel 1 (moving cars) at (3,2) and (3,6), and they correlate 0.999. Across rows 2 to 7, channel 1 rows four columns apart correlate 0.99 on average, neighbours 0.29."
+   }
+  },
+  {
+   "quote": "The large second bias does not by itself identify a default action.",
+   "say": "One W3 row contrasts outputs 2 and 5, counting from 1, with 2.626 and -2.432, and the output biases are -0.029, 3.142, -1.862, 0.173, -1.269. The model reads these as scores without fixed meanings.",
+   "layer": "W3",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [
+    6
+   ],
+   "actions": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "refs": [
+    {
+     "m": "W3",
+     "i": 6,
+     "j": 1,
+     "v": 2.626
+    },
+    {
+     "m": "W3",
+     "i": 6,
+     "j": 4,
+     "v": -2.432
+    },
+    {
+     "m": "b3",
+     "i": 0,
+     "j": null,
+     "v": -0.029
+    },
+    {
+     "m": "b3",
+     "i": 1,
+     "j": null,
+     "v": 3.142
+    },
+    {
+     "m": "b3",
+     "i": 2,
+     "j": null,
+     "v": -1.862
+    },
+    {
+     "m": "b3",
+     "i": 4,
+     "j": null,
+     "v": -1.269
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "This is W3 row 6 and b3. Outputs 2 and 5 counting from 1 are up and right. The largest bias, 3.142, is on up, the move that carries the player across the road."
+   }
+  },
+  {
+   "quote": "Rows resembling the bias could arise from inputs consistently equal to one during training, such as fixed background or border indicators.",
+   "say": "The model explains the bias-like rows as inputs that were always equal to one, such as fixed background or border markers.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     9,
+     0
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "Channel 3 rows of the 36 border cells correlate with b1 at 0.96 on average (lowest 0.94). Correct: channel 3 holds obstacles, and the outer ring is always on."
+   }
+  },
+  {
+   "quote": "100 locations with five channels each, possibly a flattened 10 × 10 symbolic grid",
+   "say": "The model tentatively reads the inputs as 100 locations with five channels each, perhaps a 10 by 10 grid. The channels might encode background, terrain and entities, and even the spatial reading is uncertain.",
+   "layer": "input",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "partly",
+    "note": "The layout is right. No channel gets a role beyond background or border."
+   }
+  },
+  {
+   "quote": "five action scores: up, down, left, right, and stay/no-op",
+   "say": "The model tentatively reads the outputs as scores for four moves and a no-op. It cannot assign moves to output numbers.",
+   "layer": "out",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "Correct: the outputs are 0 no-op, 1 up, 2 down, 3 left, 4 right."
+   }
+  },
+  {
+   "quote": "small-grid maze navigation: choosing a movement action from an encoded board state",
+   "say": "Its low-confidence guess is moving through a small grid maze. It says the destination, rules and named game cannot be recovered from the weights. Confidence 25%.",
+   "layer": "none",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "not supported",
+    "note": "Wrong game: the network plays Freeway, moving a player up across lanes of cars."
+   }
+  }
+ ],
+ "claude": [
+  {
+   "quote": "Input layout: 100 cells × 5 channels.",
+   "say": "W1 rows repeat with period 5, so the model reads input i as cell i div 5 and channel i mod 5, on a 10 by 10 grid.",
+   "layer": "input",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "This matches the true layout: input i = (row*10+col)*5+channel."
+   }
+  },
+  {
+   "quote": "Rows that are constant in the data copy the bias b1.",
+   "say": "Inputs always equal to 1 drift like the bias. The model finds these in channel 3 and concludes rows 0, 1 and 9 and columns 8 and 9 are permanent walls, leaving a 7 by 8 board.",
+   "layer": "W1",
+   "channel": 3,
+   "cells": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     9
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     9
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     3,
+     9
+    ],
+    [
+     4,
+     0
+    ],
+    [
+     4,
+     9
+    ],
+    [
+     5,
+     0
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     0
+    ],
+    [
+     6,
+     9
+    ],
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     9
+    ],
+    [
+     8,
+     0
+    ],
+    [
+     8,
+     9
+    ],
+    [
+     9,
+     0
+    ],
+    [
+     9,
+     1
+    ],
+    [
+     9,
+     2
+    ],
+    [
+     9,
+     3
+    ],
+    [
+     9,
+     4
+    ],
+    [
+     9,
+     5
+    ],
+    [
+     9,
+     6
+    ],
+    [
+     9,
+     7
+    ],
+    [
+     9,
+     8
+    ],
+    [
+     9,
+     9
+    ]
+   ],
+   "h1": [
+    3,
+    28
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 3,
+     "v": -0.477
+    },
+    {
+     "m": "b1",
+     "i": 3,
+     "j": null,
+     "v": -0.492
+    },
+    {
+     "m": "W1",
+     "i": 3,
+     "j": 25,
+     "v": 0.44
+    },
+    {
+     "m": "b1",
+     "i": 28,
+     "j": null,
+     "v": 0.434
+    },
+    {
+     "m": "W1",
+     "i": 498,
+     "j": 3,
+     "v": -0.408
+    }
+   ],
+   "check": {
+    "status": "partly",
+    "note": "Channel 3 copies b1 on the outer ring (0.94 to 0.98), as the truth says. Row 1 is no wall: there channel 2, the goal, copies b1 (0.95 to 0.98). Its quoted rows 143 and 243 are really 148 and 248, so its columns 8 and 9 are the true border."
+   }
+  },
+  {
+   "quote": "So channel 0 is probably \"empty\"",
+   "say": "Row 105 looks like the bias, so the model reads channel 0 as an empty-cell marker that is almost always on.",
+   "layer": "W1",
+   "channel": 0,
+   "cells": [
+    [
+     2,
+     2
+    ]
+   ],
+   "h1": [
+    0,
+    1
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 110,
+     "j": 0,
+     "v": 0.1
+    },
+    {
+     "m": "W1",
+     "i": 110,
+     "j": 1,
+     "v": 0.367
+    }
+   ],
+   "check": {
+    "status": "not supported",
+    "note": "In the truth channel 0 is the agent, with norms up to 18.0 in columns 3 to 6. The quoted values sit at row 110, cell (2,2), an edge cell that only weakly copies b1 (0.58)."
+   }
+  },
+  {
+   "quote": "Channel 1 repeats with horizontal period 4.",
+   "say": "Channel 1 weights at column c and c+4 of a row are nearly equal, such as 6.639 and 6.689 into unit 12, so those inputs are always equal. The model sees two copies of a pattern across the board.",
+   "layer": "W1",
+   "channel": 1,
+   "cells": [
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     2,
+     6
+    ],
+    [
+     2,
+     7
+    ],
+    [
+     2,
+     8
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     6
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     1
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     5
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     3
+    ],
+    [
+     6,
+     4
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     6,
+     7
+    ],
+    [
+     6,
+     8
+    ]
+   ],
+   "h1": [
+    12,
+    15
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 161,
+     "j": 12,
+     "v": 6.639
+    },
+    {
+     "m": "W1",
+     "i": 181,
+     "j": 12,
+     "v": 6.689
+    },
+    {
+     "m": "W1",
+     "i": 216,
+     "j": 12,
+     "v": 1.871
+    },
+    {
+     "m": "W1",
+     "i": 236,
+     "j": 12,
+     "v": 2.021
+    },
+    {
+     "m": "W1",
+     "i": 321,
+     "j": 15,
+     "v": 4.041
+    },
+    {
+     "m": "W1",
+     "i": 341,
+     "j": 15,
+     "v": 4.057
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "Channel 1 rows at (r,c) and (r,c+4) correlate 0.976 to 0.999 in rows 2 to 7. Its cell numbers run one low: 6.639 is at cell (3,2). Matches the truth: moving objects, the cars."
+   }
+  },
+  {
+   "quote": "Channel 1 is never present in the bottom live row (cells 80–87).",
+   "say": "Channel 1 rows in the bottom live row are all tiny. The model reads that row as a car-free starting sidewalk.",
+   "layer": "W1",
+   "channel": 1,
+   "cells": [
+    [
+     8,
+     1
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ],
+    [
+     8,
+     7
+    ],
+    [
+     8,
+     8
+    ]
+   ],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "Channel 1 norms in row 8 are at most 0.39, against 2.5 to 7.2 in rows 2 to 7. In the truth row 8 is the start row with no cars."
+   }
+  },
+  {
+   "quote": "Channel 4 appears in every live row, including the bottom one, with strong position-specific weights.",
+   "say": "Channel 4 has strong weights at particular positions in every live row, including row 8, such as 6.182. The model takes it as a single object whose position matters: the agent.",
+   "layer": "W1",
+   "channel": 4,
+   "cells": [
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     3
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     1
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     3,
+     3
+    ],
+    [
+     3,
+     4
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     7
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ],
+    [
+     4,
+     4
+    ],
+    [
+     4,
+     5
+    ],
+    [
+     4,
+     6
+    ],
+    [
+     4,
+     7
+    ],
+    [
+     4,
+     8
+    ],
+    [
+     5,
+     2
+    ],
+    [
+     5,
+     3
+    ],
+    [
+     5,
+     4
+    ],
+    [
+     5,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     5,
+     8
+    ],
+    [
+     6,
+     1
+    ],
+    [
+     6,
+     2
+    ],
+    [
+     6,
+     5
+    ],
+    [
+     6,
+     6
+    ],
+    [
+     7,
+     1
+    ],
+    [
+     7,
+     2
+    ],
+    [
+     7,
+     3
+    ],
+    [
+     7,
+     4
+    ],
+    [
+     7,
+     6
+    ],
+    [
+     7,
+     7
+    ],
+    [
+     7,
+     8
+    ],
+    [
+     8,
+     2
+    ],
+    [
+     8,
+     3
+    ],
+    [
+     8,
+     4
+    ],
+    [
+     8,
+     5
+    ],
+    [
+     8,
+     6
+    ]
+   ],
+   "h1": [
+    4,
+    5,
+    12,
+    18
+   ],
+   "h2": [],
+   "actions": [],
+   "refs": [
+    {
+     "m": "W1",
+     "i": 264,
+     "j": 4,
+     "v": 6.182
+    },
+    {
+     "m": "W1",
+     "i": 294,
+     "j": 18,
+     "v": -4.103
+    },
+    {
+     "m": "W1",
+     "i": 314,
+     "j": 12,
+     "v": 3.251
+    },
+    {
+     "m": "W1",
+     "i": 429,
+     "j": 5,
+     "v": 2.285
+    }
+   ],
+   "check": {
+    "status": "not supported",
+    "note": "The values are all channel 4. In the truth channel 4 is the previous frame (agent and cars one step earlier); the agent is channel 0, with norms up to 18.0 against 8.3 for channel 4."
+   }
+  },
+  {
+   "quote": "Output 1 has a strongly dominant prior, which looks like a default action.",
+   "say": "Output 1 has bias 3.142, far above the others, so the model reads it as the most frequent action, probably up or stay, in the order no-op, up, down, left, right.",
+   "layer": "out",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [
+    1
+   ],
+   "refs": [
+    {
+     "m": "b3",
+     "i": 1,
+     "j": null,
+     "v": 3.142
+    },
+    {
+     "m": "b3",
+     "i": 0,
+     "j": null,
+     "v": -0.029
+    },
+    {
+     "m": "b3",
+     "i": 2,
+     "j": null,
+     "v": -1.862
+    }
+   ],
+   "check": {
+    "status": "supported",
+    "note": "The biases are right, and the order matches the truth: output 1 is up, the move that crosses the road."
+   }
+  },
+  {
+   "quote": "A policy or Q-network for a Frogger/Freeway-style road-crossing gridworld.",
+   "say": "The model concludes a road-crossing game like Frogger or Freeway: the agent starts on the bottom safe row and crosses lanes of periodic traffic. Confidence 40%.",
+   "layer": "none",
+   "channel": null,
+   "cells": [],
+   "h1": [],
+   "h2": [],
+   "actions": [],
+   "refs": [],
+   "check": {
+    "status": "supported",
+    "note": "The game is right: car lanes in rows 2 to 7, the start in row 8 and the goal in row 1."
+   }
+  }
+ ]
+}

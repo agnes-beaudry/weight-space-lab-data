@@ -1172,7 +1172,7 @@
    "refs": [],
    "check": {
     "status": "not checkable",
-    "note": "The weights cannot name a game; the recorded training label for this network is breakout, which agrees."
+    "note": ""
    },
    "say": "The model says the game is Breakout, a small grid version with a paddle, a ball and bricks."
   }
@@ -2259,7 +2259,7 @@
    "refs": [],
    "check": {
     "status": "not checkable",
-    "note": "The weights cannot name a game; the recorded training label for this network is breakout, which agrees."
+    "note": ""
    },
    "say": "The model says the game is Breakout, a brick-breaking game on a grid, similar to Arkanoid."
   }
@@ -3364,7 +3364,7 @@
    "refs": [],
    "check": {
     "status": "not checkable",
-    "note": "The weights cannot name a game; the recorded training label for this network is breakout, which agrees."
+    "note": ""
    },
    "say": "The model says the game is Breakout, in a small MinAtar-style version similar to Arkanoid."
   }
